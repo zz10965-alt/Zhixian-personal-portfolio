@@ -1,0 +1,8 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import ProjectGallery from '../../../components/ProjectGallery.astro';
+import { categories, site, labels } from '../../../lib/content';
+export function getStaticPaths() { return categories.map(category => ({params:{category:category.id},props:{category}})); }
+const { category } = Astro.props;
+---
+<Layout title={site.navigation.find(item => item.key === 'projects')!.label} pageKey="projects" description={`${category.label} ${labels.projectPlural} · ${site.copyrightName}`}><div class="container collection-page"><header class="page-heading"><p class="eyebrow">{labels.categoryEyebrow}</p><h1>{category.label}</h1><p>{labels.categoryDescription}</p></header><ProjectGallery category={category.id} /></div></Layout>

@@ -1,0 +1,48 @@
+---
+import { site, labels } from '../lib/content';
+const page = site.pages.experience;
+import Layout from '../layouts/Layout.astro';
+import ExperienceDetail from '../components/ExperienceDetail.astro';
+import { experiences, mediaPath } from '../lib/content';
+---
+<Layout title={site.navigation.find(item => item.key === 'experience')!.label} pageKey="experience" description={page.seoDescription}>
+  <div class="container collection-page">
+    <header class="page-heading"><p class="eyebrow">{page.eyebrow}</p><h1>{page.heading} <em>{page.emphasis}</em></h1><p>{page.description}</p></header>
+    <div class="experience-layout">
+      <div class="experience-tabs" role="tablist" aria-label={labels.internships} aria-orientation="vertical">
+        {experiences.map((experience, index) => <button role="tab" id={`tab-${experience.id}`} aria-controls="experience-panel" aria-selected={index === 0 ? 'true' : 'false'} tabindex={index === 0 ? 0 : -1} data-experience={experience.id}>
+          <span class="company-mark">{experience.logo ? <img src={mediaPath(experience.logo)} alt="" width="36" height="36" /> : experience.monogram}</span><span><strong>{experience.company}</strong><small>{experience.role}</small><small>{experience.dates}</small></span>
+        </button>)}
+      </div>
+      <div class="experience-mobile-select"><label for="experience-select">{labels.selectExperience}</label><select id="experience-select">{experiences.map(experience => <option value={experience.id}>{experience.company} · {experience.dates}</option>)}</select></div>
+      <div id="experience-panel" role="tabpanel" aria-labelledby={`tab-${experiences[0].id}`} tabindex="0"><ExperienceDetail experience={experiences[0]} /></div>
+    </div>
+    {experiences.map(experience => <template id={`experience-${experience.id}`}><ExperienceDetail experience={experience} /></template>)}
+  </div>
+  <script>
+    const tabs = [...document.querySelectorAll<HTMLButtonElement>('[data-experience]')];
+    const panel = document.querySelector<HTMLElement>('#experience-panel')!;
+    const select = document.querySelector<HTMLSelectElement>('#experience-select')!;
+    function activate(id: string, focusTab = false) {
+      const template = document.getElementById(`experience-${id}`) as HTMLTemplateElement;
+      if (!template) return;
+      panel.replaceChildren(template.content.cloneNode(true));
+      panel.setAttribute('aria-labelledby', `tab-${id}`);
+      select.value = id;
+      tabs.forEach(tab => { const active = tab.dataset.experience === id; tab.setAttribute('aria-selected', String(active)); tab.tabIndex = active ? 0 : -1; if (active && focusTab) tab.focus(); });
+    }
+    tabs.forEach((tab, index) => {
+      tab.addEventListener('click', () => activate(tab.dataset.experience!));
+      tab.addEventListener('keydown', event => {
+        let next = index;
+        if (event.key === 'ArrowDown') next = (index + 1) % tabs.length;
+        else if (event.key === 'ArrowUp') next = (index - 1 + tabs.length) % tabs.length;
+        else if (event.key === 'Home') next = 0;
+        else if (event.key === 'End') next = tabs.length - 1;
+        else return;
+        event.preventDefault(); activate(tabs[next].dataset.experience!, true);
+      });
+    });
+    select.addEventListener('change', () => activate(select.value));
+  </script>
+</Layout>

@@ -1,0 +1,5 @@
+[
+  {"id":"data-business-analytics","label":"Data & Business Analytics","icon":"chart"},
+  {"id":"data-science","label":"Data Science","icon":"code"},
+  {"id":"product-ai","label":"Product & AI","icon":"spark"}
+]

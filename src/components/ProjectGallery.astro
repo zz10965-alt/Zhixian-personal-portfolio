@@ -1,0 +1,18 @@
+---
+import { labels } from '../lib/content';
+import Icon from './Icon.astro';
+import { categories, projects, categoryLabel, mediaPath, sitePath } from '../lib/content';
+const { category = '' } = Astro.props;
+const selected = projects.filter(project => !category || project.category === category);
+---
+<div class="collection-filters" aria-label={labels.projectCategories}>
+  <a href={sitePath('projects/')} aria-current={!category ? 'page' : undefined}>{labels.allProjects} <span>{projects.length}</span></a>
+  {categories.map(item => <a href={sitePath(`projects/category/${item.id}/`)} aria-current={category === item.id ? 'page' : undefined}>{item.label}</a>)}
+</div>
+<p class="collection-count">{selected.length} {selected.length === 1 ? labels.projectSingular : labels.projectPlural} · {labels.countNote}</p>
+<div class="project-grid">
+  {selected.map(project => <a class="project-card" href={sitePath(`projects/${project.id}/`)}>
+    <div class="project-cover">{project.cover ? <img src={mediaPath(project.cover)} alt={project.coverAlt} width="640" height="400" loading="lazy" /> : <div class="project-placeholder"><Icon name={categories.find(item => item.id === project.category)?.icon} /><span>{labels.projectImage}</span></div>}</div>
+    <div class="project-card-body"><span class="category-badge">{categoryLabel(project.category)}</span><h2>{project.title}</h2><p>{project.cardDescription}</p><ul class="tags">{project.tags.slice(0, 4).map(tag => <li>{tag}</li>)}</ul><span class="view-details">{labels.viewDetails} <Icon name="arrow" /></span></div>
+  </a>)}
+</div>

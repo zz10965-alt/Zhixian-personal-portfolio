@@ -1,0 +1,9 @@
+---
+import { site, labels } from '../../lib/content';
+const page = site.pages.projects;
+import Layout from '../../layouts/Layout.astro';
+import ProjectGallery from '../../components/ProjectGallery.astro';
+---
+<Layout title={site.navigation.find(item => item.key === 'projects')!.label} pageKey="projects" description={page.seoDescription}>
+  <div class="container collection-page"><header class="page-heading"><p class="eyebrow">{page.eyebrow}</p><h1>{page.heading} <em>{page.emphasis}</em></h1><p>{page.description}</p></header><ProjectGallery /></div>
+</Layout>

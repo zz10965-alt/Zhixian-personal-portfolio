@@ -1,0 +1,814 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:freya-portfolio:content",
+  "title": "Portfolio content field contract",
+  "description": "Field inventory and types for the planned CMS. Select the definition matching each src/content filename. This does not enable a CMS.",
+  "$defs": {
+    "site": {
+      "type": "object",
+      "properties": {
+        "copyrightName": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "footerText": {
+          "type": "string"
+        },
+        "labels": {
+          "type": "object",
+          "properties": {
+            "academicHighlights": {
+              "type": "string"
+            },
+            "allProjects": {
+              "type": "string"
+            },
+            "backProjects": {
+              "type": "string"
+            },
+            "categoryDescription": {
+              "type": "string"
+            },
+            "categoryEyebrow": {
+              "type": "string"
+            },
+            "connect": {
+              "type": "string"
+            },
+            "contact": {
+              "type": "string"
+            },
+            "contributions": {
+              "type": "string"
+            },
+            "countNote": {
+              "type": "string"
+            },
+            "coursework": {
+              "type": "string"
+            },
+            "dashboardLink": {
+              "type": "string"
+            },
+            "dashboardScreenshot": {
+              "type": "string"
+            },
+            "downloadScreenshot": {
+              "type": "string"
+            },
+            "educationNote": {
+              "type": "string"
+            },
+            "educationTimeline": {
+              "type": "string"
+            },
+            "email": {
+              "type": "string"
+            },
+            "expandCategories": {
+              "type": "string"
+            },
+            "github": {
+              "type": "string"
+            },
+            "gpa": {
+              "type": "string"
+            },
+            "home": {
+              "type": "string"
+            },
+            "honors": {
+              "type": "string"
+            },
+            "interestPhoto": {
+              "type": "string"
+            },
+            "internships": {
+              "type": "string"
+            },
+            "linkedin": {
+              "type": "string"
+            },
+            "linkedinMissing": {
+              "type": "string"
+            },
+            "menu": {
+              "type": "string"
+            },
+            "navigation": {
+              "type": "string"
+            },
+            "onThisPage": {
+              "type": "string"
+            },
+            "open": {
+              "type": "string"
+            },
+            "pending": {
+              "type": "string"
+            },
+            "previewPending": {
+              "type": "string"
+            },
+            "projectCategories": {
+              "type": "string"
+            },
+            "projectImage": {
+              "type": "string"
+            },
+            "projectPlural": {
+              "type": "string"
+            },
+            "projectSections": {
+              "type": "string"
+            },
+            "projectSingular": {
+              "type": "string"
+            },
+            "relatedProject": {
+              "type": "string"
+            },
+            "resources": {
+              "type": "string"
+            },
+            "resume": {
+              "type": "string"
+            },
+            "resumeMissing": {
+              "type": "string"
+            },
+            "resumePending": {
+              "type": "string"
+            },
+            "screenshotGallery": {
+              "type": "string"
+            },
+            "selectExperience": {
+              "type": "string"
+            },
+            "skip": {
+              "type": "string"
+            },
+            "viewDetails": {
+              "type": "string"
+            },
+            "viewScreenshot": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        },
+        "language": {
+          "type": "string"
+        },
+        "navigation": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "key": {
+                "type": "string"
+              },
+              "label": {
+                "type": "string"
+              },
+              "path": {
+                "type": "string"
+              }
+            },
+            "additionalProperties": false
+          }
+        },
+        "pages": {
+          "type": "object",
+          "properties": {
+            "dashboards": {
+              "type": "object",
+              "properties": {
+                "description": {
+                  "type": "string"
+                },
+                "emphasis": {
+                  "type": "string"
+                },
+                "eyebrow": {
+                  "type": "string"
+                },
+                "heading": {
+                  "type": "string"
+                },
+                "seoDescription": {
+                  "type": "string"
+                }
+              },
+              "additionalProperties": false
+            },
+            "education": {
+              "type": "object",
+              "properties": {
+                "description": {
+                  "type": "string"
+                },
+                "emphasis": {
+                  "type": "string"
+                },
+                "eyebrow": {
+                  "type": "string"
+                },
+                "heading": {
+                  "type": "string"
+                },
+                "seoDescription": {
+                  "type": "string"
+                }
+              },
+              "additionalProperties": false
+            },
+            "experience": {
+              "type": "object",
+              "properties": {
+                "description": {
+                  "type": "string"
+                },
+                "emphasis": {
+                  "type": "string"
+                },
+                "eyebrow": {
+                  "type": "string"
+                },
+                "heading": {
+                  "type": "string"
+                },
+                "seoDescription": {
+                  "type": "string"
+                }
+              },
+              "additionalProperties": false
+            },
+            "projects": {
+              "type": "object",
+              "properties": {
+                "description": {
+                  "type": "string"
+                },
+                "emphasis": {
+                  "type": "string"
+                },
+                "eyebrow": {
+                  "type": "string"
+                },
+                "heading": {
+                  "type": "string"
+                },
+                "seoDescription": {
+                  "type": "string"
+                }
+              },
+              "additionalProperties": false
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "dashboards": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "description": {
+            "type": "string"
+          },
+          "displayOrder": {
+            "type": "integer",
+            "title": "Display Order",
+            "minimum": 0,
+            "description": "Lower values appear first within each Featured group."
+          },
+          "featured": {
+            "type": "boolean",
+            "title": "Featured",
+            "description": "Featured records appear first; no badge or visual redesign."
+          },
+          "files": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "label": {
+                  "type": "string"
+                },
+                "type": {
+                  "type": "string"
+                },
+                "url": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "label",
+                "type",
+                "url"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "id": {
+            "type": "string"
+          },
+          "note": {
+            "type": "string"
+          },
+          "platform": {
+            "type": "string"
+          },
+          "preview": {
+            "type": "string"
+          },
+          "previewAlt": {
+            "type": "string"
+          },
+          "projectId": {
+            "type": "string"
+          },
+          "publicUrl": {
+            "type": "string"
+          },
+          "publicUrlVerified": {
+            "type": "boolean"
+          },
+          "screenshots": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "alt": {
+                  "type": "string"
+                },
+                "image": {
+                  "type": "string"
+                }
+              },
+              "additionalProperties": false
+            }
+          },
+          "title": {
+            "type": "string"
+          },
+          "urlVerification": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "featured",
+          "displayOrder"
+        ]
+      }
+    },
+    "profile": {
+      "type": "object",
+      "properties": {
+        "email": {
+          "type": "string"
+        },
+        "eyebrow": {
+          "type": "string"
+        },
+        "github": {
+          "type": "string"
+        },
+        "headlineEmphasis": {
+          "type": "string"
+        },
+        "headlineLead": {
+          "type": "string"
+        },
+        "highlights": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "detail": {
+                "type": "string"
+              },
+              "icon": {
+                "type": "string"
+              },
+              "text": {
+                "type": "string"
+              }
+            },
+            "additionalProperties": false
+          }
+        },
+        "interests": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "description": {
+                "type": "string"
+              },
+              "icon": {
+                "type": "string"
+              },
+              "image": {
+                "type": "string"
+              },
+              "imageAlt": {
+                "type": "string"
+              },
+              "imagePosition": {
+                "type": "string"
+              },
+              "label": {
+                "type": "string"
+              },
+              "title": {
+                "type": "string"
+              }
+            },
+            "additionalProperties": false
+          }
+        },
+        "interestsHeading": {
+          "type": "string"
+        },
+        "interestsNote": {
+          "type": "string"
+        },
+        "introduction": {
+          "type": "string"
+        },
+        "linkedin": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "photo": {
+          "type": "string"
+        },
+        "photoAlt": {
+          "type": "string"
+        },
+        "photoCaption": {
+          "type": "string"
+        },
+        "photoPosition": {
+          "type": "string"
+        },
+        "portraitPlaceholderAlt": {
+          "type": "string"
+        },
+        "portraitPlaceholderEmphasis": {
+          "type": "string"
+        },
+        "portraitPlaceholderLead": {
+          "type": "string"
+        },
+        "portraitPlaceholderNote": {
+          "type": "string"
+        },
+        "resume": {
+          "type": "string"
+        },
+        "stickerEmphasis": {
+          "type": "string"
+        },
+        "stickerLead": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "education": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "awards": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "date": {
+                  "type": "string"
+                },
+                "title": {
+                  "type": "string"
+                }
+              },
+              "additionalProperties": false
+            }
+          },
+          "coursework": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "courseworkNote": {
+            "type": "string"
+          },
+          "degree": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "end": {
+            "type": "string"
+          },
+          "gpa": {
+            "type": "string"
+          },
+          "highlights": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "id": {
+            "type": "string"
+          },
+          "location": {
+            "type": "string"
+          },
+          "logo": {
+            "type": "string"
+          },
+          "logoAlt": {
+            "type": "string"
+          },
+          "major": {
+            "type": "string"
+          },
+          "period": {
+            "type": "string"
+          },
+          "reviewNote": {
+            "type": "string"
+          },
+          "school": {
+            "type": "string"
+          },
+          "shortName": {
+            "type": "string"
+          },
+          "start": {
+            "type": "string"
+          },
+          "timelineLabel": {
+            "type": "string"
+          },
+          "university": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "projects": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "cardDescription": {
+            "type": "string",
+            "maxLength": 180
+          },
+          "category": {
+            "type": "string",
+            "enum": [
+              "data-business-analytics",
+              "data-science",
+              "product-ai"
+            ]
+          },
+          "cover": {
+            "type": "string"
+          },
+          "coverAlt": {
+            "type": "string"
+          },
+          "dates": {
+            "type": "string"
+          },
+          "displayOrder": {
+            "type": "integer",
+            "title": "Display Order",
+            "minimum": 0,
+            "description": "Lower values appear first within each Featured group."
+          },
+          "featured": {
+            "type": "boolean",
+            "title": "Featured",
+            "description": "Featured records appear first; no badge or visual redesign."
+          },
+          "id": {
+            "type": "string"
+          },
+          "note": {
+            "type": "string"
+          },
+          "resources": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "label": {
+                  "type": "string"
+                },
+                "type": {
+                  "type": "string"
+                },
+                "url": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "label",
+                "type",
+                "url"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "role": {
+            "type": "string"
+          },
+          "sections": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "bullets": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "id": {
+                  "type": "string"
+                },
+                "images": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "src": {
+                        "type": "string"
+                      },
+                      "alt": {
+                        "type": "string"
+                      },
+                      "caption": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "src",
+                      "alt"
+                    ],
+                    "additionalProperties": false
+                  }
+                },
+                "paragraphs": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "title": {
+                  "type": "string"
+                }
+              },
+              "additionalProperties": false
+            }
+          },
+          "sourceId": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          },
+          "summary": {
+            "type": "string"
+          },
+          "tags": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "title": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "featured",
+          "displayOrder"
+        ]
+      }
+    },
+    "experience": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "company": {
+            "type": "string"
+          },
+          "contributions": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "dates": {
+            "type": "string"
+          },
+          "displayOrder": {
+            "type": "integer",
+            "title": "Display Order",
+            "minimum": 0,
+            "description": "Lower values appear first within each Featured group."
+          },
+          "featured": {
+            "type": "boolean",
+            "title": "Featured",
+            "description": "Featured records appear first; no badge or visual redesign."
+          },
+          "id": {
+            "type": "string"
+          },
+          "location": {
+            "type": "string"
+          },
+          "logo": {
+            "type": "string"
+          },
+          "logoAlt": {
+            "type": "string"
+          },
+          "monogram": {
+            "type": "string"
+          },
+          "note": {
+            "type": "string"
+          },
+          "role": {
+            "type": "string"
+          },
+          "start": {
+            "type": "string"
+          },
+          "summary": {
+            "type": "string"
+          },
+          "tags": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "team": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "featured",
+          "displayOrder"
+        ]
+      }
+    },
+    "categories": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "icon": {
+            "type": "string"
+          },
+          "id": {
+            "type": "string"
+          },
+          "label": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
+}

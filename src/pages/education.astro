@@ -1,0 +1,35 @@
+---
+import { site, labels } from '../lib/content';
+const page = site.pages.education;
+import Layout from '../layouts/Layout.astro';
+import Icon from '../components/Icon.astro';
+const base = import.meta.env.BASE_URL;
+const media = (path: string) => path.startsWith('https://') ? path : `${base}${path.replace(/^\//, '')}`;
+import education from '../content/education.json';
+import profile from '../content/profile.json';
+---
+<Layout title={site.navigation.find(item => item.key === 'education')!.label} pageKey="education" description={page.seoDescription}>
+  <div class="container education-page">
+    <header class="page-heading"><p class="eyebrow">{page.eyebrow}</p><h1>{page.heading} <em>{page.emphasis}</em></h1><p>{page.description}</p></header>
+    <ol class="education-roadmap" aria-label={labels.educationTimeline}>
+      {education.map((entry, index) => <li>
+        <div class="roadmap-stop"><span class="timeline-node" aria-hidden="true"></span><span class="eyebrow">{entry.period}</span><span class="roadmap-label">{entry.timelineLabel}</span></div>
+        <article class="education-card" aria-labelledby={entry.id}>
+          <div class="school-top"><span class:list={['school-monogram', {'nyu': entry.id === 'nyu'}]}>{entry.logo ? <img src={media(entry.logo)} alt={entry.logoAlt} width="56" height="56" loading="lazy" /> : <span aria-hidden="true">{entry.shortName}</span>}</span><span class="school-location"><Icon name="location" />{entry.location}</span></div>
+          <div class="school-heading"><h2 id={entry.id}>{entry.university}</h2>
+          {'school' in entry && <p class="school-name">{entry.school}</p>}</div>
+          <p class="degree">{entry.degree}<br /><strong>{entry.major}</strong></p>
+          {entry.reviewNote && <p class="content-review-note">{entry.reviewNote}</p>}
+          <p class="dates">{entry.start} — {entry.end}</p>
+          <div class="gpa"><span>{labels.gpa}</span><strong>{entry.gpa}</strong></div>
+                    <h3 class="detail-label">{labels.coursework}</h3>
+          <ul class="tags">{entry.coursework.map(course => <li>{course}</li>)}</ul>
+          <p class="source-caption">{entry.courseworkNote}</p>
+          {entry.awards.length > 0 && <div class="academic-section"><h3 class="detail-label">{labels.honors}</h3><ul class="award-list">{entry.awards.map(award => <li><Icon name="trophy" /><div><strong>{award.title}</strong><span>{award.date}</span></div></li>)}</ul></div>}
+          <div class="academic-section"><h3 class="detail-label">{labels.academicHighlights}</h3><ul class="highlights">{entry.highlights.map(item => <li>{item}</li>)}</ul></div>
+        </article>
+      </li>)}
+    </ol>
+    <aside class="education-note"><svg class="arrow-icon" aria-hidden="true" viewBox="0 0 12 12"><path d="M2 10 10 2M2 2h8v8" /></svg><p>{labels.educationNote}</p>{profile.email && <a class="text-link" href={`mailto:${profile.email}`}>{labels.connect} <svg class="arrow-icon" aria-hidden="true" viewBox="0 0 12 12"><path d="M2 10 10 2M2 2h8v8" /></svg></a>}</aside>
+  </div>
+</Layout>

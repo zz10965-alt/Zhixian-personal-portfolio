@@ -1,0 +1,21 @@
+---
+import { labels, usableLink } from '../lib/content';
+import Icon from './Icon.astro';
+import ResourceLinks from './ResourceLinks.astro';
+import { projects, mediaPath, sitePath } from '../lib/content';
+const { dashboard, showRelated = true } = Astro.props;
+const related = projects.find(project => project.id === dashboard.projectId);
+const fullScreenshot = dashboard.screenshots[0]?.image || dashboard.preview;
+const resources = [
+  ...(dashboard.publicUrl && dashboard.publicUrlVerified && usableLink(dashboard.publicUrl) ? [{label:`${labels.open} ${dashboard.platform}`,type:'dashboard',url:dashboard.publicUrl}] : []),
+  ...(dashboard.preview ? [{label:labels.downloadScreenshot,type:'download',url:fullScreenshot}] : []),
+  ...dashboard.files,
+];
+---
+<article class="dashboard-card" data-dashboard={dashboard.id}>
+  <div class="dashboard-preview">{dashboard.preview ? <a href={mediaPath(fullScreenshot)} target="_blank" rel="noopener noreferrer" aria-label={`${labels.viewScreenshot}: ${dashboard.title}`}><img src={mediaPath(dashboard.preview)} alt={dashboard.previewAlt} width="1200" height="900" loading="lazy" /></a> : <div class="project-placeholder"><Icon name="chart" /><span>{labels.previewPending}</span></div>}</div>
+  <div class="dashboard-card-body"><p class="eyebrow">{dashboard.platform}</p><h2>{dashboard.title}</h2><p>{dashboard.description}</p><ResourceLinks resources={resources} />
+  {showRelated && related && <a class="dashboard-related" href={sitePath(`projects/${related.id}/`)}>{labels.relatedProject}: {related.title} <Icon name="arrow" /></a>}
+  {dashboard.screenshots.length > 1 && <details class="screenshot-gallery"><summary>{labels.screenshotGallery}</summary>{dashboard.screenshots.map((shot: {image: string;alt: string}) => <a href={mediaPath(shot.image)} target="_blank" rel="noopener noreferrer"><img src={mediaPath(shot.image)} alt={shot.alt} width="1200" height="900" loading="lazy" /></a>)}</details>}
+  {dashboard.note && <p class="source-caption">{dashboard.note}</p>}</div>
+</article>

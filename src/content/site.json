@@ -1,0 +1,111 @@
+{
+  "description": "Freya Zhang — NYU Management and Analytics student exploring analytics, AI, and practical problem-solving.",
+  "language": "en",
+  "footerText": "A little curiosity goes a long way.",
+  "copyrightName": "Freya Zhang",
+  "navigation": [
+    {
+      "label": "About Me",
+      "path": "",
+      "key": "about"
+    },
+    {
+      "label": "Education",
+      "path": "education/",
+      "key": "education"
+    },
+    {
+      "label": "Experience",
+      "path": "experience/",
+      "key": "experience"
+    },
+    {
+      "label": "Projects",
+      "path": "projects/",
+      "key": "projects"
+    },
+    {
+      "label": "Dashboards",
+      "path": "dashboards/",
+      "key": "dashboards"
+    }
+  ],
+  "pages": {
+    "education": {
+      "eyebrow": "FOUNDATIONS & NEW DIRECTIONS",
+      "heading": "A journey of",
+      "emphasis": "learning.",
+      "description": "From understanding organizations to uncovering the stories in data.",
+      "seoDescription": "From understanding organizations to uncovering the stories in data."
+    },
+    "experience": {
+      "eyebrow": "DATA, PEOPLE & PRACTICAL PROBLEMS",
+      "heading": "Professional",
+      "emphasis": "Experience",
+      "description": "A journey through analytics, research, and building reliable data foundations.",
+      "seoDescription": "A journey through analytics, research, and building reliable data foundations."
+    },
+    "projects": {
+      "eyebrow": "QUESTIONS INTO SOMETHING USEFUL",
+      "heading": "Selected",
+      "emphasis": "Projects",
+      "description": "Exploring data, building tools, and making decisions a little clearer.",
+      "seoDescription": "Exploring data, building tools, and making decisions a little clearer."
+    },
+    "dashboards": {
+      "eyebrow": "A CLEARER VIEW OF THE DATA",
+      "heading": "Dashboard",
+      "emphasis": "Gallery",
+      "description": "Visual stories, decision tools, and a closer look at the analysis.",
+      "seoDescription": "Visual stories, decision tools, and a closer look at the analysis."
+    }
+  },
+  "labels": {
+    "skip": "Skip to content",
+    "menu": "Menu",
+    "navigation": "Main navigation",
+    "expandCategories": "Expand project categories",
+    "home": "home",
+    "allProjects": "All Projects",
+    "projectSingular": "project",
+    "projectPlural": "projects",
+    "countNote": "one primary category per project",
+    "projectImage": "Project image to come",
+    "viewDetails": "View Details",
+    "previewPending": "Preview image pending",
+    "viewScreenshot": "View full screenshot",
+    "open": "Open",
+    "downloadScreenshot": "Download screenshot",
+    "relatedProject": "Related project",
+    "screenshotGallery": "Screenshot gallery",
+    "contributions": "Key Contributions",
+    "selectExperience": "Select an internship",
+    "internships": "Internships",
+    "backProjects": "Back to Projects",
+    "onThisPage": "On This Page",
+    "projectSections": "Project sections",
+    "resources": "Resources",
+    "dashboardLink": "Dashboard",
+    "dashboardScreenshot": "Dashboard Screenshot",
+    "gpa": "GPA",
+    "coursework": "Relevant Coursework",
+    "honors": "Selected Honors",
+    "academicHighlights": "Academic Highlights",
+    "educationTimeline": "Education timeline",
+    "connect": "Let’s connect",
+    "educationNote": "Still learning. Always asking better questions.",
+    "categoryEyebrow": "A FOCUSED COLLECTION",
+    "categoryDescription": "Explore the questions, methods, and practical outcomes behind each project.",
+    "contact": "Contact and social links",
+    "resume": "View Resume",
+    "resumePending": "Resume to come",
+    "resumeMissing": "Resume PDF has not been supplied",
+    "linkedinMissing": "LinkedIn URL has not been supplied",
+    "pending": "to come",
+    "email": "Email",
+    "linkedin": "LinkedIn",
+    "github": "GitHub",
+    "interestPhoto": "Photo to come",
+    "projectCategories": "Project categories"
+  }
+}

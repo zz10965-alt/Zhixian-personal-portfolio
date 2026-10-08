@@ -1,0 +1,46 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { site, labels, usableLink } from '../lib/content';
+import Icon from '../components/Icon.astro';
+import profile from '../content/profile.json';
+const base = import.meta.env.BASE_URL;
+const media = (path: string) => path.startsWith('https://') ? path : `${base}${path.replace(/^\//, '')}`;
+---
+<Layout title={site.navigation[0].label} pageKey="about">
+  <section class="hero container" aria-labelledby="intro-heading">
+    <div class="hero-copy">
+      <p class="eyebrow">{profile.eyebrow}</p>
+      <h1 id="intro-heading">{profile.headlineLead} <em>{profile.headlineEmphasis}</em></h1>
+      <p class="intro">{profile.introduction}</p>
+      <ul class="hero-highlights">
+        {profile.highlights.map(item => <li><Icon name={item.icon} /><div><span>{item.text}</span>{item.detail && <small>{item.detail}</small>}</div></li>)}
+      </ul>
+    </div>
+    <figure class="hero-photo">
+      {profile.photo ? <img src={media(profile.photo)} alt={profile.photoAlt} width="780" height="1040" style={{objectPosition:profile.photoPosition}} fetchpriority="high" /> : <div class="portrait-placeholder" role="img" aria-label={profile.portraitPlaceholderAlt}>
+        <Icon name="camera" /><p>{profile.portraitPlaceholderLead}<br /><em>{profile.portraitPlaceholderEmphasis}</em></p><span>{profile.portraitPlaceholderNote}</span>
+      </div>}
+      <figcaption>{profile.photoCaption}</figcaption>
+      <span class="photo-sticker" aria-hidden="true">{profile.stickerLead}<br /><em>{profile.stickerEmphasis}</em><Icon name="spark" /></span>
+    </figure>
+    <div class="hero-actions">
+      {usableLink(profile.resume) ? <a class="button primary" href={media(profile.resume)} download>{labels.resume} <Icon name="external" /></a> : <span class="button unavailable" aria-disabled="true" title={labels.resumeMissing}>{labels.resumePending} <Icon name="external" /></span>}
+    </div>
+    <div class="hero-social" aria-label={labels.contact}>
+      {profile.email && <a href={`mailto:${profile.email}`}><Icon name="email" /><span>{labels.email}</span></a>}
+      {usableLink(profile.linkedin) ? <a href={profile.linkedin} target="_blank" rel="noopener noreferrer"><Icon name="linkedin" /><span>{labels.linkedin}</span></a> : <span class="social-pending" aria-disabled="true" title={labels.linkedinMissing}><Icon name="linkedin" /><span>{labels.linkedin} <small>{labels.pending}</small></span></span>}
+      {usableLink(profile.github) && <a href={profile.github} target="_blank" rel="noopener noreferrer"><Icon name="github" /><span>{labels.github}</span></a>}
+    </div>
+  </section>
+  <section class="beyond-section container" aria-labelledby="beyond-heading">
+    <div class="section-heading"><h2 id="beyond-heading">{profile.interestsHeading}</h2><p>{profile.interestsNote} <Icon name="arrow" /></p></div>
+    <div class="interest-grid">
+      {profile.interests.map((interest) => <article class="interest-card">
+        <div class="interest-photo">
+          {interest.image ? <img src={media(interest.image)} alt={interest.imageAlt || interest.title} width="400" height="320" style={{objectPosition:interest.imagePosition}} loading="lazy" /> : <div class="interest-placeholder"><Icon name={interest.icon} /><span>{labels.interestPhoto}</span></div>}
+        </div>
+        <h3><Icon name={interest.icon} />{interest.title}</h3>
+      </article>)}
+    </div>
+  </section>
+</Layout>

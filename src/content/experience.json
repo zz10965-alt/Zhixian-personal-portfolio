@@ -1,0 +1,112 @@
+[
+  {
+    "id": "google",
+    "company": "Google",
+    "monogram": "G",
+    "logo": "",
+    "logoAlt": "Google logo",
+    "role": "Data Analyst Intern",
+    "team": "LCS Apps Team",
+    "dates": "July — September 2026",
+    "start": "2026-07",
+    "location": "Beijing, China",
+    "summary": "Supported advertising performance analysis and recurring reporting for App advertisers in the Large Customer Sales team.",
+    "contributions": [
+      "Queried and transformed 100K+ advertising performance records across 10+ App clients and 50+ campaigns using SQL, creating datasets across campaign, channel, and time dimensions.",
+      "Analyzed CTR, CVR, CPA, CPC, and conversion KPIs in Pandas using trends, benchmarks, drill-down, and driver analyses to diagnose performance shifts.",
+      "Standardized SQL extraction and Python transformation into a Tableau reporting pipeline for 8 KPIs and 6 dimensions, reducing weekly data preparation from 3 hours to 1 hour."
+    ],
+    "tags": [
+      "SQL",
+      "Python",
+      "Pandas",
+      "Tableau",
+      "Advertising Analytics"
+    ],
+    "note": "The time saving applies to weekly data preparation; no client-level conversion or revenue lift is claimed.",
+    "featured": false,
+    "displayOrder": 1
+  },
+  {
+    "id": "ai-solutions",
+    "company": "AI Solutions",
+    "monogram": "AI",
+    "logo": "",
+    "logoAlt": "AI Solutions logo",
+    "role": "Data Platform Development Intern",
+    "team": "Data platform development",
+    "dates": "May — July 2026",
+    "start": "2026-05",
+    "location": "Covina, California, United States",
+    "summary": "Worked on the data layer and application analytics of a learning platform, with a focus on reliable data flows and recurring reporting.",
+    "contributions": [
+      "Maintained and queried SQL Server data across 12+ relational tables for user, question-bank, and quiz modules.",
+      "Modified 10+ SQL Server stored procedures and 2 migration scripts to implement data validation, soft deletion, and cascading logic while preserving historical records.",
+      "Built Tableau reporting for weekly registrations and AI-recommendation metrics on a platform serving 4K+ users and 1.5K questions."
+    ],
+    "tags": [
+      "SQL Server",
+      "Tableau",
+      "Stored Procedures",
+      "Data Integrity"
+    ],
+    "note": "Confidential employer reports are not shared. The source-reported retention lift is omitted pending measurement review.",
+    "featured": false,
+    "displayOrder": 2
+  },
+  {
+    "id": "nielseniq",
+    "company": "NielsenIQ (GfK)",
+    "monogram": "NIQ",
+    "logo": "",
+    "logoAlt": "NielsenIQ logo",
+    "role": "Quantitative Analyst Intern",
+    "team": "Consumer & Market Insights",
+    "dates": "May — August 2025",
+    "start": "2025-05",
+    "location": "Guangzhou, China",
+    "summary": "Supported cross-market consumer research, turning survey data and qualitative insights into practical recommendations for hardware clients.",
+    "contributions": [
+      "Cleaned and validated 2.6K+ consumer survey responses across Saudi Arabia and Egypt, identifying inconsistent, malformed, and anomalous records.",
+      "Analyzed purchase drivers, pricing, brand preferences, and channel behavior in Excel and Python; supplemented survey data with product pricing and specification research.",
+      "Synthesized quantitative findings and qualitative insights across Saudi Arabia, Egypt, and India into team-produced client-facing reports."
+    ],
+    "tags": [
+      "Python",
+      "Excel",
+      "Survey Analysis",
+      "Consumer Insights",
+      "Market Research"
+    ],
+    "note": "Survey count is the collected-response total; reports were collaborative team deliverables.",
+    "featured": false,
+    "displayOrder": 3
+  },
+  {
+    "id": "conch",
+    "company": "成都海螺型材有限责任公司",
+    "monogram": "海螺",
+    "logo": "",
+    "logoAlt": "Company logo",
+    "role": "Marketing Department Assistant",
+    "team": "Marketing",
+    "dates": "Summer 2023 & Summer 2024",
+    "start": "2023-07",
+    "location": "Chengdu, China",
+    "summary": "Supported market research, marketing events, and promotional content during two summer placements.",
+    "contributions": [
+      "Assisted with questionnaire design and execution and statistical analysis of approximately 500 survey responses.",
+      "Helped plan and deliver four in-person promotional events.",
+      "Worked on two sets of promotional materials, including flyers, posters, and video advertisements, with video editing and layout design."
+    ],
+    "tags": [
+      "Market Research",
+      "Event Coordination",
+      "Video Editing",
+      "Layout Design"
+    ],
+    "note": "Counts are owner-recalled estimates. The original Chinese company name is retained because no official English name was supplied.",
+    "featured": false,
+    "displayOrder": 4
+  }
+]

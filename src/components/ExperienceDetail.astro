@@ -1,0 +1,16 @@
+---
+import { labels } from '../lib/content';
+import Icon from './Icon.astro';
+import { mediaPath } from '../lib/content';
+const { experience } = Astro.props;
+---
+<article class="experience-detail">
+  <div class="experience-detail-top"><span class="company-mark">{experience.logo ? <img src={mediaPath(experience.logo)} alt={experience.logoAlt} width="52" height="52" /> : experience.monogram}</span><p class="eyebrow">{experience.team}</p></div>
+  <h2>{experience.company}</h2>
+  <p class="experience-role">{experience.role}</p>
+  <div class="experience-meta"><span>{experience.dates}</span>{experience.location && <span><Icon name="location" />{experience.location}</span>}</div>
+  <p class="experience-summary">{experience.summary}</p>
+  {experience.contributions.length > 0 && <><h3 class="detail-label">{labels.contributions}</h3><ul class="contribution-list">{experience.contributions.map((item: string) => <li>{item}</li>)}</ul></>}
+  <ul class="tags">{experience.tags.map((tag: string) => <li>{tag}</li>)}</ul>
+  {experience.note && <p class="source-caption">{experience.note}</p>}
+</article>

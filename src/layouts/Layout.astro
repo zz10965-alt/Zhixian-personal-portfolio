@@ -1,0 +1,82 @@
+---
+import '../styles/global.css';
+import profile from '../content/profile.json';
+import Icon from '../components/Icon.astro';
+import { categories, site, labels } from '../lib/content';
+const { title = site.navigation[0].label, pageKey = 'about', description = site.description } = Astro.props;
+const base = import.meta.env.BASE_URL;
+const url = (path = '') => `${base}${path}`;
+const links = site.navigation;
+---
+<!doctype html>
+<html lang={site.language}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#faf9f6" />
+    <meta property="og:title" content={`${title} · ${profile.name}`} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    {Astro.site && <link rel="canonical" href={new URL(Astro.url.pathname, Astro.site)} />}
+    <link rel="icon" type="image/svg+xml" href={url('favicon.svg')} />
+    <title>{title} · {profile.name}</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">{labels.skip}</a>
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="wordmark" href={url()} aria-label={`${profile.name} ${labels.home}`}>{profile.name}<span class="wordmark-dot">.</span></a>
+        <button class="menu-toggle" aria-expanded="false" aria-controls="main-navigation"><span>{labels.menu}</span><span aria-hidden="true">☰</span></button>
+        <nav id="main-navigation" aria-label={labels.navigation}>
+          {links.map(({label, path, key}) => key === 'projects' ? <div class="projects-nav">
+            <div class="projects-nav-heading"><a href={url(path)} aria-current={pageKey === key ? 'page' : undefined}>{label}</a><button class="projects-toggle" aria-expanded="false" aria-controls="project-categories" aria-label={labels.expandCategories}><span aria-hidden="true">⌄</span></button></div>
+            <div id="project-categories" class="projects-dropdown" hidden>
+              {categories.map(category => <a href={url(`projects/category/${category.id}/`)}><Icon name={category.icon} /><span>{category.label}</span></a>)}
+            </div>
+          </div> : <a href={url(path)} aria-current={pageKey === key ? 'page' : undefined}>{label}</a>)}
+        </nav>
+      </div>
+    </header>
+    <main id="main"><slot /></main>
+    <footer class="site-footer container">
+      <a class="wordmark" href={url()}>{profile.name}<span class="wordmark-dot">.</span></a>
+      <p>{site.footerText}</p>
+      <span>© {new Date().getFullYear()} {site.copyrightName}</span>
+    </footer>
+    <script>
+      const menuButton = document.querySelector<HTMLButtonElement>('.menu-toggle')!;
+      const navigation = document.querySelector<HTMLElement>('#main-navigation')!;
+      const projectsNav = document.querySelector<HTMLElement>('.projects-nav')!;
+      const projectsButton = document.querySelector<HTMLButtonElement>('.projects-toggle')!;
+      const dropdown = document.querySelector<HTMLElement>('#project-categories')!;
+      const categoryLinks = [...dropdown.querySelectorAll<HTMLAnchorElement>('a')];
+      const setProjectsOpen = (open: boolean) => { projectsButton.setAttribute('aria-expanded', String(open)); dropdown.hidden = !open; };
+      const closeMenu = () => { menuButton.setAttribute('aria-expanded', 'false'); navigation.classList.remove('is-open'); setProjectsOpen(false); };
+      menuButton.addEventListener('click', () => { const open = menuButton.getAttribute('aria-expanded') !== 'true'; menuButton.setAttribute('aria-expanded', String(open)); navigation.classList.toggle('is-open', open); if (!open) setProjectsOpen(false); });
+      projectsButton.addEventListener('click', () => setProjectsOpen(projectsButton.getAttribute('aria-expanded') !== 'true'));
+      projectsNav.addEventListener('pointerenter', () => { if (window.matchMedia('(hover: hover) and (min-width: 801px)').matches) setProjectsOpen(true); });
+      projectsNav.addEventListener('pointerleave', () => { if (!projectsNav.contains(document.activeElement)) setProjectsOpen(false); });
+      projectsNav.addEventListener('focusout', (event) => { if (!projectsNav.contains(event.relatedTarget as Node)) setProjectsOpen(false); });
+      projectsButton.addEventListener('keydown', (event) => { if (event.key === 'ArrowDown') { event.preventDefault(); setProjectsOpen(true); categoryLinks[0]?.focus(); } });
+      dropdown.addEventListener('keydown', (event) => {
+        const index = categoryLinks.indexOf(document.activeElement as HTMLAnchorElement);
+        let next = index;
+        if (event.key === 'ArrowDown') next = (index + 1) % categoryLinks.length;
+        else if (event.key === 'ArrowUp') next = (index - 1 + categoryLinks.length) % categoryLinks.length;
+        else if (event.key === 'Home') next = 0;
+        else if (event.key === 'End') next = categoryLinks.length - 1;
+        else return;
+        event.preventDefault(); categoryLinks[next]?.focus();
+      });
+      document.addEventListener('click', (event) => { if (!projectsNav.contains(event.target as Node)) setProjectsOpen(false); });
+      document.addEventListener('keydown', (event) => {
+        if (event.key !== 'Escape') return;
+        if (!dropdown.hidden) { setProjectsOpen(false); projectsButton.focus(); }
+        else if (menuButton.getAttribute('aria-expanded') === 'true') { closeMenu(); menuButton.focus(); }
+      });
+      navigation.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
+      window.matchMedia('(min-width: 801px)').addEventListener('change', closeMenu);
+    </script>
+  </body>
+</html>

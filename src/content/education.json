@@ -1,0 +1,77 @@
+[
+  {
+    "id": "cqut",
+    "university": "Chongqing University of Technology",
+    "shortName": "CQUT",
+    "location": "Chongqing, China",
+    "degree": "Bachelor’s degree in Management",
+    "major": "Administrative Management",
+    "start": "September 2021",
+    "end": "June 2025",
+    "period": "2021 — 2025",
+    "gpa": "3.48 / 5.0",
+    "description": "A foundation in management, quantitative research, and understanding how people and organizations work.",
+    "coursework": [
+      "Statistics",
+      "Quantitative Research",
+      "Probability & Mathematical Statistics",
+      "Python",
+      "Economics",
+      "Accounting",
+      "Public Management",
+      "Social Psychology"
+    ],
+    "awards": [
+      {
+        "title": "National Scholarship",
+        "date": "November 2024"
+      },
+      {
+        "title": "First Prize · National College Student Advertising Art Competition, Chongqing Division",
+        "date": "August 2024"
+      }
+    ],
+    "highlights": [
+      "Led research on mutual support for older adults during a summer social practice program.",
+      "Vice President, Management School Student Science & Technology Association, June 2023–June 2024."
+    ],
+    "logo": "",
+    "logoAlt": "Chongqing University of Technology logo",
+    "reviewNote": "English degree title is a translation of 管理学学士; official diploma wording needs confirmation.",
+    "courseworkNote": "Course titles translated from the supplied academic record.",
+    "timelineLabel": "THE FOUNDATION"
+  },
+  {
+    "id": "nyu",
+    "university": "New York University",
+    "shortName": "NYU",
+    "school": "School of Professional Studies",
+    "location": "New York, United States",
+    "degree": "Master of Science",
+    "major": "Management and Analytics",
+    "start": "September 2025",
+    "end": "February 2027 (expected)",
+    "period": "2025 — 2027",
+    "gpa": "3.92 / 4.0",
+    "description": "Building on that foundation with business analytics, machine learning, and data-driven decision-making.",
+    "coursework": [
+      "Data-Driven Decision Making",
+      "Business Analytics",
+      "Quantitative Research Methods",
+      "Machine Learning",
+      "Database Management Systems",
+      "Emergency Management",
+      "Organizational Risk & Management"
+    ],
+    "awards": [],
+    "highlights": [
+      "Key contributor, NYU SPS × Google Hackathon creator-shortlisting prototype (ongoing).",
+      "Testing Lead, UN-ICC × NYU AI safety capstone (proposal stage)."
+    ],
+    "logo": "",
+    "logoAlt": "New York University logo",
+    "reviewNote": "",
+    "courseworkNote": "Course titles translated from the supplied academic record.",
+    "timelineLabel": "THE NEXT CHAPTER"
+  }
+]

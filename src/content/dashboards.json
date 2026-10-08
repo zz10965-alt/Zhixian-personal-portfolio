@@ -1,0 +1,41 @@
+[
+  {
+    "id": "advertising-abtest",
+    "title": "A/B Testing Decision Dashboard",
+    "platform": "Power BI",
+    "projectId": "advertising-ab-testing",
+    "description": "CTR by experiment arm, day-level stability, uncertainty, and conservative rollout planning in a single decision dashboard.",
+    "preview": "/images/dashboards/advertising-abtest-preview.webp",
+    "previewAlt": "Original A/B Testing Decision Dashboard showing CTR comparison, confidence intervals, daily trends and rollout recommendations",
+    "publicUrl": "",
+    "urlVerification": "No public interactive URL supplied",
+    "screenshots": [
+      {
+        "image": "/images/dashboards/advertising-abtest.png",
+        "alt": "Full A/B Testing Decision Dashboard"
+      }
+    ],
+    "files": [],
+    "note": "Screenshot from the owner’s Data_Project repository. Rollout and click-impact figures are analytical recommendations and estimates, not realized business outcomes.",
+    "featured": false,
+    "displayOrder": 1,
+    "publicUrlVerified": false
+  },
+  {
+    "id": "ecommerce-tableau",
+    "title": "E-commerce Growth & Purchase Intent Analytics",
+    "platform": "Tableau",
+    "projectId": "ecommerce-growth",
+    "description": "A Tableau view linked from the e-commerce analysis, covering growth, purchasing behavior and purchase intent.",
+    "preview": "",
+    "previewAlt": "",
+    "publicUrl": "https://public.tableau.com/views/E-commerceGrowthPurchaseIntentAnalytics/1",
+    "urlVerification": "Owner-supplied URL; live verification blocked by environment network policy",
+    "screenshots": [],
+    "files": [],
+    "note": "Preview image pending. The public Tableau URL is supplied in the source materials; its current availability has not been verified.",
+    "featured": false,
+    "displayOrder": 2,
+    "publicUrlVerified": false
+  }
+]

@@ -1,0 +1,84 @@
+{
+  "name": "Freya Zhang",
+  "eyebrow": "ANALYTICS · AI · A LITTLE CURIOSITY",
+  "introduction": "I’m a Management and Analytics graduate student at NYU, with experience in advertising analytics at Google, consumer research at NielsenIQ, and data platform development at AI Solutions. I enjoy making sense of messy data and exploring how AI can help people solve practical problems.",
+  "photo": "",
+  "photoAlt": "Freya Zhang’s personal travel photograph",
+  "photoCaption": "A moment away from the desk.",
+  "email": "zzz0429x@163.com",
+  "github": "https://github.com/zz10965-alt",
+  "linkedin": "",
+  "resume": "",
+  "interests": [
+    {
+      "title": "Photography",
+      "description": "A reason to slow down and notice the little things.",
+      "label": "Through my lens",
+      "image": "",
+      "imageAlt": "",
+      "icon": "camera",
+      "imagePosition": "50% 50%"
+    },
+    {
+      "title": "Travel",
+      "description": "New places, different perspectives, and a camera along for the ride.",
+      "label": "Somewhere new",
+      "image": "",
+      "imageAlt": "",
+      "icon": "travel",
+      "imagePosition": "50% 50%"
+    },
+    {
+      "title": "Gaming",
+      "description": "A little play, a little strategy, and time to switch gears.",
+      "icon": "gaming",
+      "image": "",
+      "imageAlt": "",
+      "imagePosition": "50% 50%"
+    },
+    {
+      "title": "Video Creation",
+      "description": "Putting moments together into a story worth sharing.",
+      "icon": "video",
+      "image": "",
+      "imageAlt": "",
+      "imagePosition": "50% 50%"
+    },
+    {
+      "title": "Vibe Coding",
+      "description": "Following a spark of an idea and seeing what I can build.",
+      "icon": "code",
+      "image": "",
+      "imageAlt": "",
+      "imagePosition": "50% 50%"
+    }
+  ],
+  "headlineLead": "Hi, I’m",
+  "headlineEmphasis": "Freya.",
+  "highlights": [
+    {
+      "icon": "education",
+      "text": "NYU · MS in Management and Analytics",
+      "detail": ""
+    },
+    {
+      "icon": "location",
+      "text": "New York, United States",
+      "detail": ""
+    },
+    {
+      "icon": "chart",
+      "text": "Data Analytics · Business Analytics · AI & Product",
+      "detail": ""
+    }
+  ],
+  "photoPosition": "50% 65%",
+  "interestsHeading": "Beyond Work",
+  "interestsNote": "A little bit of everything.",
+  "portraitPlaceholderAlt": "Placeholder for Freya’s supplied lifestyle photograph; image file pending",
+  "portraitPlaceholderLead": "A personal",
+  "portraitPlaceholderEmphasis": "perspective.",
+  "portraitPlaceholderNote": "YOUR LIFESTYLE PHOTO GOES HERE",
+  "stickerLead": "always",
+  "stickerEmphasis": "curious."
+}
