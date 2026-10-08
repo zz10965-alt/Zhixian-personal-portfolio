@@ -7,7 +7,7 @@ import { projects, dashboards, site, labels, usableLink, categoryLabel, mediaPat
 export function getStaticPaths() { return projects.map(project => ({params:{id:project.id},props:{project}})); }
 const { project } = Astro.props;
 const relatedDashboards = dashboards.filter(dashboard => dashboard.projectId === project.id);
-const resources = project.resources.filter(resource => usableLink(resource.url));
+const resources = project.resources.filter(resource => (!('verified' in resource) || resource.verified !== false) && usableLink(resource.url));
 const hasResources = resources.length > 0 || relatedDashboards.length > 0;
 const sections = project.sections.filter(section => section.paragraphs.some(text => text.trim()) || section.bullets.some(text => text.trim()) || section.images.some(image => image.src) || (section.id === 'resources' && hasResources));
 if (hasResources && !sections.some(section => section.id === 'resources')) sections.push({id:'resources',title:labels.resources,paragraphs:[],bullets:[],images:[]});

@@ -1,5 +1,6 @@
 # Phase 2 review
 
+> For current asset availability, see [the comprehensive audit](../asset-inventory.md). Missing-asset notes below record the earlier review state.
 Status: implemented and tested locally; awaiting Phase 2 approval. Review screenshots are shared through GitHub. Website source has not been publicly deployed; Pages CMS and deployment workflows have not been configured.
 
 ## What changed

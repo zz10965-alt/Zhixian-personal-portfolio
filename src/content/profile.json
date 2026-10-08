@@ -7,7 +7,7 @@
   "photoCaption": "A moment away from the desk.",
   "email": "zzz0429x@163.com",
   "github": "https://github.com/zz10965-alt",
-  "linkedin": "",
+  "linkedin": "https://www.linkedin.com/in/freya-data",
   "resume": "",
   "interests": [
     {
@@ -80,5 +80,8 @@
   "portraitPlaceholderEmphasis": "perspective.",
   "portraitPlaceholderNote": "YOUR LIFESTYLE PHOTO GOES HERE",
   "stickerLead": "always",
-  "stickerEmphasis": "curious."
+  "stickerEmphasis": "curious.",
+  "professionalPortrait": "/images/profile/professional-portrait.jpg",
+  "professionalPortraitAlt": "Freya Zhang’s professional portrait from her earlier portfolio",
+  "linkedinVerified": false
 }

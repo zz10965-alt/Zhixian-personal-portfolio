@@ -1,5 +1,6 @@
 # Final Phase 2 content audit
 
+> Asset availability has been re-audited. See [the comprehensive inventory](asset-inventory.md) for current statuses; older missing-asset statements below are historical.
 The approved layout, navigation destinations and interactions are preserved. CMS installation, authentication, hosting and publish automation remain Phase 3 tasks requiring explicit approval. Content is currently edited as JSON in the repository; no visual CMS is connected yet.
 
 ## Editable field inventory
@@ -9,7 +10,7 @@ The approved layout, navigation destinations and interactions are preserved. CMS
 | Content file | Editable content |
 | --- | --- |
 | `site.json` | Navigation labels and destinations; language and SEO description; page headings, emphasis, descriptions and eyebrow text; all shared interface/placeholder labels; footer text and copyright name |
-| `profile.json` | Name, introduction and headline; academic/location/skill highlights; email and social URLs; resume document; portrait, alt text, crop and caption; placeholder/sticker copy; interests, icons, images, captions and descriptions |
+| `profile.json` | Name, introduction and headline; academic/location/skill highlights; email and social URLs/verification flag; resume document; professional portrait metadata; portrait, alt text, crop and caption; placeholder/sticker copy; interests, icons, images, captions and descriptions |
 | `education.json` | University, school, degree, major, location, dates and timeline labels; GPA, coursework, honors, academic highlights; logo/alt text; translation/review notes |
 | `categories.json` | Category labels, icons and route IDs |
 | `experience.json` | Company, role, team, dates/start, location, summary, contributions, skills/tags, logo/monogram, notes; Featured and Display Order |

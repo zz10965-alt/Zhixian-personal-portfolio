@@ -51,11 +51,13 @@ const experiences=JSON.parse(fs.readFileSync(root+'/src/content/experience.json'
  await page.locator('.menu-toggle').click();await page.locator('.projects-toggle').click();assert.equal(await page.locator('.projects-toggle').getAttribute('aria-expanded'),'true');await page.locator('#project-categories a').last().click();await page.waitForURL('**/category/product-ai/');
  await page.goto(base+'/experience/');await page.locator('main h1').waitFor();await page.locator('#experience-select').selectOption('nielseniq');assert.equal(await page.locator('#experience-panel h2').innerText(),'NielsenIQ (GfK)');
  console.log('PASS mobile contact-before-photo order, tap sizes, dropdown and internship select');
+ await page.goto(base+'/projects/starshow/');assert.equal(await page.locator('img[src="/images/projects/starshow.png"]').count(),1);
+ for(const route of ['/projects/creator-shortlisting/','/projects/conversational-ai-agent/','/projects/starshow/','/dashboards/','/']){await page.goto(base+route);assert.equal(await page.locator('main a[href*="youtu.be"], main a[href*="public.tableau.com"], main a[href*="linkedin.com"], main a[href*="zz10965-alt.github.io"]').count(),0);}
  const paths=new Set();
  for(const route of routes){await page.goto(base+route);await page.locator('main h1').waitFor();for(const path of await page.locator('main a[href], main img[src]').evaluateAll(els=>els.map(e=>e.getAttribute('href')||e.getAttribute('src')))){if(path?.startsWith('/')&&!path.startsWith('//'))paths.add(path.split('#')[0]);}}
  for(const path of paths){const response=await page.request.get(base+path);assert.equal(response.status(),200,path);}
- for(const project of projects)for(const resource of project.resources){const url=new URL(resource.url);if(url.pathname.includes('/Data_Project/blob/main/')){const relative=decodeURIComponent(url.pathname.split('/blob/main/')[1]);assert.ok(relative.endsWith('.ipynb'),'notebook URL '+relative);}}
- assert.deepEqual(errors,[]);console.log(`PASS ${paths.size} local resource destinations, five notebook paths, no browser page errors`);
+ for(const project of projects)for(const resource of project.resources){if(resource.url.startsWith('/'))continue;const url=new URL(resource.url);if(url.pathname.includes('/Data_Project/blob/main/')){const relative=decodeURIComponent(url.pathname.split('/blob/main/')[1]);assert.ok(relative.endsWith('.ipynb'),'notebook URL '+relative);}}
+ assert.deepEqual(errors,[]);console.log(`PASS ${paths.size} local resource destinations, supplied notebook paths, no browser page errors`);
  const screenshotDir=process.env.PORTFOLIO_SCREENSHOT_DIR || path.join(root,'node_modules','.cache','review-screenshots');
  fs.mkdirSync(screenshotDir,{recursive:true});
  const shots=[['/','home'],['/education/','education'],['/experience/','experience'],['/projects/','projects'],['/projects/ecommerce-growth/','project-detail'],['/dashboards/','dashboards']];

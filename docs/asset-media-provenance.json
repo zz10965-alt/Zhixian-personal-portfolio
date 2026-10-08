@@ -1,0 +1,37 @@
+[
+  {
+    "source": "https://github.com/zz10965-alt/zz10965-alt.github.io/blob/fff3afa4162e214c3a8536feb78e7dd99b0b01b4/assets/img/profile.jpg",
+    "destination": "public/images/profile/professional-portrait.jpg",
+    "sha256": "4971e3880e2072ed556344a1454ccfe47027d5dc03a39fd646763dfe22b9abe6"
+  },
+  {
+    "source": "https://github.com/zz10965-alt/zz10965-alt.github.io/blob/fff3afa4162e214c3a8536feb78e7dd99b0b01b4/assets/img/projects/creator-shortlisting.svg",
+    "destination": "public/images/projects/legacy-creator-shortlisting.svg",
+    "sha256": "f2f926050d7932e25cddb6b2368eaa4bea982fac7c0bdf9f90412b921d6c1cf4"
+  },
+  {
+    "source": "https://github.com/zz10965-alt/zz10965-alt.github.io/blob/fff3afa4162e214c3a8536feb78e7dd99b0b01b4/assets/img/projects/uncap-ai-safety.svg",
+    "destination": "public/images/projects/legacy-uncap-ai-safety.svg",
+    "sha256": "1444230f2cb533b03e5edc955ffdcdbc3c9e6bd4abff39375cd89c8fc2746a56"
+  },
+  {
+    "source": "https://github.com/zz10965-alt/zz10965-alt.github.io/blob/fff3afa4162e214c3a8536feb78e7dd99b0b01b4/assets/img/projects/medicare.svg",
+    "destination": "public/images/projects/legacy-medicare.svg",
+    "sha256": "a8b5c45148bfb80a9d273f8835dd77aa6ffa40cec831a6978253300041074c9b"
+  },
+  {
+    "source": "https://github.com/zz10965-alt/zz10965-alt.github.io/blob/fff3afa4162e214c3a8536feb78e7dd99b0b01b4/assets/img/projects/furniture-db.svg",
+    "destination": "public/images/projects/legacy-furniture-db.svg",
+    "sha256": "c15d46ad69e98a8e06e810cab71f91a86ec01ca4ee7fb97ab25fe67d88f6f2a4"
+  },
+  {
+    "source": "https://github.com/zz10965-alt/zz10965-alt.github.io/blob/fff3afa4162e214c3a8536feb78e7dd99b0b01b4/assets/img/diagrams/ai-agent-en.svg",
+    "destination": "public/images/projects/ai-agent-architecture.svg",
+    "sha256": "165659c2c02a2d5e45f53f7bd159f76b00dadf4f653a559a00bd88804e106703"
+  },
+  {
+    "source": "https://github.com/zz10965-alt/starshows-mobile/blob/2838061e5d0f7d89385a61227a51438a597eb342/screenshot.png",
+    "destination": "public/images/projects/starshow.png",
+    "sha256": "9fcb96c3f2d536d5ca3e97909cda36e78009db0bf10b00a12704aa86fd0ff00b"
+  }
+]

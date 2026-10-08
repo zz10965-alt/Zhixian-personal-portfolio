@@ -8,7 +8,8 @@ test('Phase 1 content preserves documented education and missing-resource states
   assert.equal(profile.name, 'Freya Zhang');
   assert.deepEqual(profile.interests.map(item => item.title), ['Photography', 'Travel', 'Gaming', 'Video Creation', 'Vibe Coding']);
   assert.equal(profile.resume, '');
-  assert.equal(profile.linkedin, '');
+  assert.equal(profile.linkedin, 'https://www.linkedin.com/in/freya-data');
+  assert.equal(profile.linkedinVerified, false);
   assert.equal(education.length, 2);
   assert.equal(education[0].gpa, '3.48 / 5.0');
   assert.equal(education[1].gpa, '3.92 / 4.0');

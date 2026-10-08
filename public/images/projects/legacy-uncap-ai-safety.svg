@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500" role="img">
+  <rect width="800" height="500" fill="#f8fafc"/>
+  <circle cx="768" cy="24" r="230" fill="#2563EB" opacity="0.10"/>
+  <circle cx="24" cy="480" r="200" fill="#2563EB" opacity="0.07"/>
+  <circle cx="400" cy="250" r="175" fill="#2563EB" opacity="0.05"/>
+  <g fill="#2563EB" opacity="0.16">
+    <circle cx="92" cy="92" r="6"/><circle cx="190" cy="70" r="4"/><circle cx="288" cy="122" r="5"/>
+    <circle cx="642" cy="176" r="5"/><circle cx="722" cy="302" r="4"/><circle cx="604" cy="402" r="6"/>
+    <circle cx="132" cy="360" r="4"/><circle cx="210" cy="428" r="5"/><circle cx="524" cy="62" r="4"/>
+    <circle cx="500" cy="452" r="4"/><circle cx="70" cy="220" r="4"/>
+  </g>
+  <rect x="296" y="138" width="208" height="208" rx="50" fill="#2563EB" opacity="0.12"/>
+  <text x="400" y="250" font-size="104" text-anchor="middle" dominant-baseline="central">🩺</text>
+  <rect x="366" y="378" width="68" height="7" rx="3.5" fill="#2563EB"/>
+</svg>

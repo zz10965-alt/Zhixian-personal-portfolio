@@ -40,3 +40,7 @@ See `docs/phase-2-review.md` for validation evidence and remaining content/asset
 ## Final content readiness
 
 See [the CMS content audit](docs/cms-content-audit.md) and [field contract](docs/cms-content-schema.json) for every editable field and remaining limitations. Shared page/interface/footer text lives in `site.json`. Projects, experiences and dashboards have `featured` and `displayOrder` fields: Featured first, then ascending Display Order. Public dashboard actions require `publicUrlVerified`; unverified URLs remain metadata only.
+
+## Asset audit
+
+The [comprehensive asset inventory](docs/asset-inventory.md) supersedes older missing-assets lists. It includes a full CSV, all 19 public repository snapshots, recovered media provenance and the exact remaining owner actions. Recovered unverified URLs are retained in content but hidden from public actions; no CMS or deployment has started.

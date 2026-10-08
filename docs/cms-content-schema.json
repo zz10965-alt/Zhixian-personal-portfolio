@@ -306,6 +306,9 @@
                 },
                 "url": {
                   "type": "string"
+                },
+                "verified": {
+                  "type": "boolean"
                 }
               },
               "required": [
@@ -448,6 +451,9 @@
         "linkedin": {
           "type": "string"
         },
+        "linkedinVerified": {
+          "type": "boolean"
+        },
         "name": {
           "type": "string"
         },
@@ -473,6 +479,12 @@
           "type": "string"
         },
         "portraitPlaceholderNote": {
+          "type": "string"
+        },
+        "professionalPortrait": {
+          "type": "string"
+        },
+        "professionalPortraitAlt": {
           "type": "string"
         },
         "resume": {
@@ -630,6 +642,9 @@
                 },
                 "url": {
                   "type": "string"
+                },
+                "verified": {
+                  "type": "boolean"
                 }
               },
               "required": [

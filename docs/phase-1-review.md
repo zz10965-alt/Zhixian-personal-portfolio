@@ -1,5 +1,6 @@
 # Phase 1 review
 
+> Asset availability has been re-audited. See [the comprehensive inventory](asset-inventory.md) for current statuses; older missing-asset statements below are historical.
 Status: implemented locally; awaiting design approval. No public deployment.
 
 ## Materials

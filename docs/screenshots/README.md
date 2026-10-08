@@ -18,3 +18,5 @@ Use GitHub’s **Download raw file** button to download any full-resolution scre
 Checks passed: four content/integrity tests, 19-route production build, and Chromium interaction checks at desktop, tablet, and mobile widths down to 320px.
 
 Remaining: original personal photos, resume, LinkedIn URL, logos and some project/report assets; official English bachelor’s degree wording; pending owner review of the synthetic-data battery case study; and Tableau preview/live-link verification (blocked by the cloud network policy). No unsupported performance figures or completed proposal results are invented.
+
+Asset availability is now documented in the [comprehensive audit](../asset-inventory.md); it supersedes historical missing-assets notes.

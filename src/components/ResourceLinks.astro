@@ -3,4 +3,4 @@ import Icon from './Icon.astro';
 import { mediaPath, usableLink } from '../lib/content';
 const { resources = [] } = Astro.props;
 ---
-<div class="resource-links">{resources.filter((resource: {url: string}) => usableLink(resource.url)).map((resource: {url: string;label: string;type: string}) => <a href={mediaPath(resource.url)} target="_blank" rel="noopener noreferrer" download={resource.type === 'download' ? true : undefined}><Icon name={resource.type === 'github' ? 'github' : 'external'} />{resource.label}</a>)}</div>
+<div class="resource-links">{resources.filter((resource: {url: string;verified?: boolean}) => resource.verified !== false && usableLink(resource.url)).map((resource: {url: string;label: string;type: string}) => <a href={mediaPath(resource.url)} target="_blank" rel="noopener noreferrer" download={resource.type === 'download' ? true : undefined}><Icon name={resource.type === 'github' ? 'github' : 'external'} />{resource.label}</a>)}</div>

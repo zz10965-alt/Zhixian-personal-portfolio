@@ -62,6 +62,22 @@
         "label": "GitHub",
         "type": "github",
         "url": "https://github.com/zz10965-alt/Creator2"
+      },
+      {
+        "label": "Notebook",
+        "type": "notebook",
+        "url": "https://github.com/zz10965-alt/Creator2/blob/main/pipeline.ipynb"
+      },
+      {
+        "label": "Demo",
+        "type": "demo",
+        "url": "https://youtu.be/XFMcbs6lcrs",
+        "verified": false
+      },
+      {
+        "label": "Original project illustration",
+        "type": "download",
+        "url": "/images/projects/legacy-creator-shortlisting.svg"
       }
     ],
     "cover": "",
@@ -292,7 +308,13 @@
         "images": []
       }
     ],
-    "resources": [],
+    "resources": [
+      {
+        "label": "Original project illustration",
+        "type": "download",
+        "url": "/images/projects/legacy-uncap-ai-safety.svg"
+      }
+    ],
     "cover": "",
     "coverAlt": "",
     "note": "Proposal-stage work; no evaluation results or completed test dataset are reported.",
@@ -364,7 +386,13 @@
         "images": []
       }
     ],
-    "resources": [],
+    "resources": [
+      {
+        "label": "Original project illustration",
+        "type": "download",
+        "url": "/images/projects/legacy-medicare.svg"
+      }
+    ],
     "cover": "",
     "coverAlt": "",
     "note": "",
@@ -495,7 +523,13 @@
         "images": []
       }
     ],
-    "resources": [],
+    "resources": [
+      {
+        "label": "Original project illustration",
+        "type": "download",
+        "url": "/images/projects/legacy-furniture-db.svg"
+      }
+    ],
     "cover": "",
     "coverAlt": "",
     "note": "",
@@ -537,7 +571,13 @@
           "Redis provides cross-session memory; Qdrant supports document chunking, embedding, semantic retrieval, and filtering; SerpAPI adds live information. LangChain and OpenAI GPT orchestrate responses through a FastAPI application."
         ],
         "bullets": [],
-        "images": []
+        "images": [
+          {
+            "src": "/images/projects/ai-agent-architecture.svg",
+            "alt": "Owner’s original AI Conversational Agent architecture diagram",
+            "caption": "Architecture illustration from the earlier portfolio; not an execution trace or measured performance result."
+          }
+        ]
       },
       {
         "id": "implementation",
@@ -563,6 +603,12 @@
         "label": "GitHub",
         "type": "github",
         "url": "https://github.com/zz10965-alt/ai-conversational-agent"
+      },
+      {
+        "label": "Demo",
+        "type": "demo",
+        "url": "https://zz10965-alt.github.io/ai-conversational-agent/",
+        "verified": false
       }
     ],
     "cover": "",
@@ -605,7 +651,13 @@
           "Mapped user needs to scenarios and solutions; distinguished favorites, watchlist, and plans; documented key flows, priorities, and a three-phase roadmap. Hypotheses and metrics are defined for future validation, not reported as measured outcomes."
         ],
         "bullets": [],
-        "images": []
+        "images": [
+          {
+            "src": "/images/projects/starshow.png",
+            "alt": "Original StarShow mobile prototype home screen",
+            "caption": "Original screenshot supplied in the StarShow repository. This is a product prototype, not a production service."
+          }
+        ]
       },
       {
         "id": "implementation",
@@ -631,10 +683,16 @@
         "label": "GitHub",
         "type": "github",
         "url": "https://github.com/zz10965-alt/starshows-mobile"
+      },
+      {
+        "label": "Demo",
+        "type": "demo",
+        "url": "https://zz10965-alt.github.io/starshows-mobile/",
+        "verified": false
       }
     ],
-    "cover": "",
-    "coverAlt": "",
+    "cover": "/images/projects/starshow.png",
+    "coverAlt": "Original StarShow mobile prototype home screen",
     "note": "",
     "featured": false,
     "displayOrder": 9,
