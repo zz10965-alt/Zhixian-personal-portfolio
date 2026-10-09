@@ -2,7 +2,7 @@
 
 An Astro portfolio with an editorial, warm-white and muted-purple design.
 
-Phases 1 and 2 are implemented: About Me, Education, interactive Experience, project categories and case studies with Scroll Spy, and related Dashboards. Phase 2 final refinements are complete; explicit approval is required before Phase 3. CMS and public deployment remain Phase 3 tasks after explicit approval.
+Phases 1 and 2 are implemented: About Me, Education, interactive Experience, project categories and case studies with Scroll Spy, and related Dashboards. Phase 2 final refinements are complete; temporary preview/CMS setup is in progress. Phase 3 is approved for a temporary preview and visual CMS; final public launch remains unapproved.
 
 ## Local development
 
@@ -23,11 +23,11 @@ npm run preview
 
 ## Content and review
 
-Personal introduction, interests, contacts, photos, and education are separated into `src/content/`. Empty media/link fields show honest placeholders; missing resources do not produce fake links. Pages CMS is planned for visual editing in Phase 3; it is not connected yet.
+Personal introduction, interests, contacts, photos, and education are separated into `src/content/`. Empty media/link fields show honest placeholders; missing resources do not produce fake links. Pages CMS is configured in `.pages.yml`; your GitHub sign-in/repository authorization is required before visual editing can be verified.
 
 See [the Phase 1 review](docs/phase-1-review.md) for source inventory, proposed project categories, fact-review flags, missing assets, architecture, and approval gates.
 
-Do not add the raw experience archive to this repository: it includes private information. No public deployment or CMS authorization has been performed.
+Do not add the raw experience archive to this repository: it includes private information. No final public website deployment has been performed.
 
 ## Phase 2 content and checks
 
@@ -35,7 +35,7 @@ Do not add the raw experience archive to this repository: it includes private in
 
 Run `npm run test:browser` with the development server running to check all routes, responsive layouts, navigation, experience selection, Scroll Spy, and local resources. This check uses the cloud runtime’s existing Playwright and Chromium; outside this environment, install Playwright and set `CHROMIUM_PATH` to an available Chromium binary. `PORTFOLIO_TEST_URL` can select a different local server and `PORTFOLIO_SCREENSHOT_DIR` can select a screenshot output directory. Screenshots default to an ignored directory under `node_modules/.cache/`.
 
-See `docs/phase-2-review.md` for validation evidence and remaining content/asset limits. No CMS login or editing-to-deployment workflow has been tested or claimed.
+See `docs/phase-2-review.md` for validation evidence and remaining content/asset limits. Authenticated CMS login and save/upload-to-preview verification are pending.
 
 ## Final content readiness
 
@@ -44,3 +44,7 @@ See [the CMS content audit](docs/cms-content-audit.md) and [field contract](docs
 ## Asset audit
 
 The [comprehensive asset inventory](docs/asset-inventory.md) supersedes older missing-assets lists. It includes a full CSV, all 19 public repository snapshots, recovered media provenance and the exact remaining owner actions. Recovered unverified URLs are retained in content but hidden from public actions; no CMS or deployment has started.
+
+## Temporary preview and visual editing
+
+[Setup instructions](docs/phase-3-setup.md) explain the two one-time account steps: enable GitHub Pages using GitHub Actions, and sign into Pages CMS for this repository. Only a labeled `/preview/` is deployed; no final-site workflow exists. `.pages.yml` exposes all seven content files and image/document upload libraries. Content saves rebuild only the preview.

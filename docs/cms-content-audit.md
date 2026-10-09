@@ -1,7 +1,7 @@
 # Final Phase 2 content audit
 
 > Asset availability has been re-audited. See [the comprehensive inventory](asset-inventory.md) for current statuses; older missing-asset statements below are historical.
-The approved layout, navigation destinations and interactions are preserved. CMS installation, authentication, hosting and publish automation remain Phase 3 tasks requiring explicit approval. Content is currently edited as JSON in the repository; no visual CMS is connected yet.
+The approved layout, navigation destinations and interactions are preserved. Phase 3 preview/CMS implementation is now authorized and configured. See [the setup guide](phase-3-setup.md) for account authorization and live verification steps. Final public launch remains unapproved.
 
 ## Editable field inventory
 

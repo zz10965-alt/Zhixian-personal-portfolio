@@ -1,0 +1,1395 @@
+{
+  "media": [
+    {
+      "name": "images",
+      "label": "Photos, Logos & Project Images",
+      "input": "public/images",
+      "output": "/images",
+      "extensions": [
+        "jpg",
+        "jpeg",
+        "png",
+        "webp",
+        "svg",
+        "avif"
+      ]
+    },
+    {
+      "name": "documents",
+      "label": "Resume, PDFs & Slides",
+      "input": "public/documents",
+      "output": "/documents",
+      "extensions": [
+        "pdf",
+        "pptx",
+        "ppt",
+        "docx"
+      ]
+    }
+  ],
+  "content": [
+    {
+      "name": "profile",
+      "label": "About Me & Contacts",
+      "type": "file",
+      "path": "src/content/profile.json",
+      "format": "json",
+      "fields": [
+        {
+          "name": "email",
+          "label": "Email",
+          "type": "string"
+        },
+        {
+          "name": "eyebrow",
+          "label": "Eyebrow",
+          "type": "string"
+        },
+        {
+          "name": "github",
+          "label": "Github",
+          "type": "string"
+        },
+        {
+          "name": "headlineEmphasis",
+          "label": "Headline Emphasis",
+          "type": "string"
+        },
+        {
+          "name": "headlineLead",
+          "label": "Headline Lead",
+          "type": "string"
+        },
+        {
+          "name": "highlights",
+          "label": "Highlights",
+          "list": {
+            "collapsible": {
+              "collapsed": true,
+              "summary": "{index}"
+            }
+          },
+          "default": [],
+          "type": "object",
+          "fields": [
+            {
+              "name": "detail",
+              "label": "Detail",
+              "type": "string"
+            },
+            {
+              "name": "icon",
+              "label": "Icon",
+              "type": "string"
+            },
+            {
+              "name": "text",
+              "label": "Text",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "name": "interests",
+          "label": "Interests",
+          "list": {
+            "collapsible": {
+              "collapsed": true,
+              "summary": "{fields.title}"
+            }
+          },
+          "default": [],
+          "type": "object",
+          "fields": [
+            {
+              "name": "description",
+              "label": "Description",
+              "type": "text"
+            },
+            {
+              "name": "icon",
+              "label": "Icon",
+              "type": "string"
+            },
+            {
+              "name": "image",
+              "label": "Image",
+              "type": "image",
+              "options": {
+                "media": "images"
+              }
+            },
+            {
+              "name": "imageAlt",
+              "label": "Image Alt",
+              "type": "string"
+            },
+            {
+              "name": "imagePosition",
+              "label": "Image Position",
+              "type": "string"
+            },
+            {
+              "name": "label",
+              "label": "Label",
+              "type": "string"
+            },
+            {
+              "name": "title",
+              "label": "Title",
+              "type": "string",
+              "required": true
+            }
+          ]
+        },
+        {
+          "name": "interestsHeading",
+          "label": "Interests Heading",
+          "type": "string"
+        },
+        {
+          "name": "interestsNote",
+          "label": "Interests Note",
+          "type": "string"
+        },
+        {
+          "name": "introduction",
+          "label": "Introduction",
+          "type": "text"
+        },
+        {
+          "name": "linkedin",
+          "label": "Linkedin",
+          "type": "string"
+        },
+        {
+          "name": "linkedinVerified",
+          "label": "Linkedin Verified",
+          "description": "Enable the LinkedIn button after confirming the profile URL.",
+          "type": "boolean",
+          "default": false
+        },
+        {
+          "name": "name",
+          "label": "Name",
+          "type": "string"
+        },
+        {
+          "name": "photo",
+          "label": "Photo",
+          "description": "Choose/upload the intended lifestyle photo. The professional headshot is stored separately.",
+          "type": "image",
+          "options": {
+            "media": "images"
+          }
+        },
+        {
+          "name": "photoAlt",
+          "label": "Photo Alt",
+          "type": "string"
+        },
+        {
+          "name": "photoCaption",
+          "label": "Photo Caption",
+          "type": "string"
+        },
+        {
+          "name": "photoPosition",
+          "label": "Photo Position",
+          "type": "string"
+        },
+        {
+          "name": "portraitPlaceholderAlt",
+          "label": "Portrait Placeholder Alt",
+          "type": "string"
+        },
+        {
+          "name": "portraitPlaceholderEmphasis",
+          "label": "Portrait Placeholder Emphasis",
+          "type": "string"
+        },
+        {
+          "name": "portraitPlaceholderLead",
+          "label": "Portrait Placeholder Lead",
+          "type": "string"
+        },
+        {
+          "name": "portraitPlaceholderNote",
+          "label": "Portrait Placeholder Note",
+          "type": "string"
+        },
+        {
+          "name": "professionalPortrait",
+          "label": "Professional Portrait",
+          "type": "image",
+          "options": {
+            "media": "images"
+          }
+        },
+        {
+          "name": "professionalPortraitAlt",
+          "label": "Professional Portrait Alt",
+          "type": "string"
+        },
+        {
+          "name": "resume",
+          "label": "Resume",
+          "type": "file",
+          "options": {
+            "media": "documents"
+          }
+        },
+        {
+          "name": "stickerEmphasis",
+          "label": "Sticker Emphasis",
+          "type": "string"
+        },
+        {
+          "name": "stickerLead",
+          "label": "Sticker Lead",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "site",
+      "label": "Page Headings, Navigation & Footer",
+      "type": "file",
+      "path": "src/content/site.json",
+      "format": "json",
+      "fields": [
+        {
+          "name": "copyrightName",
+          "label": "Copyright Name",
+          "type": "string"
+        },
+        {
+          "name": "description",
+          "label": "Description",
+          "type": "text"
+        },
+        {
+          "name": "footerText",
+          "label": "Footer Text",
+          "type": "string"
+        },
+        {
+          "name": "labels",
+          "label": "Labels",
+          "type": "object",
+          "fields": [
+            {
+              "name": "academicHighlights",
+              "label": "Academic Highlights",
+              "type": "string"
+            },
+            {
+              "name": "allProjects",
+              "label": "All Projects",
+              "type": "string"
+            },
+            {
+              "name": "backProjects",
+              "label": "Back Projects",
+              "type": "string"
+            },
+            {
+              "name": "categoryDescription",
+              "label": "Category Description",
+              "type": "string"
+            },
+            {
+              "name": "categoryEyebrow",
+              "label": "Category Eyebrow",
+              "type": "string"
+            },
+            {
+              "name": "connect",
+              "label": "Connect",
+              "type": "string"
+            },
+            {
+              "name": "contact",
+              "label": "Contact",
+              "type": "string"
+            },
+            {
+              "name": "contributions",
+              "label": "Contributions",
+              "type": "text"
+            },
+            {
+              "name": "countNote",
+              "label": "Count Note",
+              "type": "string"
+            },
+            {
+              "name": "coursework",
+              "label": "Coursework",
+              "type": "string"
+            },
+            {
+              "name": "dashboardLink",
+              "label": "Dashboard Link",
+              "type": "string"
+            },
+            {
+              "name": "dashboardScreenshot",
+              "label": "Dashboard Screenshot",
+              "type": "string"
+            },
+            {
+              "name": "downloadScreenshot",
+              "label": "Download Screenshot",
+              "type": "string"
+            },
+            {
+              "name": "educationNote",
+              "label": "Education Note",
+              "type": "string"
+            },
+            {
+              "name": "educationTimeline",
+              "label": "Education Timeline",
+              "type": "string"
+            },
+            {
+              "name": "email",
+              "label": "Email",
+              "type": "string"
+            },
+            {
+              "name": "expandCategories",
+              "label": "Expand Categories",
+              "type": "string"
+            },
+            {
+              "name": "github",
+              "label": "Github",
+              "type": "string"
+            },
+            {
+              "name": "gpa",
+              "label": "Gpa",
+              "type": "string"
+            },
+            {
+              "name": "home",
+              "label": "Home",
+              "type": "string"
+            },
+            {
+              "name": "honors",
+              "label": "Honors",
+              "type": "string"
+            },
+            {
+              "name": "interestPhoto",
+              "label": "Interest Photo",
+              "type": "string"
+            },
+            {
+              "name": "internships",
+              "label": "Internships",
+              "type": "string"
+            },
+            {
+              "name": "linkedin",
+              "label": "Linkedin",
+              "type": "string"
+            },
+            {
+              "name": "linkedinMissing",
+              "label": "Linkedin Missing",
+              "type": "string"
+            },
+            {
+              "name": "menu",
+              "label": "Menu",
+              "type": "string"
+            },
+            {
+              "name": "navigation",
+              "label": "Navigation",
+              "type": "string"
+            },
+            {
+              "name": "onThisPage",
+              "label": "On This Page",
+              "type": "string"
+            },
+            {
+              "name": "open",
+              "label": "Open",
+              "type": "string"
+            },
+            {
+              "name": "pending",
+              "label": "Pending",
+              "type": "string"
+            },
+            {
+              "name": "previewPending",
+              "label": "Preview Pending",
+              "type": "string"
+            },
+            {
+              "name": "projectCategories",
+              "label": "Project Categories",
+              "type": "string"
+            },
+            {
+              "name": "projectImage",
+              "label": "Project Image",
+              "type": "string"
+            },
+            {
+              "name": "projectPlural",
+              "label": "Project Plural",
+              "type": "string"
+            },
+            {
+              "name": "projectSections",
+              "label": "Project Sections",
+              "type": "string"
+            },
+            {
+              "name": "projectSingular",
+              "label": "Project Singular",
+              "type": "string"
+            },
+            {
+              "name": "relatedProject",
+              "label": "Related Project",
+              "type": "string"
+            },
+            {
+              "name": "resources",
+              "label": "Resources",
+              "type": "string"
+            },
+            {
+              "name": "resume",
+              "label": "Resume",
+              "type": "file",
+              "options": {
+                "media": "documents"
+              }
+            },
+            {
+              "name": "resumeMissing",
+              "label": "Resume Missing",
+              "type": "string"
+            },
+            {
+              "name": "resumePending",
+              "label": "Resume Pending",
+              "type": "string"
+            },
+            {
+              "name": "screenshotGallery",
+              "label": "Screenshot Gallery",
+              "type": "string"
+            },
+            {
+              "name": "selectExperience",
+              "label": "Select Experience",
+              "type": "string"
+            },
+            {
+              "name": "skip",
+              "label": "Skip",
+              "type": "string"
+            },
+            {
+              "name": "viewDetails",
+              "label": "View Details",
+              "type": "string"
+            },
+            {
+              "name": "viewScreenshot",
+              "label": "View Screenshot",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "name": "language",
+          "label": "Language",
+          "type": "string"
+        },
+        {
+          "name": "navigation",
+          "label": "Navigation",
+          "list": {
+            "collapsible": {
+              "collapsed": true,
+              "summary": "{fields.label}"
+            }
+          },
+          "default": [],
+          "type": "object",
+          "fields": [
+            {
+              "name": "key",
+              "label": "Key",
+              "type": "string",
+              "readonly": true
+            },
+            {
+              "name": "label",
+              "label": "Label",
+              "type": "string"
+            },
+            {
+              "name": "path",
+              "label": "Path",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "name": "pages",
+          "label": "Pages",
+          "type": "object",
+          "fields": [
+            {
+              "name": "dashboards",
+              "label": "Dashboards",
+              "type": "object",
+              "fields": [
+                {
+                  "name": "description",
+                  "label": "Description",
+                  "type": "text"
+                },
+                {
+                  "name": "emphasis",
+                  "label": "Emphasis",
+                  "type": "string"
+                },
+                {
+                  "name": "eyebrow",
+                  "label": "Eyebrow",
+                  "type": "string"
+                },
+                {
+                  "name": "heading",
+                  "label": "Heading",
+                  "type": "string"
+                },
+                {
+                  "name": "seoDescription",
+                  "label": "Seo Description",
+                  "type": "text"
+                }
+              ]
+            },
+            {
+              "name": "education",
+              "label": "Education",
+              "type": "object",
+              "fields": [
+                {
+                  "name": "description",
+                  "label": "Description",
+                  "type": "text"
+                },
+                {
+                  "name": "emphasis",
+                  "label": "Emphasis",
+                  "type": "string"
+                },
+                {
+                  "name": "eyebrow",
+                  "label": "Eyebrow",
+                  "type": "string"
+                },
+                {
+                  "name": "heading",
+                  "label": "Heading",
+                  "type": "string"
+                },
+                {
+                  "name": "seoDescription",
+                  "label": "Seo Description",
+                  "type": "text"
+                }
+              ]
+            },
+            {
+              "name": "experience",
+              "label": "Experience",
+              "type": "object",
+              "fields": [
+                {
+                  "name": "description",
+                  "label": "Description",
+                  "type": "text"
+                },
+                {
+                  "name": "emphasis",
+                  "label": "Emphasis",
+                  "type": "string"
+                },
+                {
+                  "name": "eyebrow",
+                  "label": "Eyebrow",
+                  "type": "string"
+                },
+                {
+                  "name": "heading",
+                  "label": "Heading",
+                  "type": "string"
+                },
+                {
+                  "name": "seoDescription",
+                  "label": "Seo Description",
+                  "type": "text"
+                }
+              ]
+            },
+            {
+              "name": "projects",
+              "label": "Projects",
+              "type": "object",
+              "fields": [
+                {
+                  "name": "description",
+                  "label": "Description",
+                  "type": "text"
+                },
+                {
+                  "name": "emphasis",
+                  "label": "Emphasis",
+                  "type": "string"
+                },
+                {
+                  "name": "eyebrow",
+                  "label": "Eyebrow",
+                  "type": "string"
+                },
+                {
+                  "name": "heading",
+                  "label": "Heading",
+                  "type": "string"
+                },
+                {
+                  "name": "seoDescription",
+                  "label": "Seo Description",
+                  "type": "text"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "previewNotice",
+          "label": "Preview Notice",
+          "description": "Shown only on the temporary preview; final deployment remains unapproved.",
+          "type": "text"
+        },
+        {
+          "name": "favicon",
+          "label": "Favicon",
+          "type": "image",
+          "options": {
+            "media": "images"
+          }
+        }
+      ]
+    },
+    {
+      "name": "education",
+      "label": "Education",
+      "type": "file",
+      "path": "src/content/education.json",
+      "format": "json",
+      "fields": [
+        {
+          "name": "awards",
+          "label": "Awards",
+          "list": {
+            "collapsible": {
+              "collapsed": true,
+              "summary": "{fields.title}"
+            }
+          },
+          "default": [],
+          "type": "object",
+          "fields": [
+            {
+              "name": "date",
+              "label": "Date",
+              "type": "string"
+            },
+            {
+              "name": "title",
+              "label": "Title",
+              "type": "string",
+              "required": true
+            }
+          ]
+        },
+        {
+          "name": "coursework",
+          "label": "Coursework",
+          "list": true,
+          "default": [],
+          "type": "string"
+        },
+        {
+          "name": "courseworkNote",
+          "label": "Coursework Note",
+          "type": "text"
+        },
+        {
+          "name": "degree",
+          "label": "Degree",
+          "type": "string"
+        },
+        {
+          "name": "description",
+          "label": "Description",
+          "type": "text"
+        },
+        {
+          "name": "end",
+          "label": "End",
+          "type": "string"
+        },
+        {
+          "name": "gpa",
+          "label": "Gpa",
+          "type": "string"
+        },
+        {
+          "name": "highlights",
+          "label": "Highlights",
+          "list": true,
+          "default": [],
+          "type": "text"
+        },
+        {
+          "name": "id",
+          "label": "Id",
+          "description": "Stable URL/anchor identifier. Keep unique; changing it changes URLs/references.",
+          "type": "string",
+          "required": true,
+          "pattern": {
+            "regex": "^[a-z][a-z0-9-]*$",
+            "message": "Use a unique lowercase ID with letters, numbers and hyphens."
+          }
+        },
+        {
+          "name": "location",
+          "label": "Location",
+          "type": "string"
+        },
+        {
+          "name": "logo",
+          "label": "Logo",
+          "type": "image",
+          "options": {
+            "media": "images"
+          }
+        },
+        {
+          "name": "logoAlt",
+          "label": "Logo Alt",
+          "type": "string"
+        },
+        {
+          "name": "major",
+          "label": "Major",
+          "type": "string"
+        },
+        {
+          "name": "period",
+          "label": "Period",
+          "type": "string"
+        },
+        {
+          "name": "reviewNote",
+          "label": "Review Note",
+          "type": "text"
+        },
+        {
+          "name": "school",
+          "label": "School",
+          "type": "string"
+        },
+        {
+          "name": "shortName",
+          "label": "Short Name",
+          "type": "string"
+        },
+        {
+          "name": "start",
+          "label": "Start",
+          "type": "string"
+        },
+        {
+          "name": "timelineLabel",
+          "label": "Timeline Label",
+          "type": "string"
+        },
+        {
+          "name": "university",
+          "label": "University",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "list": true
+    },
+    {
+      "name": "experience",
+      "label": "Experience",
+      "type": "file",
+      "path": "src/content/experience.json",
+      "format": "json",
+      "fields": [
+        {
+          "name": "company",
+          "label": "Company",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "contributions",
+          "label": "Contributions",
+          "list": true,
+          "default": [],
+          "type": "text"
+        },
+        {
+          "name": "dates",
+          "label": "Dates",
+          "type": "string"
+        },
+        {
+          "name": "displayOrder",
+          "label": "Display Order",
+          "description": "Lower numbers appear first within each Featured group.",
+          "type": "number",
+          "default": 0,
+          "options": {
+            "min": 0
+          }
+        },
+        {
+          "name": "featured",
+          "label": "Featured",
+          "description": "Move this record ahead of non-featured records without changing the design.",
+          "type": "boolean",
+          "default": false
+        },
+        {
+          "name": "id",
+          "label": "Id",
+          "description": "Stable URL/anchor identifier. Keep unique; changing it changes URLs/references.",
+          "type": "string",
+          "required": true,
+          "pattern": {
+            "regex": "^[a-z][a-z0-9-]*$",
+            "message": "Use a unique lowercase ID with letters, numbers and hyphens."
+          }
+        },
+        {
+          "name": "location",
+          "label": "Location",
+          "type": "string"
+        },
+        {
+          "name": "logo",
+          "label": "Logo",
+          "type": "image",
+          "options": {
+            "media": "images"
+          }
+        },
+        {
+          "name": "logoAlt",
+          "label": "Logo Alt",
+          "type": "string"
+        },
+        {
+          "name": "monogram",
+          "label": "Monogram",
+          "type": "string"
+        },
+        {
+          "name": "note",
+          "label": "Note",
+          "type": "text"
+        },
+        {
+          "name": "role",
+          "label": "Role",
+          "type": "string"
+        },
+        {
+          "name": "start",
+          "label": "Start",
+          "type": "string"
+        },
+        {
+          "name": "summary",
+          "label": "Summary",
+          "type": "text"
+        },
+        {
+          "name": "tags",
+          "label": "Tags",
+          "list": true,
+          "default": [],
+          "type": "string"
+        },
+        {
+          "name": "team",
+          "label": "Team",
+          "type": "string"
+        }
+      ],
+      "list": true
+    },
+    {
+      "name": "categories",
+      "label": "Project Categories",
+      "type": "file",
+      "path": "src/content/categories.json",
+      "format": "json",
+      "fields": [
+        {
+          "name": "icon",
+          "label": "Icon",
+          "type": "string"
+        },
+        {
+          "name": "id",
+          "label": "Id",
+          "description": "Stable URL/anchor identifier. Keep unique; changing it changes URLs/references.",
+          "type": "string",
+          "required": true,
+          "pattern": {
+            "regex": "^[a-z][a-z0-9-]*$",
+            "message": "Use a unique lowercase ID with letters, numbers and hyphens."
+          }
+        },
+        {
+          "name": "label",
+          "label": "Label",
+          "type": "string"
+        }
+      ],
+      "list": true
+    },
+    {
+      "name": "projects",
+      "label": "Projects & Case Studies",
+      "type": "file",
+      "path": "src/content/projects.json",
+      "format": "json",
+      "fields": [
+        {
+          "name": "cardDescription",
+          "label": "Card Description",
+          "description": "Short card description, up to 180 characters. The case study uses Summary separately.",
+          "type": "text",
+          "options": {
+            "maxlength": 180
+          }
+        },
+        {
+          "name": "category",
+          "label": "Category",
+          "type": "select",
+          "required": true,
+          "options": {
+            "values": [
+              {
+                "label": "Data & Business Analytics",
+                "value": "data-business-analytics"
+              },
+              {
+                "label": "Data Science",
+                "value": "data-science"
+              },
+              {
+                "label": "Product & AI",
+                "value": "product-ai"
+              }
+            ]
+          }
+        },
+        {
+          "name": "cover",
+          "label": "Cover",
+          "type": "image",
+          "options": {
+            "media": "images"
+          }
+        },
+        {
+          "name": "coverAlt",
+          "label": "Cover Alt",
+          "type": "string"
+        },
+        {
+          "name": "dates",
+          "label": "Dates",
+          "type": "string"
+        },
+        {
+          "name": "displayOrder",
+          "label": "Display Order",
+          "description": "Lower numbers appear first within each Featured group.",
+          "type": "number",
+          "default": 0,
+          "options": {
+            "min": 0
+          }
+        },
+        {
+          "name": "featured",
+          "label": "Featured",
+          "description": "Move this record ahead of non-featured records without changing the design.",
+          "type": "boolean",
+          "default": false
+        },
+        {
+          "name": "id",
+          "label": "Id",
+          "description": "Stable URL/anchor identifier. Keep unique; changing it changes URLs/references.",
+          "type": "string",
+          "required": true,
+          "pattern": {
+            "regex": "^[a-z][a-z0-9-]*$",
+            "message": "Use a unique lowercase ID with letters, numbers and hyphens."
+          }
+        },
+        {
+          "name": "note",
+          "label": "Note",
+          "type": "text"
+        },
+        {
+          "name": "resources",
+          "label": "Resources",
+          "list": {
+            "collapsible": {
+              "collapsed": true,
+              "summary": "{fields.label}"
+            }
+          },
+          "default": [],
+          "type": "object",
+          "fields": [
+            {
+              "name": "label",
+              "label": "Label",
+              "type": "string",
+              "required": true
+            },
+            {
+              "name": "type",
+              "label": "Type",
+              "type": "string",
+              "required": true
+            },
+            {
+              "name": "url",
+              "label": "Url",
+              "description": "External HTTPS URL, or the /documents/... or /images/... path copied from Media.",
+              "type": "string",
+              "required": true
+            },
+            {
+              "name": "verified",
+              "label": "Verified",
+              "description": "Enable only after checking the linked resource in your browser.",
+              "type": "boolean",
+              "default": false
+            }
+          ]
+        },
+        {
+          "name": "role",
+          "label": "Role",
+          "type": "string"
+        },
+        {
+          "name": "sections",
+          "label": "Sections",
+          "list": {
+            "collapsible": {
+              "collapsed": true,
+              "summary": "{fields.title}"
+            }
+          },
+          "default": [],
+          "type": "object",
+          "fields": [
+            {
+              "name": "bullets",
+              "label": "Bullets",
+              "list": true,
+              "default": [],
+              "type": "text"
+            },
+            {
+              "name": "id",
+              "label": "Id",
+              "description": "Stable URL/anchor identifier. Keep unique; changing it changes URLs/references.",
+              "type": "string",
+              "required": true,
+              "pattern": {
+                "regex": "^[a-z][a-z0-9-]*$",
+                "message": "Use a unique lowercase ID with letters, numbers and hyphens."
+              }
+            },
+            {
+              "name": "images",
+              "label": "Images",
+              "list": {
+                "collapsible": {
+                  "collapsed": true,
+                  "summary": "{index}"
+                }
+              },
+              "default": [],
+              "type": "object",
+              "fields": [
+                {
+                  "name": "src",
+                  "label": "Src",
+                  "type": "image",
+                  "options": {
+                    "media": "images"
+                  },
+                  "required": true
+                },
+                {
+                  "name": "alt",
+                  "label": "Alt",
+                  "type": "string",
+                  "required": true
+                },
+                {
+                  "name": "caption",
+                  "label": "Caption",
+                  "type": "text"
+                }
+              ]
+            },
+            {
+              "name": "paragraphs",
+              "label": "Paragraphs",
+              "list": true,
+              "default": [],
+              "type": "text"
+            },
+            {
+              "name": "title",
+              "label": "Title",
+              "type": "string",
+              "required": true
+            }
+          ]
+        },
+        {
+          "name": "sourceId",
+          "label": "Source Id",
+          "description": "Source provenance ID; not displayed.",
+          "type": "string"
+        },
+        {
+          "name": "status",
+          "label": "Status",
+          "type": "string"
+        },
+        {
+          "name": "summary",
+          "label": "Summary",
+          "type": "text"
+        },
+        {
+          "name": "tags",
+          "label": "Tags",
+          "list": true,
+          "default": [],
+          "type": "string"
+        },
+        {
+          "name": "title",
+          "label": "Title",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "list": true
+    },
+    {
+      "name": "dashboards",
+      "label": "Dashboards",
+      "type": "file",
+      "path": "src/content/dashboards.json",
+      "format": "json",
+      "fields": [
+        {
+          "name": "description",
+          "label": "Description",
+          "type": "text"
+        },
+        {
+          "name": "displayOrder",
+          "label": "Display Order",
+          "description": "Lower numbers appear first within each Featured group.",
+          "type": "number",
+          "default": 0,
+          "options": {
+            "min": 0
+          }
+        },
+        {
+          "name": "featured",
+          "label": "Featured",
+          "description": "Move this record ahead of non-featured records without changing the design.",
+          "type": "boolean",
+          "default": false
+        },
+        {
+          "name": "files",
+          "label": "Files",
+          "list": {
+            "collapsible": {
+              "collapsed": true,
+              "summary": "{fields.label}"
+            }
+          },
+          "default": [],
+          "type": "object",
+          "fields": [
+            {
+              "name": "label",
+              "label": "Label",
+              "type": "string",
+              "required": true
+            },
+            {
+              "name": "type",
+              "label": "Type",
+              "type": "string",
+              "required": true
+            },
+            {
+              "name": "url",
+              "label": "Url",
+              "description": "External HTTPS URL, or the /documents/... or /images/... path copied from Media.",
+              "type": "string",
+              "required": true
+            },
+            {
+              "name": "verified",
+              "label": "Verified",
+              "description": "Enable only after checking the linked resource in your browser.",
+              "type": "boolean",
+              "default": false
+            }
+          ]
+        },
+        {
+          "name": "id",
+          "label": "Id",
+          "description": "Stable URL/anchor identifier. Keep unique; changing it changes URLs/references.",
+          "type": "string",
+          "required": true,
+          "pattern": {
+            "regex": "^[a-z][a-z0-9-]*$",
+            "message": "Use a unique lowercase ID with letters, numbers and hyphens."
+          }
+        },
+        {
+          "name": "note",
+          "label": "Note",
+          "type": "text"
+        },
+        {
+          "name": "platform",
+          "label": "Platform",
+          "type": "string"
+        },
+        {
+          "name": "preview",
+          "label": "Preview",
+          "type": "image",
+          "options": {
+            "media": "images"
+          }
+        },
+        {
+          "name": "previewAlt",
+          "label": "Preview Alt",
+          "type": "string"
+        },
+        {
+          "name": "projectId",
+          "label": "Project Id",
+          "type": "string"
+        },
+        {
+          "name": "publicUrl",
+          "label": "Public Url",
+          "type": "string"
+        },
+        {
+          "name": "publicUrlVerified",
+          "label": "Public Url Verified",
+          "description": "Enable the public dashboard link after verifying it.",
+          "type": "boolean",
+          "default": false
+        },
+        {
+          "name": "screenshots",
+          "label": "Screenshots",
+          "list": {
+            "collapsible": {
+              "collapsed": true,
+              "summary": "{index}"
+            }
+          },
+          "default": [],
+          "type": "object",
+          "fields": [
+            {
+              "name": "alt",
+              "label": "Alt",
+              "type": "string"
+            },
+            {
+              "name": "image",
+              "label": "Image",
+              "type": "image",
+              "options": {
+                "media": "images"
+              }
+            }
+          ]
+        },
+        {
+          "name": "title",
+          "label": "Title",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "urlVerification",
+          "label": "Url Verification",
+          "type": "string"
+        }
+      ],
+      "list": true
+    }
+  ]
+}

@@ -5,8 +5,8 @@ import Layout from '../layouts/Layout.astro';
 import Icon from '../components/Icon.astro';
 const base = import.meta.env.BASE_URL;
 const media = (path: string) => path.startsWith('https://') ? path : `${base}${path.replace(/^\//, '')}`;
-import education from '../content/education.json';
-import profile from '../content/profile.json';
+import { education } from '../lib/content';
+import { profile } from '../lib/content';
 ---
 <Layout title={site.navigation.find(item => item.key === 'education')!.label} pageKey="education" description={page.seoDescription}>
   <div class="container education-page">

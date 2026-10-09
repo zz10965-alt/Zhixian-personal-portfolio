@@ -61,12 +61,14 @@
       {
         "label": "GitHub",
         "type": "github",
-        "url": "https://github.com/zz10965-alt/Creator2"
+        "url": "https://github.com/zz10965-alt/Creator2",
+        "verified": true
       },
       {
         "label": "Notebook",
         "type": "notebook",
-        "url": "https://github.com/zz10965-alt/Creator2/blob/main/pipeline.ipynb"
+        "url": "https://github.com/zz10965-alt/Creator2/blob/main/pipeline.ipynb",
+        "verified": true
       },
       {
         "label": "Demo",
@@ -77,7 +79,8 @@
       {
         "label": "Original project illustration",
         "type": "download",
-        "url": "/images/projects/legacy-creator-shortlisting.svg"
+        "url": "/images/projects/legacy-creator-shortlisting.svg",
+        "verified": true
       }
     ],
     "cover": "",
@@ -166,7 +169,8 @@
       {
         "label": "Notebook",
         "type": "notebook",
-        "url": "https://github.com/zz10965-alt/Data_Project/blob/main/04-ecommerce-analytics/growth_repurchase_analysis.ipynb"
+        "url": "https://github.com/zz10965-alt/Data_Project/blob/main/04-ecommerce-analytics/growth_repurchase_analysis.ipynb",
+        "verified": true
       }
     ],
     "cover": "/images/projects/ecommerce.png",
@@ -245,7 +249,8 @@
       {
         "label": "Notebook",
         "type": "notebook",
-        "url": "https://github.com/zz10965-alt/Data_Project/blob/main/05-advertising-analytics%28AB%20Test%29/abtest_ads_decision.ipynb"
+        "url": "https://github.com/zz10965-alt/Data_Project/blob/main/05-advertising-analytics%28AB%20Test%29/abtest_ads_decision.ipynb",
+        "verified": true
       }
     ],
     "cover": "/images/dashboards/advertising-abtest-preview.webp",
@@ -312,7 +317,8 @@
       {
         "label": "Original project illustration",
         "type": "download",
-        "url": "/images/projects/legacy-uncap-ai-safety.svg"
+        "url": "/images/projects/legacy-uncap-ai-safety.svg",
+        "verified": true
       }
     ],
     "cover": "",
@@ -390,7 +396,8 @@
       {
         "label": "Original project illustration",
         "type": "download",
-        "url": "/images/projects/legacy-medicare.svg"
+        "url": "/images/projects/legacy-medicare.svg",
+        "verified": true
       }
     ],
     "cover": "",
@@ -465,7 +472,8 @@
       {
         "label": "Notebook",
         "type": "notebook",
-        "url": "https://github.com/zz10965-alt/Data_Project/blob/main/03-employee-attrition/Employee_Attrition_Risk_Analysis.ipynb"
+        "url": "https://github.com/zz10965-alt/Data_Project/blob/main/03-employee-attrition/Employee_Attrition_Risk_Analysis.ipynb",
+        "verified": true
       }
     ],
     "cover": "/images/projects/employee-attrition.png",
@@ -527,7 +535,8 @@
       {
         "label": "Original project illustration",
         "type": "download",
-        "url": "/images/projects/legacy-furniture-db.svg"
+        "url": "/images/projects/legacy-furniture-db.svg",
+        "verified": true
       }
     ],
     "cover": "",
@@ -602,7 +611,8 @@
       {
         "label": "GitHub",
         "type": "github",
-        "url": "https://github.com/zz10965-alt/ai-conversational-agent"
+        "url": "https://github.com/zz10965-alt/ai-conversational-agent",
+        "verified": true
       },
       {
         "label": "Demo",
@@ -682,7 +692,8 @@
       {
         "label": "GitHub",
         "type": "github",
-        "url": "https://github.com/zz10965-alt/starshows-mobile"
+        "url": "https://github.com/zz10965-alt/starshows-mobile",
+        "verified": true
       },
       {
         "label": "Demo",
@@ -764,7 +775,8 @@
       {
         "label": "Notebook",
         "type": "notebook",
-        "url": "https://github.com/zz10965-alt/Data_Project/blob/main/01-ev-battery-failure/EV_Battery_Failure_DS.ipynb"
+        "url": "https://github.com/zz10965-alt/Data_Project/blob/main/01-ev-battery-failure/EV_Battery_Failure_DS.ipynb",
+        "verified": true
       }
     ],
     "cover": "/images/projects/ev-battery.png",
@@ -841,7 +853,8 @@
       {
         "label": "Notebook",
         "type": "notebook",
-        "url": "https://github.com/zz10965-alt/Data_Project/blob/main/02-ev-adoption-analysis/EV_Adoption_Drivers_Analysis.ipynb"
+        "url": "https://github.com/zz10965-alt/Data_Project/blob/main/02-ev-adoption-analysis/EV_Adoption_Drivers_Analysis.ipynb",
+        "verified": true
       }
     ],
     "cover": "/images/projects/ev-adoption.png",

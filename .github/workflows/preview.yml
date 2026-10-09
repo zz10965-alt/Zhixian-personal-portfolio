@@ -1,0 +1,60 @@
+name: Temporary portfolio preview
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'src/**'
+      - 'public/**'
+      - 'scripts/**'
+      - 'tests/**'
+      - 'package*.json'
+      - 'astro.config.mjs'
+      - '.pages.yml'
+      - '.github/workflows/preview.yml'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: portfolio-preview
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+      - run: npm ci --no-audit --no-fund
+      - run: npm test
+      - name: Build temporary preview only
+        run: npm run build
+        env:
+          PORTFOLIO_PREVIEW: 'true'
+          PORTFOLIO_SITE_URL: 'https://zz10965-alt.github.io'
+          PORTFOLIO_BASE_PATH: '/Zhixian-personal-portfolio/preview/'
+      - name: Package preview in a separate path
+        run: node scripts/package-preview.mjs
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: preview-artifact
+  preview:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}preview/
+    steps:
+      - name: Configure approved preview hosting
+        uses: actions/configure-pages@v5
+      - name: Publish temporary preview
+        id: deployment
+        uses: actions/deploy-pages@v4

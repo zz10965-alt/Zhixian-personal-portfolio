@@ -4,5 +4,7 @@ export default defineConfig({
   output: 'static',
   devToolbar: { enabled: false },
   trailingSlash: 'always',
-  // Phase 3: configure site and base for the approved hosting destination.
+  // Only the preview workflow sets these; no final deployment is configured.
+  site: process.env.PORTFOLIO_SITE_URL || undefined,
+  base: process.env.PORTFOLIO_BASE_PATH || '/',
 });

@@ -2,7 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import { site, labels, usableLink } from '../lib/content';
 import Icon from '../components/Icon.astro';
-import profile from '../content/profile.json';
+import { profile } from '../lib/content';
 const base = import.meta.env.BASE_URL;
 const media = (path: string) => path.startsWith('https://') ? path : `${base}${path.replace(/^\//, '')}`;
 ---

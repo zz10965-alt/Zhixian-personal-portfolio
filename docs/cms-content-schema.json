@@ -270,6 +270,12 @@
             }
           },
           "additionalProperties": false
+        },
+        "previewNotice": {
+          "type": "string"
+        },
+        "favicon": {
+          "type": "string"
         }
       },
       "additionalProperties": false

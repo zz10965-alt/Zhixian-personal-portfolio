@@ -107,5 +107,7 @@
     "github": "GitHub",
     "interestPhoto": "Photo to come",
     "projectCategories": "Project categories"
-  }
+  },
+  "previewNotice": "Temporary review preview · Final public launch is awaiting approval.",
+  "favicon": "/favicon.svg"
 }

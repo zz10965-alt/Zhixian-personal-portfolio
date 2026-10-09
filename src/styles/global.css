@@ -24,3 +24,5 @@
 
 /* Keep card reading areas aligned without clipping editorial content. */
 .project-card h2{min-height:3.6em}.project-card-body>p{min-height:5.4em}.project-card .tags{min-height:27px}.project-card .tags li{font-size:10px}
+
+.preview-notice{padding:9px 20px;text-align:center;background:var(--lilac);color:var(--ink);font-size:12px;line-height:1.6;border-bottom:1px solid var(--border)}

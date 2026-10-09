@@ -2,17 +2,13 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 const read = name => JSON.parse(readFileSync(new URL(`../src/content/${name}.json`, import.meta.url)));
-test('Phase 1 content preserves documented education and missing-resource states', () => {
+test('profile and education records remain usable after CMS edits', () => {
   const profile = read('profile');
-  const education = read('education');
-  assert.equal(profile.name, 'Freya Zhang');
-  assert.deepEqual(profile.interests.map(item => item.title), ['Photography', 'Travel', 'Gaming', 'Video Creation', 'Vibe Coding']);
-  assert.equal(profile.resume, '');
-  assert.equal(profile.linkedin, 'https://www.linkedin.com/in/freya-data');
-  assert.equal(profile.linkedinVerified, false);
-  assert.equal(education.length, 2);
-  assert.equal(education[0].gpa, '3.48 / 5.0');
-  assert.equal(education[1].gpa, '3.92 / 4.0');
-  assert.match(education[1].end, /expected/);
-  for (const entry of education) assert.ok(entry.coursework.length > 0);
+  assert.ok(profile.name && profile.headlineLead && profile.introduction);
+  assert.ok(Array.isArray(profile.interests));
+  for (const entry of read('education')) {
+    assert.ok(entry.id && entry.university && entry.degree && entry.start && entry.end);
+    if (entry.gpa) assert.match(entry.gpa, /\d.*\/.*\d/);
+    assert.ok(Array.isArray(entry.coursework));
+  }
 });
