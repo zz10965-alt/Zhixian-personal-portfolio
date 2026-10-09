@@ -24,19 +24,9 @@
             "enabled": true
           },
           {
-            "label": "Notebook",
-            "url": "https://github.com/zz10965-alt/Creator2/blob/main/pipeline.ipynb",
-            "enabled": true
-          },
-          {
             "label": "Demo",
             "url": "https://youtu.be/XFMcbs6lcrs",
             "enabled": false
-          },
-          {
-            "label": "Original project illustration",
-            "url": "/images/projects/legacy-creator-shortlisting.svg",
-            "enabled": true
           }
         ]
       }
@@ -106,7 +96,7 @@
         "type": "links",
         "links": [
           {
-            "label": "Notebook",
+            "label": "Code",
             "url": "https://github.com/zz10965-alt/Data_Project/blob/main/04-ecommerce-analytics/growth_repurchase_analysis.ipynb",
             "enabled": true
           },
@@ -205,7 +195,7 @@
         "type": "links",
         "links": [
           {
-            "label": "Notebook",
+            "label": "Code",
             "url": "https://github.com/zz10965-alt/Data_Project/blob/main/05-advertising-analytics%28AB%20Test%29/abtest_ads_decision.ipynb",
             "enabled": true
           }
@@ -277,14 +267,7 @@
         ]
       },
       {
-        "type": "links",
-        "links": [
-          {
-            "label": "Original project illustration",
-            "url": "/images/projects/legacy-uncap-ai-safety.svg",
-            "enabled": true
-          }
-        ]
+        "type": "links"
       }
     ],
     "sections": [
