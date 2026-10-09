@@ -3,7 +3,7 @@ import { join, relative, dirname } from 'node:path';
 const artifact = 'public-artifact';
 rmSync(artifact, { recursive: true, force: true });
 cpSync('dist', artifact, { recursive: true });
-const base = process.env.PORTFOLIO_BASE_PATH || '/Zhixian-personal-portfolio/';
+const base = process.env.PORTFOLIO_BASE_PATH || `/${process.env.GITHUB_REPOSITORY?.split('/')[1] || 'freya_portfolio'}/`;
 function redirectOldPreviews(directory) {
   for (const entry of readdirSync(directory, { withFileTypes: true })) {
     const path = join(directory, entry.name);

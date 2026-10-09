@@ -43,7 +43,7 @@ test('CMS omission of empty fields restores rendering defaults without losing re
 test('public deployment uses the stable root and redirects old previews', () => {
   const workflow = readFileSync(new URL('../.github/workflows/publish.yml',import.meta.url),'utf8');
   assert.match(workflow,/PORTFOLIO_PREVIEW: 'false'/);
-  assert.match(workflow,/PORTFOLIO_BASE_PATH: '\/Zhixian-personal-portfolio\/'/);
+  assert.ok(workflow.includes("PORTFOLIO_BASE_PATH: '/${{ github.event.repository.name }}/'"));
   assert.match(workflow,/path: public-artifact/);
   const script = readFileSync(new URL('../scripts/package-public.mjs',import.meta.url),'utf8');
   assert.match(script,/http-equiv="refresh"/);

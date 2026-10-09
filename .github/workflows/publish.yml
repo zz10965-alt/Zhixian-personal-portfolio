@@ -18,6 +18,10 @@ on:
 permissions:
   contents: read
 
+env:
+  PORTFOLIO_SITE_URL: 'https://${{ github.repository_owner }}.github.io'
+  PORTFOLIO_BASE_PATH: '/${{ github.event.repository.name }}/'
+
 concurrency:
   group: portfolio-pages
   cancel-in-progress: true
@@ -38,8 +42,6 @@ jobs:
         env:
           PORTFOLIO_PREVIEW: 'false'
           PORTFOLIO_REVISION: ${{ github.sha }}
-          PORTFOLIO_SITE_URL: 'https://zz10965-alt.github.io'
-          PORTFOLIO_BASE_PATH: '/Zhixian-personal-portfolio/'
       - name: Package public website and redirect old preview URLs
         run: node scripts/package-public.mjs
       - uses: actions/upload-pages-artifact@v3
@@ -53,7 +55,7 @@ jobs:
       id-token: write
     environment:
       name: github-pages
-      url: https://zz10965-alt.github.io/Zhixian-personal-portfolio/
+      url: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/
     steps:
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
