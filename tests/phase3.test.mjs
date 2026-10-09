@@ -40,12 +40,14 @@ test('CMS omission of empty fields restores rendering defaults without losing re
   assert.deepEqual(project.sections[0].images,[]); assert.deepEqual(project.sections[0].bullets,[]);
   assert.equal(normalizeContent({},contract.profile).linkedinVerified,false);
 });
-test('only the isolated temporary preview is packaged for deployment', () => {
-  const workflow = readFileSync(new URL('../.github/workflows/preview.yml',import.meta.url),'utf8');
-  assert.match(workflow,/PORTFOLIO_PREVIEW: 'true'/);
-  assert.match(workflow,/PORTFOLIO_BASE_PATH: '\/Zhixian-personal-portfolio\/preview\/'/);
-  const script = readFileSync(new URL('../scripts/package-preview.mjs',import.meta.url),'utf8');
-  assert.match(script,/preview-artifact\/preview/); assert.match(script,/final public website has not launched/); assert.match(script,/noindex/);
+test('public deployment uses the stable root and redirects old previews', () => {
+  const workflow = readFileSync(new URL('../.github/workflows/publish.yml',import.meta.url),'utf8');
+  assert.match(workflow,/PORTFOLIO_PREVIEW: 'false'/);
+  assert.match(workflow,/PORTFOLIO_BASE_PATH: '\/Zhixian-personal-portfolio\/'/);
+  assert.match(workflow,/path: public-artifact/);
+  const script = readFileSync(new URL('../scripts/package-public.mjs',import.meta.url),'utf8');
+  assert.match(script,/http-equiv="refresh"/);
+  assert.match(script,/preview/);
 });
 test('CMS primitive lists add a scalar item rather than appending an empty array', () => {
   let count = 0;

@@ -1,5 +1,5 @@
-name: Temporary portfolio preview
-run-name: Review preview · ${{ github.ref_name }}
+name: Publish portfolio website
+run-name: Publish website · ${{ github.ref_name }}
 
 on:
   workflow_dispatch:
@@ -13,13 +13,13 @@ on:
       - 'package*.json'
       - 'astro.config.mjs'
       - '.pages.yml'
-      - '.github/workflows/preview.yml'
+      - '.github/workflows/publish.yml'
 
 permissions:
   contents: read
 
 concurrency:
-  group: portfolio-preview
+  group: portfolio-pages
   cancel-in-progress: true
 
 jobs:
@@ -33,19 +33,19 @@ jobs:
           cache: npm
       - run: npm ci --no-audit --no-fund
       - run: npm test
-      - name: Build temporary preview only
+      - name: Build public website
         run: npm run build
         env:
-          PORTFOLIO_PREVIEW: 'true'
+          PORTFOLIO_PREVIEW: 'false'
           PORTFOLIO_REVISION: ${{ github.sha }}
           PORTFOLIO_SITE_URL: 'https://zz10965-alt.github.io'
-          PORTFOLIO_BASE_PATH: '/Zhixian-personal-portfolio/preview/'
-      - name: Package preview in a separate path
-        run: node scripts/package-preview.mjs
+          PORTFOLIO_BASE_PATH: '/Zhixian-personal-portfolio/'
+      - name: Package public website and redirect old preview URLs
+        run: node scripts/package-public.mjs
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: preview-artifact
-  preview:
+          path: public-artifact
+  publish:
     needs: build
     runs-on: ubuntu-latest
     permissions:
@@ -53,10 +53,10 @@ jobs:
       id-token: write
     environment:
       name: github-pages
-      url: https://zz10965-alt.github.io/Zhixian-personal-portfolio/preview/
+      url: https://zz10965-alt.github.io/Zhixian-personal-portfolio/
     steps:
-      - name: Configure approved preview hosting
+      - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
-      - name: Publish temporary preview
+      - name: Publish public website
         id: deployment
         uses: actions/deploy-pages@v4

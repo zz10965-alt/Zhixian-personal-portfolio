@@ -3,6 +3,8 @@ const assert=require('node:assert/strict');const fs=require('node:fs');
 const path=require('node:path');
 const root=path.resolve(__dirname,'..');
 const projects=JSON.parse(fs.readFileSync(root+'/src/content/projects.json'));
+const dashboards=JSON.parse(fs.readFileSync(root+'/src/content/dashboards.json'));
+const profile=JSON.parse(fs.readFileSync(root+'/src/content/profile.json'));
 const categories=JSON.parse(fs.readFileSync(root+'/src/content/categories.json'));
 const experiences=JSON.parse(fs.readFileSync(root+'/src/content/experience.json'));
 (async()=>{
@@ -43,18 +45,18 @@ const experiences=JSON.parse(fs.readFileSync(root+'/src/content/experience.json'
  for(const id of sectionIds){await page.locator(`#${id}`).evaluate(e=>e.scrollIntoView({behavior:'instant',block:'start'}));await page.waitForFunction(id=>document.querySelector('[data-section-link][aria-current=location]')?.dataset.sectionLink===id,id);}
  await page.emulateMedia({reducedMotion:'reduce'});await page.locator('[data-section-link="methodology"]').click();await page.waitForFunction(()=>document.querySelector('[data-section-link][aria-current=location]')?.dataset.sectionLink==='methodology');assert.equal(await page.locator('.case-section').count(),sectionIds.length);
  console.log('PASS continuous content, dynamic TOC, scroll highlighting and click-to-scroll');
- await page.goto(base+'/dashboards/');await page.locator('main h1').waitFor();assert.equal(await page.locator('[data-dashboard="advertising-abtest"]').count(),1);assert.equal(await page.locator('a[download]').count(),1);assert.equal(await page.locator('[data-dashboard="ecommerce-tableau"] .project-placeholder').count(),1);
+ await page.goto(base+'/dashboards/');await page.locator('main h1').waitFor();assert.equal(await page.locator('[data-dashboard="advertising-abtest"]').count(),1);assert.equal(await page.locator('a[download]').count(),dashboards.filter(d=>d.preview).length);assert.equal(await page.locator('[data-dashboard="ecommerce-tableau"] .project-placeholder').count(),dashboards.find(d=>d.id==='ecommerce-tableau').preview?0:1);
  await page.goto(base+'/projects/advertising-ab-testing/');await page.locator('main h1').waitFor();assert.equal(await page.locator('#overview img[src$="/images/dashboards/advertising-abtest.png"]').count(),1);assert.equal(await page.locator('#resources').count(),0);
  console.log('PASS shared dashboard references and screenshot-only fallback');
  await page.setViewportSize({width:390,height:844});await page.goto(base+'/');await page.locator('main h1').waitFor();
  assert.equal(await page.locator('.hero-social a[href="mailto:freyazhang968@nyu.edu"]').innerText(),'freyazhang968@nyu.edu');assert.equal(await page.locator('.hero-social a[href="https://www.linkedin.com/in/freya-data/"]').count(),1);
- const order=await page.evaluate(()=>['.hero-copy','.hero-actions','.hero-social','.hero-photo'].map(s=>document.querySelector(s).getBoundingClientRect().top));assert.ok(order.every((v,i)=>!i||v>order[i-1]));assert.equal(await page.locator('.hero-actions a').count(),0);
+ const order=await page.evaluate(()=>['.hero-copy','.hero-actions','.hero-social','.hero-photo'].map(s=>document.querySelector(s).getBoundingClientRect().top));assert.ok(order.every((v,i)=>!i||v>order[i-1]));assert.equal(await page.locator('.hero-actions a').count(),profile.resume?1:0);
  for(const e of await page.locator('.hero-social a').all())assert.ok((await e.boundingBox()).height>=44);
  await page.locator('.menu-toggle').click();await page.locator('.projects-toggle').click();assert.equal(await page.locator('.projects-toggle').getAttribute('aria-expanded'),'true');await page.locator('#project-categories a').last().click();await page.waitForURL(url=>url.pathname.endsWith('/category/product-ai/'));
  await page.goto(base+'/experience/');await page.locator('main h1').waitFor();await page.locator('#experience-select').selectOption('nielseniq');assert.equal(await page.locator('#experience-panel h2').innerText(),'NielsenIQ (GfK)');
  console.log('PASS mobile contact-before-photo order, tap sizes, dropdown and internship select');
  await page.goto(base+'/projects/starshow/');assert.equal(await page.locator('img[src$="/images/projects/starshow.png"]').count(),1);
- for(const route of ['/projects/creator-shortlisting/','/projects/conversational-ai-agent/','/projects/starshow/','/dashboards/','/']){await page.goto(base+route);assert.equal(await page.locator('main a[href*="youtu.be"], main a[href*="public.tableau.com"], main a[href*="zz10965-alt.github.io"]').count(),0);}
+ for(const project of projects){await page.goto(base+`/projects/${project.id}/`);for(const link of project.overviewBlocks.flatMap(block=>block.links||[]).filter(link=>link.enabled!==false&&link.label&&/^https:\/\//.test(link.url))){assert.ok(await page.locator('#overview a').evaluateAll((els,url)=>els.some(e=>e.getAttribute('href')===url),link.url),`Visible project link: ${link.label}`);}}
  const paths=new Set();
  for(const route of routes){await page.goto(base+route);await page.locator('main h1').waitFor();for(const path of await page.locator('main a[href], main img[src]').evaluateAll(els=>els.map(e=>e.getAttribute('href')||e.getAttribute('src')))){if(path?.startsWith('/')&&!path.startsWith('//'))paths.add(path.split('#')[0]);}}
  for(const path of paths){const response=await page.request.get(new URL(path,base).href);assert.equal(response.status(),200,path);}

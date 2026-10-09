@@ -4,7 +4,7 @@ export default defineConfig({
   output: 'static',
   devToolbar: { enabled: false },
   trailingSlash: 'always',
-  // Only the preview workflow sets these; no final deployment is configured.
+  // Deployment builds use the repository’s stable GitHub Pages path.
   site: process.env.PORTFOLIO_SITE_URL || undefined,
   base: process.env.PORTFOLIO_BASE_PATH || '/',
 });
