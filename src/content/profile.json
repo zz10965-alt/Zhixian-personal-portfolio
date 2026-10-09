@@ -47,18 +47,21 @@
     },
     {
       "title": "Gaming",
+      "image": "/images/游戏.png",
       "description": "A little play, a little strategy, and time to switch gears.",
       "imagePosition": "50% 50%",
       "icon": "gaming"
     },
     {
       "title": "Video Creation",
+      "image": "/images/剪辑.png",
       "description": "Putting moments together into a story worth sharing.",
       "imagePosition": "50% 50%",
       "icon": "video"
     },
     {
       "title": "Vibe Coding",
+      "image": "/images/vibe.png",
       "description": "Following a spark of an idea and seeing what I can build.",
       "imagePosition": "50% 50%",
       "icon": "code"
