@@ -516,6 +516,7 @@
         "id": "limitations"
       }
     ],
+    "cover": "/images/Screenshot 2026-10-09 003120.png",
     "cardDescription": "A relational data foundation for sales and customer analysis, from entity modeling to reusable SQL.",
     "category": "data-business-analytics",
     "featured": false,
@@ -594,6 +595,7 @@
         "id": "evaluation"
       }
     ],
+    "cover": "/images/Screenshot 2026-10-09 003352.png",
     "cardDescription": "A conversational assistant prototype for answering questions and organizing information.",
     "category": "product-ai",
     "featured": false,
@@ -671,7 +673,7 @@
         "id": "boundaries"
       }
     ],
-    "cover": "/images/projects/starshow.png",
+    "cover": "/images/Screenshot 2026-10-09 003603.png",
     "coverAlt": "Original StarShow mobile prototype home screen",
     "cardDescription": "A mobile product prototype with scripted assistance and simulated social interactions.",
     "category": "product-ai",
