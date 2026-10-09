@@ -24,7 +24,7 @@ const media = (path: string) => path.startsWith('https://') ? path : `${base}${p
       <span class="photo-sticker" aria-hidden="true">{profile.stickerLead}<br /><em>{profile.stickerEmphasis}</em><Icon name="spark" /></span>
     </figure>
     <div class="hero-actions">
-      {usableLink(profile.resume) ? <a class="button primary" href={media(profile.resume)} download>{labels.resume} <Icon name="external" /></a> : <span class="button unavailable" aria-disabled="true" title={labels.resumeMissing}>{labels.resumePending} <Icon name="external" /></span>}
+      {usableLink(profile.resume) ? <a class="button primary" href={media(profile.resume)} target="_blank" rel="noopener noreferrer">{labels.resume} <Icon name="external" /></a> : <span class="button unavailable" aria-disabled="true" title={labels.resumeMissing}>{labels.resumePending} <Icon name="external" /></span>}
     </div>
     <div class="hero-social" aria-label={labels.contact}>
       {profile.email && <a href={`mailto:${profile.email}`}><Icon name="email" /><span>{profile.email}</span></a>}

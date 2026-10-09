@@ -141,11 +141,9 @@
         },
         {
           "name": "resume",
-          "label": "5. 上传 / 选择简历",
-          "type": "file",
-          "options": {
-            "media": "documents"
-          }
+          "label": "5. 简历链接（Google Drive 等）",
+          "type": "string",
+          "description": "粘贴可公开查看的 HTTPS 分享链接；也可保留已上传的 PDF 路径。"
         },
         {
           "name": "interestsHeading",
