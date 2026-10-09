@@ -1,87 +1,75 @@
 {
-  "name": "Freya Zhang",
-  "eyebrow": "ANALYTICS · AI · A LITTLE CURIOSITY",
-  "introduction": "I’m a Management and Analytics graduate student at NYU, with experience in advertising analytics at Google, consumer research at NielsenIQ, and data platform development at AI Solutions. I enjoy making sense of messy data and exploring how AI can help people solve practical problems.",
-  "photo": "",
-  "photoAlt": "Freya Zhang’s personal travel photograph",
-  "photoCaption": "A moment away from the desk.",
   "email": "freyazhang968@nyu.edu",
+  "eyebrow": "ANALYTICS · AI · A LITTLE CURIOSITY",
   "github": "https://github.com/zz10965-alt",
-  "linkedin": "https://www.linkedin.com/in/freya-data/",
-  "resume": "",
-  "interests": [
-    {
-      "title": "Photography",
-      "description": "A reason to slow down and notice the little things.",
-      "label": "Through my lens",
-      "image": "",
-      "imageAlt": "",
-      "icon": "camera",
-      "imagePosition": "50% 50%"
-    },
-    {
-      "title": "Travel",
-      "description": "New places, different perspectives, and a camera along for the ride.",
-      "label": "Somewhere new",
-      "image": "",
-      "imageAlt": "",
-      "icon": "travel",
-      "imagePosition": "50% 50%"
-    },
-    {
-      "title": "Gaming",
-      "description": "A little play, a little strategy, and time to switch gears.",
-      "icon": "gaming",
-      "image": "",
-      "imageAlt": "",
-      "imagePosition": "50% 50%"
-    },
-    {
-      "title": "Video Creation",
-      "description": "Putting moments together into a story worth sharing.",
-      "icon": "video",
-      "image": "",
-      "imageAlt": "",
-      "imagePosition": "50% 50%"
-    },
-    {
-      "title": "Vibe Coding",
-      "description": "Following a spark of an idea and seeing what I can build.",
-      "icon": "code",
-      "image": "",
-      "imageAlt": "",
-      "imagePosition": "50% 50%"
-    }
-  ],
-  "headlineLead": "Hi, I’m",
   "headlineEmphasis": "Freya.",
+  "headlineLead": "Hi, I’m",
   "highlights": [
     {
       "icon": "education",
-      "text": "NYU · MS in Management and Analytics",
-      "detail": ""
+      "text": "NYU · MS in Management and Analytics"
     },
     {
       "icon": "location",
-      "text": "New York, United States",
-      "detail": ""
+      "text": "New York, United States"
     },
     {
       "icon": "chart",
-      "text": "Data Analytics · Business Analytics · AI & Product",
-      "detail": ""
+      "text": "Data Analytics · Business Analytics · AI & Product"
     }
   ],
-  "photoPosition": "50% 65%",
+  "interests": [
+    {
+      "description": "A reason to slow down and notice the little things.",
+      "icon": "camera",
+      "image": "/images/Weixin Image_20261008224738_212_2.jpg",
+      "imagePosition": "50% 50%",
+      "label": "Through my lens",
+      "title": "Photography"
+    },
+    {
+      "description": "New places, different perspectives, and a camera along for the ride.",
+      "icon": "travel",
+      "image": "/images/Weixin Image_20261008224010_211_2-1.jpg",
+      "imagePosition": "50% 50%",
+      "label": "Somewhere new",
+      "title": "Travel"
+    },
+    {
+      "description": "A little play, a little strategy, and time to switch gears.",
+      "icon": "gaming",
+      "imagePosition": "50% 50%",
+      "title": "Gaming"
+    },
+    {
+      "description": "Putting moments together into a story worth sharing.",
+      "icon": "video",
+      "imagePosition": "50% 50%",
+      "title": "Video Creation"
+    },
+    {
+      "description": "Following a spark of an idea and seeing what I can build.",
+      "icon": "code",
+      "imagePosition": "50% 50%",
+      "title": "Vibe Coding"
+    }
+  ],
   "interestsHeading": "Beyond Work",
   "interestsNote": "A little bit of everything.",
+  "introduction": "👋 Hello! My name is Freya and I live in NYC now.\n\n👩🏻‍💻 I am currently pursuing my masters degree at NYU and looking for 2027 New Grad roles in Data fields.\n\n🎓 I am completing an M.S. in Management and Analytics at New York University. Finished my Bachelor of Management in Administrative Management at Chongqing University of Technology. \n\n💪 Specialties in analyzing customer and business data from online services and applying insights to actionable strategies.\n💻 Programming: Python (Pandas, NumPy, scikit-learn), R, SQL, Java\n📊 Data Visualization: Tableau, Power BI, Excel\n🗄️ Database & Tools: MySQL, SQL Server, PostgreSQL, Spark, Git, SPSS\n📈 Statistics & ML: A/B Testing, XGBoost, Logistic Regression, Decision Trees, K-Means Clustering\n🤖 AI: LLM Applications, Prompt Design, RAG, LangChain\n\n🔥 Aspire to become a data analyst who can translate data into clear business decisions and customer-centric growth strategies.\n\n💼 Previously, interned at Google, NielsenIQ, and AI Solutions across advertising analytics, consumer research, and data platform work. I automated KPI reporting with Tableau dashboards and deeply dived into ad performance and consumer insights using SQL, Python, and Excel, and I also built data pipelines and AI features on the development side.\n\n🚀 As for my future, I want to become a data-driven analyst who can read customers unmet needs through data and help teams make better decisions.\n\n✈️ In my free time, I love traveling, 📸 photography, 🎬 video editing and🎮 playing games.\n\n➡️ To know more about me, please visit my portfolio below or DM me!",
+  "linkedin": "https://www.linkedin.com/in/freya-data/",
+  "linkedinVerified": true,
+  "name": "Freya Zhang",
+  "photo": "/images/Weixin Image_20261008225053_213_2.jpg",
+  "photoAlt": "Freya Zhang’s personal travel photograph",
+  "photoCaption": "A moment away from the desk.",
+  "photoPosition": "50% 65%",
   "portraitPlaceholderAlt": "Placeholder for Freya’s supplied lifestyle photograph; image file pending",
-  "portraitPlaceholderLead": "A personal",
   "portraitPlaceholderEmphasis": "perspective.",
+  "portraitPlaceholderLead": "A personal",
   "portraitPlaceholderNote": "YOUR LIFESTYLE PHOTO GOES HERE",
-  "stickerLead": "always",
-  "stickerEmphasis": "curious.",
   "professionalPortrait": "/images/profile/professional-portrait.jpg",
   "professionalPortraitAlt": "Freya Zhang’s professional portrait from her earlier portfolio",
-  "linkedinVerified": true
+  "stickerEmphasis": "curious.",
+  "stickerLead": "always"
 }
