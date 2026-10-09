@@ -1,4 +1,5 @@
 name: Temporary portfolio preview
+run-name: Review preview · ${{ github.ref_name }}
 
 on:
   workflow_dispatch:
