@@ -1,7 +1,9 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
-const read = name => JSON.parse(readFileSync(new URL(`../src/content/${name}.json`, import.meta.url)));
+import { normalizeContent } from '../src/lib/normalize-content.mjs';
+const contract = JSON.parse(readFileSync(new URL('../docs/cms-content-schema.json', import.meta.url))).$defs;
+const read = name => normalizeContent(JSON.parse(readFileSync(new URL(`../src/content/${name}.json`, import.meta.url))), contract[name]);
 test('profile and education records remain usable after CMS edits', () => {
   const profile = read('profile');
   assert.ok(profile.name && profile.headlineLead && profile.introduction);
