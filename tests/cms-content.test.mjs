@@ -22,7 +22,7 @@ test('CMS contract covers all content fields and presentation controls', () => {
   for (const name of ['experience','projects','dashboards']) for (const item of read(name)) { assert.equal(typeof item.featured, 'boolean'); assert.ok(Number.isInteger(item.displayOrder)); }
 });
 test('all content media and document references are present; links use safe schemes', () => {
-  const mediaKeys = new Set(['photo','image','logo','cover','preview','src','resume','professionalPortrait','favicon']);
+  const mediaKeys = new Set(['photo','image','logo','cover','preview','src','resume','professionalPortrait','favicon','videoUrl']);
   function walk(value, key = '') {
     if (Array.isArray(value)) return value.forEach(item => walk(item));
     if (value && typeof value === 'object') return Object.entries(value).forEach(([name,item]) => walk(item,name));

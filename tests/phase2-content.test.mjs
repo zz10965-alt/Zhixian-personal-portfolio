@@ -23,7 +23,9 @@ test('project taxonomy, section anchors, resources and assets are consistent', (
     unique(project.sections.map(section => section.id));
     for (const section of project.sections) { assert.match(section.id, /^[a-z][a-z0-9-]*$/); for (const image of section.images ?? []) { if (!image.src) continue; asset(image.src); assert.ok(image.alt); } }
     asset(project.cover);
-    for (const resource of project.resources ?? []) { if (!resource.url) continue; if (resource.url.startsWith('/')) asset(resource.url); else assert.equal(new URL(resource.url).protocol,'https:'); assert.ok(resource.label); }
+    for (const block of project.overviewBlocks) { if (block.type === 'image') asset(block.src); }
+    assert.ok(!project.sections.some(section => section.id === 'resources'));
+    for (const resource of project.overviewBlocks.flatMap(block => block.links ?? [])) { if (!resource.url) continue; if (resource.url.startsWith('/')) asset(resource.url); else assert.equal(new URL(resource.url).protocol,'https:'); assert.ok(resource.label); }
   }
 });
 test('dashboards reference shared projects and show only supplied media/resources', () => {

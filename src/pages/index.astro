@@ -27,7 +27,7 @@ const media = (path: string) => path.startsWith('https://') ? path : `${base}${p
       {usableLink(profile.resume) ? <a class="button primary" href={media(profile.resume)} download>{labels.resume} <Icon name="external" /></a> : <span class="button unavailable" aria-disabled="true" title={labels.resumeMissing}>{labels.resumePending} <Icon name="external" /></span>}
     </div>
     <div class="hero-social" aria-label={labels.contact}>
-      {profile.email && <a href={`mailto:${profile.email}`}><Icon name="email" /><span>{labels.email}</span></a>}
+      {profile.email && <a href={`mailto:${profile.email}`}><Icon name="email" /><span>{profile.email}</span></a>}
       {usableLink(profile.linkedin) && profile.linkedinVerified ? <a href={profile.linkedin} target="_blank" rel="noopener noreferrer"><Icon name="linkedin" /><span>{labels.linkedin}</span></a> : <span class="social-pending" aria-disabled="true" title={labels.linkedinMissing}><Icon name="linkedin" /><span>{labels.linkedin} <small>{labels.pending}</small></span></span>}
       {usableLink(profile.github) && <a href={profile.github} target="_blank" rel="noopener noreferrer"><Icon name="github" /><span>{labels.github}</span></a>}
     </div>

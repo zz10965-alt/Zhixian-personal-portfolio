@@ -25,6 +25,16 @@
         "ppt",
         "docx"
       ]
+    },
+    {
+      "name": "videos",
+      "label": "Project Videos",
+      "input": "public/videos",
+      "output": "/videos",
+      "extensions": [
+        "mp4",
+        "webm"
+      ]
     }
   ],
   "content": [
@@ -1075,49 +1085,133 @@
           "type": "text"
         },
         {
-          "name": "resources",
-          "label": "Resources",
-          "list": {
-            "collapsible": {
-              "collapsed": true,
-              "summary": "{fields.label}"
-            }
-          },
-          "default": [],
-          "type": "object",
-          "fields": [
-            {
-              "name": "label",
-              "label": "Label",
-              "type": "string",
-              "required": true
-            },
-            {
-              "name": "type",
-              "label": "Type",
-              "type": "string",
-              "required": true
-            },
-            {
-              "name": "url",
-              "label": "Url",
-              "description": "External HTTPS URL, or the /documents/... or /images/... path copied from Media.",
-              "type": "string",
-              "required": true
-            },
-            {
-              "name": "verified",
-              "label": "Verified",
-              "description": "Enable only after checking the linked resource in your browser.",
-              "type": "boolean",
-              "default": false
-            }
-          ]
-        },
-        {
           "name": "role",
           "label": "Role",
           "type": "string"
+        },
+        {
+          "name": "overviewBlocks",
+          "label": "Overview — Text, Images, Video & Links",
+          "list": {
+            "collapsible": {
+              "collapsed": true,
+              "summary": "{index}"
+            }
+          },
+          "default": [],
+          "type": "block",
+          "blockKey": "type",
+          "description": "Add, edit, delete and drag blocks into any order. Empty blocks do not appear on the website.",
+          "blocks": [
+            {
+              "name": "text",
+              "label": "Text",
+              "fields": [
+                {
+                  "name": "heading",
+                  "label": "Heading",
+                  "type": "string"
+                },
+                {
+                  "name": "paragraphs",
+                  "label": "Paragraphs",
+                  "list": true,
+                  "default": [],
+                  "type": "text"
+                },
+                {
+                  "name": "bullets",
+                  "label": "Bullets",
+                  "list": true,
+                  "default": [],
+                  "type": "text"
+                }
+              ]
+            },
+            {
+              "name": "image",
+              "label": "Image",
+              "fields": [
+                {
+                  "name": "src",
+                  "label": "Src",
+                  "type": "image",
+                  "options": {
+                    "media": "images"
+                  }
+                },
+                {
+                  "name": "alt",
+                  "label": "Alt",
+                  "type": "string"
+                },
+                {
+                  "name": "caption",
+                  "label": "Caption",
+                  "type": "text"
+                }
+              ]
+            },
+            {
+              "name": "video",
+              "label": "Video",
+              "fields": [
+                {
+                  "name": "videoUrl",
+                  "label": "Upload Video or Paste Video URL",
+                  "type": "file",
+                  "options": {
+                    "media": "videos"
+                  },
+                  "description": "Upload MP4/WebM, or paste a YouTube/Vimeo link or HTTPS video file URL."
+                },
+                {
+                  "name": "caption",
+                  "label": "Caption",
+                  "type": "text"
+                }
+              ]
+            },
+            {
+              "name": "links",
+              "label": "Links",
+              "fields": [
+                {
+                  "name": "links",
+                  "label": "Links",
+                  "list": {
+                    "collapsible": {
+                      "collapsed": true,
+                      "summary": "{fields.label}"
+                    }
+                  },
+                  "default": [],
+                  "type": "object",
+                  "fields": [
+                    {
+                      "name": "label",
+                      "label": "Label",
+                      "type": "string",
+                      "required": true
+                    },
+                    {
+                      "name": "url",
+                      "label": "Url",
+                      "description": "External HTTPS URL, or the /documents/... or /images/... path copied from Media.",
+                      "type": "string",
+                      "required": true
+                    },
+                    {
+                      "name": "enabled",
+                      "label": "Enabled",
+                      "type": "boolean",
+                      "default": true
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
         },
         {
           "name": "sections",

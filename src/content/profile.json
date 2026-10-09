@@ -5,9 +5,9 @@
   "photo": "",
   "photoAlt": "Freya Zhang’s personal travel photograph",
   "photoCaption": "A moment away from the desk.",
-  "email": "zzz0429x@163.com",
+  "email": "freyazhang968@nyu.edu",
   "github": "https://github.com/zz10965-alt",
-  "linkedin": "https://www.linkedin.com/in/freya-data",
+  "linkedin": "https://www.linkedin.com/in/freya-data/",
   "resume": "",
   "interests": [
     {
@@ -83,5 +83,5 @@
   "stickerEmphasis": "curious.",
   "professionalPortrait": "/images/profile/professional-portrait.jpg",
   "professionalPortraitAlt": "Freya Zhang’s professional portrait from her earlier portfolio",
-  "linkedinVerified": false
+  "linkedinVerified": true
 }

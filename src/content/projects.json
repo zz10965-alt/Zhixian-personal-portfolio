@@ -19,9 +19,7 @@
       {
         "id": "overview",
         "title": "Overview",
-        "paragraphs": [
-          "At the NYU SPS × Google Hackathon, our team is building a tool to turn a brand brief into a shortlist of relevant creators. I contributed to feature design and owned analytics metric design and interactive page logic, including LLM integration."
-        ],
+        "paragraphs": [],
         "bullets": [],
         "images": []
       },
@@ -57,38 +55,46 @@
         "images": []
       }
     ],
-    "resources": [
-      {
-        "label": "GitHub",
-        "type": "github",
-        "url": "https://github.com/zz10965-alt/Creator2",
-        "verified": true
-      },
-      {
-        "label": "Notebook",
-        "type": "notebook",
-        "url": "https://github.com/zz10965-alt/Creator2/blob/main/pipeline.ipynb",
-        "verified": true
-      },
-      {
-        "label": "Demo",
-        "type": "demo",
-        "url": "https://youtu.be/XFMcbs6lcrs",
-        "verified": false
-      },
-      {
-        "label": "Original project illustration",
-        "type": "download",
-        "url": "/images/projects/legacy-creator-shortlisting.svg",
-        "verified": true
-      }
-    ],
     "cover": "",
     "coverAlt": "",
     "note": "Prototype, not a production marketing system. No award is claimed.",
     "featured": false,
     "displayOrder": 1,
-    "cardDescription": "A creator-shortlisting prototype for comparing candidates and supporting human review."
+    "cardDescription": "A creator-shortlisting prototype for comparing candidates and supporting human review.",
+    "overviewBlocks": [
+      {
+        "type": "text",
+        "paragraphs": [
+          "At the NYU SPS × Google Hackathon, our team is building a tool to turn a brand brief into a shortlist of relevant creators. I contributed to feature design and owned analytics metric design and interactive page logic, including LLM integration."
+        ],
+        "bullets": []
+      },
+      {
+        "type": "links",
+        "links": [
+          {
+            "label": "GitHub",
+            "url": "https://github.com/zz10965-alt/Creator2",
+            "enabled": true
+          },
+          {
+            "label": "Notebook",
+            "url": "https://github.com/zz10965-alt/Creator2/blob/main/pipeline.ipynb",
+            "enabled": true
+          },
+          {
+            "label": "Demo",
+            "url": "https://youtu.be/XFMcbs6lcrs",
+            "enabled": false
+          },
+          {
+            "label": "Original project illustration",
+            "url": "/images/projects/legacy-creator-shortlisting.svg",
+            "enabled": true
+          }
+        ]
+      }
+    ]
   },
   {
     "id": "ecommerce-growth",
@@ -110,9 +116,7 @@
       {
         "id": "overview",
         "title": "Overview",
-        "paragraphs": [
-          "Which purchase paths convert, how does a promotion change demand, and who should receive a follow-up? This project examines those questions using 12,256,906 public Tianchi behavior records from 10,000 users. The analysis window is December 6–14, 2014."
-        ],
+        "paragraphs": [],
         "bullets": [],
         "images": []
       },
@@ -165,20 +169,36 @@
         "images": []
       }
     ],
-    "resources": [
-      {
-        "label": "Notebook",
-        "type": "notebook",
-        "url": "https://github.com/zz10965-alt/Data_Project/blob/main/04-ecommerce-analytics/growth_repurchase_analysis.ipynb",
-        "verified": true
-      }
-    ],
     "cover": "/images/projects/ecommerce.png",
     "coverAlt": "Purchase-path conversion comparison from the executed e-commerce notebook",
     "note": "",
     "featured": false,
     "displayOrder": 2,
-    "cardDescription": "Purchase-path and repurchase analysis to identify opportunities for e-commerce growth."
+    "cardDescription": "Purchase-path and repurchase analysis to identify opportunities for e-commerce growth.",
+    "overviewBlocks": [
+      {
+        "type": "text",
+        "paragraphs": [
+          "Which purchase paths convert, how does a promotion change demand, and who should receive a follow-up? This project examines those questions using 12,256,906 public Tianchi behavior records from 10,000 users. The analysis window is December 6–14, 2014."
+        ],
+        "bullets": []
+      },
+      {
+        "type": "links",
+        "links": [
+          {
+            "label": "Notebook",
+            "url": "https://github.com/zz10965-alt/Data_Project/blob/main/04-ecommerce-analytics/growth_repurchase_analysis.ipynb",
+            "enabled": true
+          },
+          {
+            "label": "Tableau Dashboard",
+            "url": "https://public.tableau.com/views/E-commerceGrowthPurchaseIntentAnalytics/1",
+            "enabled": false
+          }
+        ]
+      }
+    ]
   },
   {
     "id": "advertising-ab-testing",
@@ -200,9 +220,7 @@
       {
         "id": "overview",
         "title": "Overview",
-        "paragraphs": [
-          "A three-arm public advertising experiment compares two targeting strategies with a control. The full log contains 2,645,958 records; cleaning leaves 2,219,999. The question is which strategy warrants a staged rollout, rather than which pooled number looks largest."
-        ],
+        "paragraphs": [],
         "bullets": [],
         "images": []
       },
@@ -245,20 +263,37 @@
         "images": []
       }
     ],
-    "resources": [
-      {
-        "label": "Notebook",
-        "type": "notebook",
-        "url": "https://github.com/zz10965-alt/Data_Project/blob/main/05-advertising-analytics%28AB%20Test%29/abtest_ads_decision.ipynb",
-        "verified": true
-      }
-    ],
     "cover": "/images/dashboards/advertising-abtest-preview.webp",
     "coverAlt": "Original Power BI A/B Testing Decision Dashboard",
     "note": "",
     "featured": false,
     "displayOrder": 3,
-    "cardDescription": "An advertising experiment analysis that combines uncertainty checks with rollout recommendations."
+    "cardDescription": "An advertising experiment analysis that combines uncertainty checks with rollout recommendations.",
+    "overviewBlocks": [
+      {
+        "type": "text",
+        "paragraphs": [
+          "A three-arm public advertising experiment compares two targeting strategies with a control. The full log contains 2,645,958 records; cleaning leaves 2,219,999. The question is which strategy warrants a staged rollout, rather than which pooled number looks largest."
+        ],
+        "bullets": []
+      },
+      {
+        "type": "image",
+        "src": "/images/dashboards/advertising-abtest.png",
+        "alt": "Original A/B Testing Decision Dashboard showing CTR comparison, confidence intervals, daily trends and rollout recommendations",
+        "caption": "Screenshot from the owner’s Data_Project repository. Rollout and click-impact figures are analytical recommendations and estimates, not realized business outcomes."
+      },
+      {
+        "type": "links",
+        "links": [
+          {
+            "label": "Notebook",
+            "url": "https://github.com/zz10965-alt/Data_Project/blob/main/05-advertising-analytics%28AB%20Test%29/abtest_ads_decision.ipynb",
+            "enabled": true
+          }
+        ]
+      }
+    ]
   },
   {
     "id": "ai-safety-evaluation",
@@ -279,9 +314,7 @@
       {
         "id": "overview",
         "title": "Overview",
-        "paragraphs": [
-          "The UN-ICC × NYU capstone asks whether conversational AI tools can give safe, medically accurate, age-appropriate, and locally feasible guidance for women and adolescents. My responsibility is the testing workstream."
-        ],
+        "paragraphs": [],
         "bullets": [],
         "images": []
       },
@@ -313,20 +346,31 @@
         "images": []
       }
     ],
-    "resources": [
-      {
-        "label": "Original project illustration",
-        "type": "download",
-        "url": "/images/projects/legacy-uncap-ai-safety.svg",
-        "verified": true
-      }
-    ],
     "cover": "",
     "coverAlt": "",
     "note": "Proposal-stage work; no evaluation results or completed test dataset are reported.",
     "featured": false,
     "displayOrder": 4,
-    "cardDescription": "A proposed evaluation framework for testing AI safety and documenting evidence."
+    "cardDescription": "A proposed evaluation framework for testing AI safety and documenting evidence.",
+    "overviewBlocks": [
+      {
+        "type": "text",
+        "paragraphs": [
+          "The UN-ICC × NYU capstone asks whether conversational AI tools can give safe, medically accurate, age-appropriate, and locally feasible guidance for women and adolescents. My responsibility is the testing workstream."
+        ],
+        "bullets": []
+      },
+      {
+        "type": "links",
+        "links": [
+          {
+            "label": "Original project illustration",
+            "url": "/images/projects/legacy-uncap-ai-safety.svg",
+            "enabled": true
+          }
+        ]
+      }
+    ]
   },
   {
     "id": "medicare-payments",
@@ -347,9 +391,7 @@
       {
         "id": "overview",
         "title": "Overview",
-        "paragraphs": [
-          "How much do Medicare inpatient payments vary across states, and how should providers benchmark them? Our course team analyzed CMS fiscal-year 2023 fee-for-service data released in 2025: 146,427 hospital–DRG records, 2,945 hospitals, and 534 DRGs."
-        ],
+        "paragraphs": [],
         "bullets": [],
         "images": []
       },
@@ -392,20 +434,31 @@
         "images": []
       }
     ],
-    "resources": [
-      {
-        "label": "Original project illustration",
-        "type": "download",
-        "url": "/images/projects/legacy-medicare.svg",
-        "verified": true
-      }
-    ],
     "cover": "",
     "coverAlt": "",
     "note": "",
     "featured": false,
     "displayOrder": 5,
-    "cardDescription": "Comparing geographic variation in inpatient payments to support state-level benchmarking."
+    "cardDescription": "Comparing geographic variation in inpatient payments to support state-level benchmarking.",
+    "overviewBlocks": [
+      {
+        "type": "text",
+        "paragraphs": [
+          "How much do Medicare inpatient payments vary across states, and how should providers benchmark them? Our course team analyzed CMS fiscal-year 2023 fee-for-service data released in 2025: 146,427 hospital–DRG records, 2,945 hospitals, and 534 DRGs."
+        ],
+        "bullets": []
+      },
+      {
+        "type": "links",
+        "links": [
+          {
+            "label": "Original project illustration",
+            "url": "/images/projects/legacy-medicare.svg",
+            "enabled": true
+          }
+        ]
+      }
+    ]
   },
   {
     "id": "employee-attrition",
@@ -426,9 +479,7 @@
       {
         "id": "overview",
         "title": "Overview",
-        "paragraphs": [
-          "Analyze 5,000 employee records across eight departments and 25 roles to understand attrition patterns and prioritize retention conversations. The analysis dataset is not attributed to a named employer."
-        ],
+        "paragraphs": [],
         "bullets": [],
         "images": []
       },
@@ -468,20 +519,31 @@
         "images": []
       }
     ],
-    "resources": [
-      {
-        "label": "Notebook",
-        "type": "notebook",
-        "url": "https://github.com/zz10965-alt/Data_Project/blob/main/03-employee-attrition/Employee_Attrition_Risk_Analysis.ipynb",
-        "verified": true
-      }
-    ],
     "cover": "/images/projects/employee-attrition.png",
     "coverAlt": "Employee attrition odds-ratio forest plot",
     "note": "",
     "featured": false,
     "displayOrder": 6,
-    "cardDescription": "Modeling employee attrition risk and examining the factors associated with turnover."
+    "cardDescription": "Modeling employee attrition risk and examining the factors associated with turnover.",
+    "overviewBlocks": [
+      {
+        "type": "text",
+        "paragraphs": [
+          "Analyze 5,000 employee records across eight departments and 25 roles to understand attrition patterns and prioritize retention conversations. The analysis dataset is not attributed to a named employer."
+        ],
+        "bullets": []
+      },
+      {
+        "type": "links",
+        "links": [
+          {
+            "label": "Notebook",
+            "url": "https://github.com/zz10965-alt/Data_Project/blob/main/03-employee-attrition/Employee_Attrition_Risk_Analysis.ipynb",
+            "enabled": true
+          }
+        ]
+      }
+    ]
   },
   {
     "id": "furniture-database",
@@ -502,9 +564,7 @@
       {
         "id": "overview",
         "title": "Overview",
-        "paragraphs": [
-          "Contributed to a relational database for sales and customer analytics in the Perfect Valley Furniture case-company scenario. The project is a team deliverable, not a production engagement with a real client."
-        ],
+        "paragraphs": [],
         "bullets": [],
         "images": []
       },
@@ -531,20 +591,31 @@
         "images": []
       }
     ],
-    "resources": [
-      {
-        "label": "Original project illustration",
-        "type": "download",
-        "url": "/images/projects/legacy-furniture-db.svg",
-        "verified": true
-      }
-    ],
     "cover": "",
     "coverAlt": "",
     "note": "",
     "featured": false,
     "displayOrder": 7,
-    "cardDescription": "A relational data foundation for sales and customer analysis, from entity modeling to reusable SQL."
+    "cardDescription": "A relational data foundation for sales and customer analysis, from entity modeling to reusable SQL.",
+    "overviewBlocks": [
+      {
+        "type": "text",
+        "paragraphs": [
+          "Contributed to a relational database for sales and customer analytics in the Perfect Valley Furniture case-company scenario. The project is a team deliverable, not a production engagement with a real client."
+        ],
+        "bullets": []
+      },
+      {
+        "type": "links",
+        "links": [
+          {
+            "label": "Original project illustration",
+            "url": "/images/projects/legacy-furniture-db.svg",
+            "enabled": true
+          }
+        ]
+      }
+    ]
   },
   {
     "id": "conversational-ai-agent",
@@ -567,9 +638,7 @@
       {
         "id": "overview",
         "title": "Overview",
-        "paragraphs": [
-          "Designed and developed a multimodal agent around a dialogue → memory → knowledge retrieval → live search → response generation workflow."
-        ],
+        "paragraphs": [],
         "bullets": [],
         "images": []
       },
@@ -607,26 +676,36 @@
         "images": []
       }
     ],
-    "resources": [
-      {
-        "label": "GitHub",
-        "type": "github",
-        "url": "https://github.com/zz10965-alt/ai-conversational-agent",
-        "verified": true
-      },
-      {
-        "label": "Demo",
-        "type": "demo",
-        "url": "https://zz10965-alt.github.io/ai-conversational-agent/",
-        "verified": false
-      }
-    ],
     "cover": "",
     "coverAlt": "",
     "note": "",
     "featured": false,
     "displayOrder": 8,
-    "cardDescription": "A conversational assistant prototype for answering questions and organizing information."
+    "cardDescription": "A conversational assistant prototype for answering questions and organizing information.",
+    "overviewBlocks": [
+      {
+        "type": "text",
+        "paragraphs": [
+          "Designed and developed a multimodal agent around a dialogue → memory → knowledge retrieval → live search → response generation workflow."
+        ],
+        "bullets": []
+      },
+      {
+        "type": "links",
+        "links": [
+          {
+            "label": "GitHub",
+            "url": "https://github.com/zz10965-alt/ai-conversational-agent",
+            "enabled": true
+          },
+          {
+            "label": "Demo",
+            "url": "https://zz10965-alt.github.io/ai-conversational-agent/",
+            "enabled": false
+          }
+        ]
+      }
+    ]
   },
   {
     "id": "starshow",
@@ -648,9 +727,7 @@
       {
         "id": "overview",
         "title": "Overview",
-        "paragraphs": [
-          "Designed a concert companion covering show discovery, ticket-sale reminders, concert-day planning, seat recommendations, and memory keeping."
-        ],
+        "paragraphs": [],
         "bullets": [],
         "images": []
       },
@@ -688,26 +765,36 @@
         "images": []
       }
     ],
-    "resources": [
-      {
-        "label": "GitHub",
-        "type": "github",
-        "url": "https://github.com/zz10965-alt/starshows-mobile",
-        "verified": true
-      },
-      {
-        "label": "Demo",
-        "type": "demo",
-        "url": "https://zz10965-alt.github.io/starshows-mobile/",
-        "verified": false
-      }
-    ],
     "cover": "/images/projects/starshow.png",
     "coverAlt": "Original StarShow mobile prototype home screen",
     "note": "",
     "featured": false,
     "displayOrder": 9,
-    "cardDescription": "A mobile product prototype with scripted assistance and simulated social interactions."
+    "cardDescription": "A mobile product prototype with scripted assistance and simulated social interactions.",
+    "overviewBlocks": [
+      {
+        "type": "text",
+        "paragraphs": [
+          "Designed a concert companion covering show discovery, ticket-sale reminders, concert-day planning, seat recommendations, and memory keeping."
+        ],
+        "bullets": []
+      },
+      {
+        "type": "links",
+        "links": [
+          {
+            "label": "GitHub",
+            "url": "https://github.com/zz10965-alt/starshows-mobile",
+            "enabled": true
+          },
+          {
+            "label": "Demo",
+            "url": "https://zz10965-alt.github.io/starshows-mobile/",
+            "enabled": false
+          }
+        ]
+      }
+    ]
   },
   {
     "id": "ev-battery-failure",
@@ -729,9 +816,7 @@
       {
         "id": "overview",
         "title": "Overview",
-        "paragraphs": [
-          "Predict battery failure and examine an intervention threshold using a synthetic dataset of 200,000 records and 70 fields. The source record’s narrative remains marked pending owner review."
-        ],
+        "paragraphs": [],
         "bullets": [],
         "images": []
       },
@@ -771,20 +856,31 @@
         "images": []
       }
     ],
-    "resources": [
-      {
-        "label": "Notebook",
-        "type": "notebook",
-        "url": "https://github.com/zz10965-alt/Data_Project/blob/main/01-ev-battery-failure/EV_Battery_Failure_DS.ipynb",
-        "verified": true
-      }
-    ],
     "cover": "/images/projects/ev-battery.png",
     "coverAlt": "Battery-failure precision–recall curve",
     "note": "Narrative pending owner review. All displayed results refer to synthetic data.",
     "featured": false,
     "displayOrder": 10,
-    "cardDescription": "Battery-failure classification using synthetic data and precision–recall evaluation."
+    "cardDescription": "Battery-failure classification using synthetic data and precision–recall evaluation.",
+    "overviewBlocks": [
+      {
+        "type": "text",
+        "paragraphs": [
+          "Predict battery failure and examine an intervention threshold using a synthetic dataset of 200,000 records and 70 fields. The source record’s narrative remains marked pending owner review."
+        ],
+        "bullets": []
+      },
+      {
+        "type": "links",
+        "links": [
+          {
+            "label": "Notebook",
+            "url": "https://github.com/zz10965-alt/Data_Project/blob/main/01-ev-battery-failure/EV_Battery_Failure_DS.ipynb",
+            "enabled": true
+          }
+        ]
+      }
+    ]
   },
   {
     "id": "ev-adoption-drivers",
@@ -806,9 +902,7 @@
       {
         "id": "overview",
         "title": "Overview",
-        "paragraphs": [
-          "Explore where electric-vehicle adoption grows fastest and which factors are associated with it in a course-provided panel: 25 countries × 16 years × three segments, 2010–2025. The 1,200 source rows aggregate to 400 country-year observations for modeling."
-        ],
+        "paragraphs": [],
         "bullets": [],
         "images": []
       },
@@ -849,19 +943,30 @@
         "images": []
       }
     ],
-    "resources": [
-      {
-        "label": "Notebook",
-        "type": "notebook",
-        "url": "https://github.com/zz10965-alt/Data_Project/blob/main/02-ev-adoption-analysis/EV_Adoption_Drivers_Analysis.ipynb",
-        "verified": true
-      }
-    ],
     "cover": "/images/projects/ev-adoption.png",
     "coverAlt": "Regional EV adoption trend chart from the source notebook",
     "note": "",
     "featured": false,
     "displayOrder": 11,
-    "cardDescription": "Country-year analysis of EV adoption, infrastructure, regulation, and model robustness."
+    "cardDescription": "Country-year analysis of EV adoption, infrastructure, regulation, and model robustness.",
+    "overviewBlocks": [
+      {
+        "type": "text",
+        "paragraphs": [
+          "Explore where electric-vehicle adoption grows fastest and which factors are associated with it in a course-provided panel: 25 countries × 16 years × three segments, 2010–2025. The 1,200 source rows aggregate to 400 country-year observations for modeling."
+        ],
+        "bullets": []
+      },
+      {
+        "type": "links",
+        "links": [
+          {
+            "label": "Notebook",
+            "url": "https://github.com/zz10965-alt/Data_Project/blob/main/02-ev-adoption-analysis/EV_Adoption_Drivers_Analysis.ipynb",
+            "enabled": true
+          }
+        ]
+      }
+    ]
   }
 ]

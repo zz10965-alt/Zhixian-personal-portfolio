@@ -12,10 +12,16 @@ function covered(definition, fields, path) {
     const definition = properties[field.name];
     if (definition.type === 'array') assert.ok(field.list, `${path}.${field.name}`);
     const nested = definition.type === 'array' ? definition.items : definition;
-    if (nested.type === 'object') covered(nested, field.fields, `${path}.${field.name}`);
+    if (nested.type === 'object') {
+      if (field.type === 'block') {
+        assert.deepEqual(field.blocks.map(block => block.name), nested.properties.type.enum);
+        const union = new Map(field.blocks.flatMap(block => block.fields).map(field => [field.name,field]));
+        union.set('type',{name:'type'}); covered(nested,[...union.values()],`${path}.${field.name}`);
+      } else covered(nested, field.fields, `${path}.${field.name}`);
+    }
   }
 }
-test('visual CMS covers every current field and both upload libraries', () => {
+test('visual CMS covers every current field and all upload libraries', () => {
   assert.equal(cms.content.length, Object.keys(contract).length);
   for (const entry of cms.content) {
     assert.equal(entry.type, 'file'); assert.equal(entry.format, 'json');
@@ -23,14 +29,14 @@ test('visual CMS covers every current field and both upload libraries', () => {
     if (contract[entry.name].type === 'array') assert.equal(entry.list, true);
     covered(contract[entry.name], entry.fields, entry.name);
   }
-  assert.deepEqual(cms.media.map(media => [media.input,media.output]), [['public/images','/images'],['public/documents','/documents']]);
+  assert.deepEqual(cms.media.map(media => [media.input,media.output]), [['public/images','/images'],['public/documents','/documents'],['public/videos','/videos']]);
 });
 test('CMS omission of empty fields restores rendering defaults without losing real content', () => {
   const project = normalizeContent({id:'sample',title:'Real title',featured:true,displayOrder:7,sections:[{id:'findings',title:'Findings',paragraphs:['An actual finding.']}]}, contract.projects.items);
   assert.equal(project.title,'Real title'); assert.equal(project.featured,true); assert.equal(project.displayOrder,7);
-  assert.equal(normalizeContent({url:'https://example.com'},contract.projects.items.properties.resources.items).verified,true);
-  assert.equal(normalizeContent({verified:false},contract.projects.items.properties.resources.items).verified,false);
-  assert.deepEqual(project.resources,[]); assert.equal(project.cover,'');
+  assert.equal(normalizeContent({url:'https://example.com'},contract.projects.items.properties.overviewBlocks.items.properties.links.items).enabled,true);
+  assert.equal(normalizeContent({enabled:false},contract.projects.items.properties.overviewBlocks.items.properties.links.items).enabled,false);
+  assert.deepEqual(project.overviewBlocks,[]); assert.equal(project.cover,'');
   assert.deepEqual(project.sections[0].images,[]); assert.deepEqual(project.sections[0].bullets,[]);
   assert.equal(normalizeContent({},contract.profile).linkedinVerified,false);
 });

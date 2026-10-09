@@ -1,0 +1,13 @@
+---
+import { mediaPath } from '../lib/content';
+import { visibleOverviewBlocks, videoEmbed } from '../lib/overview.mjs';
+const { blocks = [] } = Astro.props;
+---
+<div class="overview-blocks">
+  {visibleOverviewBlocks(blocks).map(block => <div class="overview-block" data-block-type={block.type}>
+    {block.type === 'text' && <>{block.heading && <h3>{block.heading}</h3>}{block.paragraphs?.filter(text => text.trim()).map(text => <p>{text}</p>)}{block.bullets?.length > 0 && <ul>{block.bullets.filter(text => text.trim()).map(text => <li>{text}</li>)}</ul>}</>}
+    {block.type === 'image' && <figure><a href={mediaPath(block.src)} target="_blank" rel="noopener noreferrer"><img src={mediaPath(block.src)} alt={block.alt} loading="lazy" /></a>{block.caption && <figcaption>{block.caption}</figcaption>}</figure>}
+    {block.type === 'video' && <figure>{/\.(mp4|webm)(?:[?#]|$)/i.test(block.videoUrl) ? <video controls preload="metadata" src={mediaPath(block.videoUrl)} aria-label={block.caption || 'Project video'} /> : videoEmbed(block.videoUrl) ? <iframe src={videoEmbed(block.videoUrl)} title={block.caption || 'Project video'} loading="lazy" allow="fullscreen; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin" /> : <a class="text-link" href={block.videoUrl} target="_blank" rel="noopener noreferrer">{block.caption || 'Watch video'} ↗</a>}{block.caption && <figcaption>{block.caption}</figcaption>}</figure>}
+    {block.type === 'links' && <div class="overview-links">{block.links.filter(link => link.enabled !== false && link.label?.trim() && /^(https:\/\/|\/(?!\/))/.test(link.url ?? '')).map(link => <a href={mediaPath(link.url)} target="_blank" rel="noopener noreferrer">{link.label} <span aria-hidden="true">↗</span></a>)}</div>}
+  </div>)}
+</div>
