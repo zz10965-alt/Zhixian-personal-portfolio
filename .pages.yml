@@ -2,7 +2,7 @@
   "media": [
     {
       "name": "images",
-      "label": "Photos, Logos & Project Images",
+      "label": "图片 / 公司图标 / 项目截图",
       "input": "public/images",
       "output": "/images",
       "extensions": [
@@ -16,7 +16,7 @@
     },
     {
       "name": "documents",
-      "label": "Resume, PDFs & Slides",
+      "label": "简历 / PDF / Slides",
       "input": "public/documents",
       "output": "/documents",
       "extensions": [
@@ -28,7 +28,7 @@
     },
     {
       "name": "videos",
-      "label": "Project Videos",
+      "label": "项目视频",
       "input": "public/videos",
       "output": "/videos",
       "extensions": [
@@ -40,68 +40,126 @@
   "content": [
     {
       "name": "profile",
-      "label": "About Me & Contacts",
+      "label": "1. 首页 / About Me",
       "type": "file",
       "path": "src/content/profile.json",
       "format": "json",
       "fields": [
         {
-          "name": "email",
-          "label": "Email",
+          "name": "name",
+          "label": "1. 导航栏姓名",
           "type": "string"
         },
         {
           "name": "eyebrow",
-          "label": "Eyebrow",
-          "type": "string"
-        },
-        {
-          "name": "github",
-          "label": "Github",
-          "type": "string"
-        },
-        {
-          "name": "headlineEmphasis",
-          "label": "Headline Emphasis",
+          "label": "2. 姓名上方的小标语",
           "type": "string"
         },
         {
           "name": "headlineLead",
-          "label": "Headline Lead",
+          "label": "2. 大标题前半句（Hi, I’m）",
           "type": "string"
         },
         {
+          "name": "headlineEmphasis",
+          "label": "2. 大标题紫色部分（Freya）",
+          "type": "string"
+        },
+        {
+          "name": "introduction",
+          "label": "2. 自我介绍正文",
+          "type": "text"
+        },
+        {
           "name": "highlights",
-          "label": "Highlights",
+          "label": "3. 自我介绍下方的背景信息",
           "list": {
             "collapsible": {
               "collapsed": true,
-              "summary": "{index}"
+              "summary": "{fields.text}"
             }
           },
           "default": [],
           "type": "object",
           "fields": [
             {
+              "name": "text",
+              "label": "文字",
+              "type": "text"
+            },
+            {
               "name": "detail",
-              "label": "Detail",
+              "label": "第二行文字（可留空）",
               "type": "string"
             },
             {
               "name": "icon",
-              "label": "Icon",
-              "type": "string"
-            },
-            {
-              "name": "text",
-              "label": "Text",
-              "type": "text"
+              "label": "图标样式",
+              "type": "string",
+              "hidden": true
             }
           ]
         },
         {
+          "name": "photo",
+          "label": "4. 上传 / 选择生活照",
+          "type": "image",
+          "options": {
+            "media": "images"
+          }
+        },
+        {
+          "name": "photoCaption",
+          "label": "4. 生活照下方说明（可留空）",
+          "type": "string"
+        },
+        {
+          "name": "photoAlt",
+          "label": "4. 照片替代文字（可留空）",
+          "type": "string"
+        },
+        {
+          "name": "email",
+          "label": "5. 邮箱",
+          "type": "string"
+        },
+        {
+          "name": "linkedin",
+          "label": "5. LinkedIn 链接",
+          "type": "string"
+        },
+        {
+          "name": "linkedinVerified",
+          "label": "5. 显示 LinkedIn 链接",
+          "type": "boolean",
+          "default": false
+        },
+        {
+          "name": "github",
+          "label": "5. GitHub 链接",
+          "type": "string"
+        },
+        {
+          "name": "resume",
+          "label": "5. 上传 / 选择简历",
+          "type": "file",
+          "options": {
+            "media": "documents"
+          }
+        },
+        {
+          "name": "interestsHeading",
+          "label": "6. Beyond Work 标题",
+          "type": "string"
+        },
+        {
+          "name": "interestsNote",
+          "label": "6. 标题右侧短句",
+          "type": "string"
+        },
+        {
           "name": "interests",
-          "label": "Interests",
+          "label": "6. Beyond Work — 生活兴趣卡片",
           "list": {
             "collapsible": {
               "collapsed": true,
@@ -112,180 +170,1082 @@
           "type": "object",
           "fields": [
             {
-              "name": "description",
-              "label": "Description",
-              "type": "text"
+              "name": "title",
+              "label": "卡片名称",
+              "type": "string",
+              "required": true
             },
             {
-              "name": "icon",
-              "label": "Icon",
-              "type": "string"
+              "name": "label",
+              "label": "显示文字",
+              "type": "string",
+              "hidden": true
             },
             {
               "name": "image",
-              "label": "Image",
+              "label": "上传 / 选择图片",
               "type": "image",
               "options": {
                 "media": "images"
               }
             },
             {
+              "name": "description",
+              "label": "图片替代说明（网页不显示）",
+              "type": "text",
+              "hidden": true
+            },
+            {
               "name": "imageAlt",
-              "label": "Image Alt",
+              "label": "图片替代文字（可留空）",
               "type": "string"
             },
             {
               "name": "imagePosition",
-              "label": "Image Position",
-              "type": "string"
+              "label": "图片裁剪位置",
+              "type": "string",
+              "hidden": true
             },
             {
-              "name": "label",
-              "label": "Label",
+              "name": "icon",
+              "label": "图标样式",
+              "type": "string",
+              "hidden": true
+            }
+          ]
+        },
+        {
+          "name": "photoPosition",
+          "label": "照片裁剪位置",
+          "type": "string",
+          "hidden": true
+        },
+        {
+          "name": "portraitPlaceholderAlt",
+          "label": "Portrait Placeholder Alt",
+          "type": "string",
+          "hidden": true
+        },
+        {
+          "name": "portraitPlaceholderEmphasis",
+          "label": "Portrait Placeholder Emphasis",
+          "type": "string",
+          "hidden": true
+        },
+        {
+          "name": "portraitPlaceholderLead",
+          "label": "Portrait Placeholder Lead",
+          "type": "string",
+          "hidden": true
+        },
+        {
+          "name": "portraitPlaceholderNote",
+          "label": "Portrait Placeholder Note",
+          "type": "string",
+          "hidden": true
+        },
+        {
+          "name": "professionalPortrait",
+          "label": "备用证件照",
+          "type": "image",
+          "options": {
+            "media": "images"
+          },
+          "hidden": true
+        },
+        {
+          "name": "professionalPortraitAlt",
+          "label": "备用证件照替代文字",
+          "type": "string",
+          "hidden": true
+        },
+        {
+          "name": "stickerEmphasis",
+          "label": "Sticker Emphasis",
+          "type": "string",
+          "hidden": true
+        },
+        {
+          "name": "stickerLead",
+          "label": "Sticker Lead",
+          "type": "string",
+          "hidden": true
+        }
+      ]
+    },
+    {
+      "name": "education",
+      "label": "2. Education / 教育",
+      "type": "file",
+      "path": "src/content/education.json",
+      "format": "json",
+      "fields": [
+        {
+          "name": "university",
+          "label": "学校名称",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "school",
+          "label": "学院",
+          "type": "string"
+        },
+        {
+          "name": "shortName",
+          "label": "学校简称",
+          "type": "string"
+        },
+        {
+          "name": "logo",
+          "label": "上传 / 选择图标",
+          "type": "image",
+          "options": {
+            "media": "images"
+          }
+        },
+        {
+          "name": "logoAlt",
+          "label": "图标替代文字（可留空）",
+          "type": "string"
+        },
+        {
+          "name": "location",
+          "label": "地点",
+          "type": "string"
+        },
+        {
+          "name": "degree",
+          "label": "学位",
+          "type": "string"
+        },
+        {
+          "name": "major",
+          "label": "专业",
+          "type": "string"
+        },
+        {
+          "name": "start",
+          "label": "开始时间",
+          "type": "string"
+        },
+        {
+          "name": "end",
+          "label": "结束时间",
+          "type": "string"
+        },
+        {
+          "name": "period",
+          "label": "时间线上的年份",
+          "type": "string"
+        },
+        {
+          "name": "timelineLabel",
+          "label": "时间线上的短标题",
+          "type": "string"
+        },
+        {
+          "name": "gpa",
+          "label": "成绩 / 排名",
+          "type": "string"
+        },
+        {
+          "name": "gpaLabel",
+          "label": "成绩左侧文字（可留空）",
+          "type": "string"
+        },
+        {
+          "name": "coursework",
+          "label": "课程",
+          "list": true,
+          "default": [],
+          "type": "string"
+        },
+        {
+          "name": "awards",
+          "label": "荣誉",
+          "list": {
+            "collapsible": {
+              "collapsed": true,
+              "summary": "{fields.title}"
+            }
+          },
+          "default": [],
+          "type": "object",
+          "fields": [
+            {
+              "name": "date",
+              "label": "时间",
               "type": "string"
             },
             {
               "name": "title",
-              "label": "Title",
+              "label": "标题",
               "type": "string",
               "required": true
             }
           ]
         },
         {
-          "name": "interestsHeading",
-          "label": "Interests Heading",
-          "type": "string"
-        },
-        {
-          "name": "interestsNote",
-          "label": "Interests Note",
-          "type": "string"
-        },
-        {
-          "name": "introduction",
-          "label": "Introduction",
+          "name": "highlights",
+          "label": "要点",
+          "list": true,
+          "default": [],
           "type": "text"
         },
         {
-          "name": "linkedin",
-          "label": "Linkedin",
+          "name": "reviewNote",
+          "label": "补充说明",
+          "type": "text"
+        },
+        {
+          "name": "courseworkNote",
+          "label": "课程下方说明",
+          "type": "text"
+        },
+        {
+          "name": "description",
+          "label": "介绍文字",
+          "type": "text",
+          "hidden": true
+        },
+        {
+          "name": "id",
+          "label": "记录英文短名（新建时填写）",
+          "type": "string",
+          "required": true,
+          "pattern": {
+            "regex": "^[a-z][a-z0-9-]*$",
+            "message": "Use a unique lowercase ID with letters, numbers and hyphens."
+          }
+        }
+      ],
+      "list": true
+    },
+    {
+      "name": "experience",
+      "label": "3. Experience / 工作经历",
+      "type": "file",
+      "path": "src/content/experience.json",
+      "format": "json",
+      "fields": [
+        {
+          "name": "company",
+          "label": "公司名称",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "logo",
+          "label": "上传 / 选择图标",
+          "type": "image",
+          "options": {
+            "media": "images"
+          }
+        },
+        {
+          "name": "logoAlt",
+          "label": "图标替代文字（可留空）",
           "type": "string"
         },
         {
-          "name": "linkedinVerified",
-          "label": "Linkedin Verified",
-          "description": "Enable the LinkedIn button after confirming the profile URL.",
+          "name": "monogram",
+          "label": "没有图标时显示的简称",
+          "type": "string"
+        },
+        {
+          "name": "role",
+          "label": "职位",
+          "type": "string"
+        },
+        {
+          "name": "team",
+          "label": "部门",
+          "type": "string"
+        },
+        {
+          "name": "dates",
+          "label": "时间",
+          "type": "string"
+        },
+        {
+          "name": "location",
+          "label": "地点",
+          "type": "string"
+        },
+        {
+          "name": "summary",
+          "label": "工作介绍正文",
+          "type": "text"
+        },
+        {
+          "name": "contributions",
+          "label": "工作内容（每项一条）",
+          "list": true,
+          "default": [],
+          "type": "text"
+        },
+        {
+          "name": "tags",
+          "label": "技术栈",
+          "list": true,
+          "default": [],
+          "type": "string"
+        },
+        {
+          "name": "featured",
+          "label": "优先展示",
           "type": "boolean",
           "default": false
         },
         {
-          "name": "name",
-          "label": "Name",
+          "name": "displayOrder",
+          "label": "显示顺序（数字小的在前）",
+          "type": "number",
+          "default": 0,
+          "options": {
+            "min": 0
+          }
+        },
+        {
+          "name": "id",
+          "label": "记录英文短名（新建时填写）",
+          "type": "string",
+          "required": true,
+          "pattern": {
+            "regex": "^[a-z][a-z0-9-]*$",
+            "message": "Use a unique lowercase ID with letters, numbers and hyphens."
+          }
+        },
+        {
+          "name": "note",
+          "label": "补充说明",
+          "type": "text",
+          "hidden": true
+        },
+        {
+          "name": "start",
+          "label": "开始时间",
+          "type": "string",
+          "hidden": true
+        }
+      ],
+      "list": true
+    },
+    {
+      "name": "projects",
+      "label": "4. Projects / 项目",
+      "type": "file",
+      "path": "src/content/projects.json",
+      "format": "json",
+      "fields": [
+        {
+          "name": "title",
+          "label": "1. 项目名称",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "tags",
+          "label": "1. 技术栈（名称右侧）",
+          "list": true,
+          "default": [],
           "type": "string"
         },
         {
-          "name": "photo",
-          "label": "Photo",
-          "description": "Choose/upload the intended lifestyle photo. The professional headshot is stored separately.",
+          "name": "overviewBlocks",
+          "label": "2. Overview — 文字、图片、视频、链接",
+          "list": {
+            "collapsible": {
+              "collapsed": false,
+              "summary": "{fields.type}"
+            }
+          },
+          "default": [],
+          "type": "block",
+          "blockKey": "type",
+          "blocks": [
+            {
+              "name": "text",
+              "label": "文字",
+              "fields": [
+                {
+                  "name": "heading",
+                  "label": "小标题（可留空）",
+                  "type": "string"
+                },
+                {
+                  "name": "paragraphs",
+                  "label": "正文",
+                  "list": true,
+                  "default": [],
+                  "type": "text"
+                },
+                {
+                  "name": "bullets",
+                  "label": "要点（每项一条）",
+                  "list": true,
+                  "default": [],
+                  "type": "text"
+                }
+              ]
+            },
+            {
+              "name": "image",
+              "label": "图片",
+              "fields": [
+                {
+                  "name": "src",
+                  "label": "上传 / 选择图片",
+                  "type": "image",
+                  "options": {
+                    "media": "images"
+                  }
+                },
+                {
+                  "name": "caption",
+                  "label": "图片下方说明（可留空）",
+                  "type": "text"
+                },
+                {
+                  "name": "alt",
+                  "label": "图片替代文字（可留空）",
+                  "type": "string"
+                }
+              ]
+            },
+            {
+              "name": "video",
+              "label": "视频",
+              "fields": [
+                {
+                  "name": "videoUrl",
+                  "label": "上传视频 / 粘贴视频链接",
+                  "type": "file",
+                  "options": {
+                    "media": "videos"
+                  }
+                },
+                {
+                  "name": "caption",
+                  "label": "视频下方说明（可留空）",
+                  "type": "text"
+                }
+              ]
+            },
+            {
+              "name": "links",
+              "label": "链接",
+              "fields": [
+                {
+                  "name": "links",
+                  "label": "Links",
+                  "list": {
+                    "collapsible": {
+                      "collapsed": true,
+                      "summary": "{fields.label}"
+                    }
+                  },
+                  "default": [],
+                  "type": "object",
+                  "fields": [
+                    {
+                      "name": "label",
+                      "label": "显示文字",
+                      "type": "string",
+                      "required": true
+                    },
+                    {
+                      "name": "url",
+                      "label": "链接地址",
+                      "type": "string",
+                      "required": true
+                    },
+                    {
+                      "name": "enabled",
+                      "label": "显示这个链接",
+                      "type": "boolean",
+                      "default": true
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "sections",
+          "label": "3. 详情板块（展开对应标题编辑）",
+          "list": {
+            "collapsible": {
+              "collapsed": true,
+              "summary": "{fields.title}"
+            }
+          },
+          "default": [],
+          "type": "object",
+          "fields": [
+            {
+              "name": "title",
+              "label": "板块标题（与网页左侧目录对应）",
+              "type": "string",
+              "required": true
+            },
+            {
+              "name": "paragraphs",
+              "label": "正文",
+              "list": true,
+              "default": [],
+              "type": "text"
+            },
+            {
+              "name": "bullets",
+              "label": "要点（每项一条）",
+              "list": true,
+              "default": [],
+              "type": "text"
+            },
+            {
+              "name": "images",
+              "label": "图片与图下说明",
+              "list": {
+                "collapsible": {
+                  "collapsed": true,
+                  "summary": "{fields.caption}"
+                }
+              },
+              "default": [],
+              "type": "object",
+              "fields": [
+                {
+                  "name": "src",
+                  "label": "上传 / 选择图片",
+                  "type": "image",
+                  "options": {
+                    "media": "images"
+                  },
+                  "required": true
+                },
+                {
+                  "name": "caption",
+                  "label": "图片下方说明（可留空）",
+                  "type": "text"
+                },
+                {
+                  "name": "alt",
+                  "label": "图片替代文字（可留空）",
+                  "type": "string",
+                  "required": true
+                }
+              ]
+            },
+            {
+              "name": "id",
+              "label": "板块英文短名（新建时填写）",
+              "type": "string",
+              "required": true,
+              "pattern": {
+                "regex": "^[a-z][a-z0-9-]*$",
+                "message": "Use a unique lowercase ID with letters, numbers and hyphens."
+              }
+            }
+          ]
+        },
+        {
+          "name": "cover",
+          "label": "4. 项目列表 — 封面图片",
           "type": "image",
           "options": {
             "media": "images"
           }
         },
         {
-          "name": "photoAlt",
-          "label": "Photo Alt",
+          "name": "coverAlt",
+          "label": "4. 封面替代文字（可留空）",
           "type": "string"
         },
         {
-          "name": "photoCaption",
-          "label": "Photo Caption",
+          "name": "cardDescription",
+          "label": "4. 项目列表 — 简短介绍",
+          "type": "text",
+          "options": {
+            "maxlength": 180
+          }
+        },
+        {
+          "name": "category",
+          "label": "4. 项目列表 — 分类",
+          "type": "select",
+          "required": true,
+          "options": {
+            "values": [
+              {
+                "label": "Data & Business Analytics",
+                "value": "data-business-analytics"
+              },
+              {
+                "label": "Data Science",
+                "value": "data-science"
+              },
+              {
+                "label": "Product & AI",
+                "value": "product-ai"
+              }
+            ]
+          }
+        },
+        {
+          "name": "featured",
+          "label": "5. 优先展示",
+          "type": "boolean",
+          "default": false
+        },
+        {
+          "name": "displayOrder",
+          "label": "5. 显示顺序（数字小的在前）",
+          "type": "number",
+          "default": 0,
+          "options": {
+            "min": 0
+          }
+        },
+        {
+          "name": "dates",
+          "label": "时间",
+          "type": "string",
+          "hidden": true
+        },
+        {
+          "name": "id",
+          "label": "网址名称（英文，新建时填写）",
+          "type": "string",
+          "required": true,
+          "pattern": {
+            "regex": "^[a-z][a-z0-9-]*$",
+            "message": "Use a unique lowercase ID with letters, numbers and hyphens."
+          }
+        },
+        {
+          "name": "note",
+          "label": "补充说明",
+          "type": "text",
+          "hidden": true
+        },
+        {
+          "name": "role",
+          "label": "职位",
+          "type": "string",
+          "hidden": true
+        },
+        {
+          "name": "sourceId",
+          "label": "来源编号",
+          "type": "string",
+          "hidden": true
+        },
+        {
+          "name": "status",
+          "label": "项目状态",
+          "type": "string",
+          "hidden": true
+        },
+        {
+          "name": "summary",
+          "label": "介绍正文",
+          "type": "text",
+          "hidden": true
+        }
+      ],
+      "list": true
+    },
+    {
+      "name": "dashboards",
+      "label": "5. Dashboards / 看板",
+      "type": "file",
+      "path": "src/content/dashboards.json",
+      "format": "json",
+      "fields": [
+        {
+          "name": "title",
+          "label": "标题",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "platform",
+          "label": "平台",
           "type": "string"
         },
         {
-          "name": "photoPosition",
-          "label": "Photo Position",
-          "type": "string"
+          "name": "description",
+          "label": "介绍文字",
+          "type": "text"
         },
         {
-          "name": "portraitPlaceholderAlt",
-          "label": "Portrait Placeholder Alt",
-          "type": "string"
-        },
-        {
-          "name": "portraitPlaceholderEmphasis",
-          "label": "Portrait Placeholder Emphasis",
-          "type": "string"
-        },
-        {
-          "name": "portraitPlaceholderLead",
-          "label": "Portrait Placeholder Lead",
-          "type": "string"
-        },
-        {
-          "name": "portraitPlaceholderNote",
-          "label": "Portrait Placeholder Note",
-          "type": "string"
-        },
-        {
-          "name": "professionalPortrait",
-          "label": "Professional Portrait",
+          "name": "preview",
+          "label": "上传 / 选择看板截图",
           "type": "image",
           "options": {
             "media": "images"
           }
         },
         {
-          "name": "professionalPortraitAlt",
-          "label": "Professional Portrait Alt",
+          "name": "previewAlt",
+          "label": "截图替代文字（可留空）",
           "type": "string"
         },
         {
-          "name": "resume",
-          "label": "Resume",
-          "type": "file",
+          "name": "publicUrl",
+          "label": "看板链接",
+          "type": "string"
+        },
+        {
+          "name": "publicUrlVerified",
+          "label": "显示看板链接",
+          "type": "boolean",
+          "default": false
+        },
+        {
+          "name": "screenshots",
+          "label": "更多截图",
+          "list": {
+            "collapsible": {
+              "collapsed": true,
+              "summary": "展开编辑"
+            }
+          },
+          "default": [],
+          "type": "object",
+          "fields": [
+            {
+              "name": "alt",
+              "label": "图片替代文字（可留空）",
+              "type": "string"
+            },
+            {
+              "name": "image",
+              "label": "上传 / 选择图片",
+              "type": "image",
+              "options": {
+                "media": "images"
+              }
+            }
+          ]
+        },
+        {
+          "name": "files",
+          "label": "下载文件",
+          "list": {
+            "collapsible": {
+              "collapsed": true,
+              "summary": "{fields.label}"
+            }
+          },
+          "default": [],
+          "type": "object",
+          "fields": [
+            {
+              "name": "label",
+              "label": "显示文字",
+              "type": "string",
+              "required": true
+            },
+            {
+              "name": "type",
+              "label": "类型",
+              "type": "string",
+              "required": true
+            },
+            {
+              "name": "url",
+              "label": "链接地址",
+              "type": "string",
+              "required": true
+            },
+            {
+              "name": "verified",
+              "label": "显示这个链接",
+              "type": "boolean",
+              "default": false
+            }
+          ]
+        },
+        {
+          "name": "featured",
+          "label": "优先展示",
+          "type": "boolean",
+          "default": false
+        },
+        {
+          "name": "displayOrder",
+          "label": "显示顺序（数字小的在前）",
+          "type": "number",
+          "default": 0,
           "options": {
-            "media": "documents"
+            "min": 0
           }
         },
         {
-          "name": "stickerEmphasis",
-          "label": "Sticker Emphasis",
+          "name": "id",
+          "label": "记录英文短名（新建时填写）",
+          "type": "string",
+          "required": true,
+          "pattern": {
+            "regex": "^[a-z][a-z0-9-]*$",
+            "message": "Use a unique lowercase ID with letters, numbers and hyphens."
+          }
+        },
+        {
+          "name": "note",
+          "label": "补充说明",
+          "type": "text",
+          "hidden": true
+        },
+        {
+          "name": "projectId",
+          "label": "关联项目编号",
           "type": "string"
         },
         {
-          "name": "stickerLead",
-          "label": "Sticker Lead",
+          "name": "urlVerification",
+          "label": "链接核实记录",
+          "type": "string",
+          "hidden": true
+        }
+      ],
+      "list": true
+    },
+    {
+      "name": "categories",
+      "label": "6. 项目分类",
+      "type": "file",
+      "path": "src/content/categories.json",
+      "format": "json",
+      "fields": [
+        {
+          "name": "icon",
+          "label": "图标样式",
+          "type": "string",
+          "hidden": true
+        },
+        {
+          "name": "id",
+          "label": "网址名称（英文，新建时填写）",
+          "type": "string",
+          "required": true,
+          "pattern": {
+            "regex": "^[a-z][a-z0-9-]*$",
+            "message": "Use a unique lowercase ID with letters, numbers and hyphens."
+          }
+        },
+        {
+          "name": "label",
+          "label": "显示文字",
           "type": "string"
         }
-      ]
+      ],
+      "list": true
     },
     {
       "name": "site",
-      "label": "Page Headings, Navigation & Footer",
+      "label": "7. 导航、页脚与页面标题",
       "type": "file",
       "path": "src/content/site.json",
       "format": "json",
       "fields": [
         {
-          "name": "copyrightName",
-          "label": "Copyright Name",
+          "name": "footerText",
+          "label": "页脚中间的一句话",
           "type": "string"
+        },
+        {
+          "name": "copyrightName",
+          "label": "页脚版权姓名",
+          "type": "string"
+        },
+        {
+          "name": "navigation",
+          "label": "顶部导航文字",
+          "list": {
+            "collapsible": {
+              "collapsed": true,
+              "summary": "{fields.label}"
+            }
+          },
+          "default": [],
+          "type": "object",
+          "fields": [
+            {
+              "name": "key",
+              "label": "内部编号",
+              "type": "string",
+              "readonly": true,
+              "hidden": true
+            },
+            {
+              "name": "label",
+              "label": "显示文字",
+              "type": "string"
+            },
+            {
+              "name": "path",
+              "label": "页面地址",
+              "type": "string",
+              "hidden": true
+            }
+          ]
+        },
+        {
+          "name": "pages",
+          "label": "各页面顶部标题",
+          "type": "object",
+          "fields": [
+            {
+              "name": "dashboards",
+              "label": "Dashboards",
+              "type": "object",
+              "fields": [
+                {
+                  "name": "description",
+                  "label": "介绍文字",
+                  "type": "text"
+                },
+                {
+                  "name": "emphasis",
+                  "label": "标题的紫色部分",
+                  "type": "string"
+                },
+                {
+                  "name": "eyebrow",
+                  "label": "姓名上方的小标语",
+                  "type": "string"
+                },
+                {
+                  "name": "heading",
+                  "label": "小标题（可留空）",
+                  "type": "string"
+                },
+                {
+                  "name": "seoDescription",
+                  "label": "搜索结果中的页面介绍",
+                  "type": "text"
+                }
+              ]
+            },
+            {
+              "name": "education",
+              "label": "Education",
+              "type": "object",
+              "fields": [
+                {
+                  "name": "description",
+                  "label": "介绍文字",
+                  "type": "text"
+                },
+                {
+                  "name": "emphasis",
+                  "label": "标题的紫色部分",
+                  "type": "string"
+                },
+                {
+                  "name": "eyebrow",
+                  "label": "姓名上方的小标语",
+                  "type": "string"
+                },
+                {
+                  "name": "heading",
+                  "label": "小标题（可留空）",
+                  "type": "string"
+                },
+                {
+                  "name": "seoDescription",
+                  "label": "搜索结果中的页面介绍",
+                  "type": "text"
+                }
+              ]
+            },
+            {
+              "name": "experience",
+              "label": "Experience",
+              "type": "object",
+              "fields": [
+                {
+                  "name": "description",
+                  "label": "介绍文字",
+                  "type": "text"
+                },
+                {
+                  "name": "emphasis",
+                  "label": "标题的紫色部分",
+                  "type": "string"
+                },
+                {
+                  "name": "eyebrow",
+                  "label": "姓名上方的小标语",
+                  "type": "string"
+                },
+                {
+                  "name": "heading",
+                  "label": "小标题（可留空）",
+                  "type": "string"
+                },
+                {
+                  "name": "seoDescription",
+                  "label": "搜索结果中的页面介绍",
+                  "type": "text"
+                }
+              ]
+            },
+            {
+              "name": "projects",
+              "label": "Projects",
+              "type": "object",
+              "fields": [
+                {
+                  "name": "description",
+                  "label": "介绍文字",
+                  "type": "text"
+                },
+                {
+                  "name": "emphasis",
+                  "label": "标题的紫色部分",
+                  "type": "string"
+                },
+                {
+                  "name": "eyebrow",
+                  "label": "姓名上方的小标语",
+                  "type": "string"
+                },
+                {
+                  "name": "heading",
+                  "label": "小标题（可留空）",
+                  "type": "string"
+                },
+                {
+                  "name": "seoDescription",
+                  "label": "搜索结果中的页面介绍",
+                  "type": "text"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "favicon",
+          "label": "浏览器标签页图标",
+          "type": "image",
+          "options": {
+            "media": "images"
+          }
         },
         {
           "name": "description",
-          "label": "Description",
+          "label": "介绍文字",
           "type": "text"
         },
         {
-          "name": "footerText",
-          "label": "Footer Text",
-          "type": "string"
-        },
-        {
           "name": "labels",
-          "label": "Labels",
+          "label": "其他按钮文字（通常无需修改）",
           "type": "object",
           "fields": [
             {
@@ -335,7 +1295,7 @@
             },
             {
               "name": "coursework",
-              "label": "Coursework",
+              "label": "课程",
               "type": "string"
             },
             {
@@ -365,7 +1325,7 @@
             },
             {
               "name": "email",
-              "label": "Email",
+              "label": "邮箱",
               "type": "string"
             },
             {
@@ -375,12 +1335,12 @@
             },
             {
               "name": "github",
-              "label": "Github",
+              "label": "GitHub 链接",
               "type": "string"
             },
             {
               "name": "gpa",
-              "label": "Gpa",
+              "label": "成绩 / 排名",
               "type": "string"
             },
             {
@@ -405,7 +1365,7 @@
             },
             {
               "name": "linkedin",
-              "label": "Linkedin",
+              "label": "LinkedIn 链接",
               "type": "string"
             },
             {
@@ -420,7 +1380,7 @@
             },
             {
               "name": "navigation",
-              "label": "Navigation",
+              "label": "顶部导航文字",
               "type": "string"
             },
             {
@@ -480,11 +1440,8 @@
             },
             {
               "name": "resume",
-              "label": "Resume",
-              "type": "file",
-              "options": {
-                "media": "documents"
-              }
+              "label": "简历按钮文字",
+              "type": "string"
             },
             {
               "name": "resumeMissing",
@@ -525,970 +1482,17 @@
         },
         {
           "name": "language",
-          "label": "Language",
-          "type": "string"
-        },
-        {
-          "name": "navigation",
-          "label": "Navigation",
-          "list": {
-            "collapsible": {
-              "collapsed": true,
-              "summary": "{fields.label}"
-            }
-          },
-          "default": [],
-          "type": "object",
-          "fields": [
-            {
-              "name": "key",
-              "label": "Key",
-              "type": "string",
-              "readonly": true
-            },
-            {
-              "name": "label",
-              "label": "Label",
-              "type": "string"
-            },
-            {
-              "name": "path",
-              "label": "Path",
-              "type": "string"
-            }
-          ]
-        },
-        {
-          "name": "pages",
-          "label": "Pages",
-          "type": "object",
-          "fields": [
-            {
-              "name": "dashboards",
-              "label": "Dashboards",
-              "type": "object",
-              "fields": [
-                {
-                  "name": "description",
-                  "label": "Description",
-                  "type": "text"
-                },
-                {
-                  "name": "emphasis",
-                  "label": "Emphasis",
-                  "type": "string"
-                },
-                {
-                  "name": "eyebrow",
-                  "label": "Eyebrow",
-                  "type": "string"
-                },
-                {
-                  "name": "heading",
-                  "label": "Heading",
-                  "type": "string"
-                },
-                {
-                  "name": "seoDescription",
-                  "label": "Seo Description",
-                  "type": "text"
-                }
-              ]
-            },
-            {
-              "name": "education",
-              "label": "Education",
-              "type": "object",
-              "fields": [
-                {
-                  "name": "description",
-                  "label": "Description",
-                  "type": "text"
-                },
-                {
-                  "name": "emphasis",
-                  "label": "Emphasis",
-                  "type": "string"
-                },
-                {
-                  "name": "eyebrow",
-                  "label": "Eyebrow",
-                  "type": "string"
-                },
-                {
-                  "name": "heading",
-                  "label": "Heading",
-                  "type": "string"
-                },
-                {
-                  "name": "seoDescription",
-                  "label": "Seo Description",
-                  "type": "text"
-                }
-              ]
-            },
-            {
-              "name": "experience",
-              "label": "Experience",
-              "type": "object",
-              "fields": [
-                {
-                  "name": "description",
-                  "label": "Description",
-                  "type": "text"
-                },
-                {
-                  "name": "emphasis",
-                  "label": "Emphasis",
-                  "type": "string"
-                },
-                {
-                  "name": "eyebrow",
-                  "label": "Eyebrow",
-                  "type": "string"
-                },
-                {
-                  "name": "heading",
-                  "label": "Heading",
-                  "type": "string"
-                },
-                {
-                  "name": "seoDescription",
-                  "label": "Seo Description",
-                  "type": "text"
-                }
-              ]
-            },
-            {
-              "name": "projects",
-              "label": "Projects",
-              "type": "object",
-              "fields": [
-                {
-                  "name": "description",
-                  "label": "Description",
-                  "type": "text"
-                },
-                {
-                  "name": "emphasis",
-                  "label": "Emphasis",
-                  "type": "string"
-                },
-                {
-                  "name": "eyebrow",
-                  "label": "Eyebrow",
-                  "type": "string"
-                },
-                {
-                  "name": "heading",
-                  "label": "Heading",
-                  "type": "string"
-                },
-                {
-                  "name": "seoDescription",
-                  "label": "Seo Description",
-                  "type": "text"
-                }
-              ]
-            }
-          ]
+          "label": "页面语言",
+          "type": "string",
+          "hidden": true
         },
         {
           "name": "previewNotice",
-          "label": "Preview Notice",
-          "description": "Shown only on the temporary preview; final deployment remains unapproved.",
-          "type": "text"
-        },
-        {
-          "name": "favicon",
-          "label": "Favicon",
-          "type": "image",
-          "options": {
-            "media": "images"
-          }
+          "label": "临时预览提示",
+          "type": "text",
+          "hidden": true
         }
       ]
-    },
-    {
-      "name": "education",
-      "label": "Education",
-      "type": "file",
-      "path": "src/content/education.json",
-      "format": "json",
-      "fields": [
-        {
-          "name": "awards",
-          "label": "Awards",
-          "list": {
-            "collapsible": {
-              "collapsed": true,
-              "summary": "{fields.title}"
-            }
-          },
-          "default": [],
-          "type": "object",
-          "fields": [
-            {
-              "name": "date",
-              "label": "Date",
-              "type": "string"
-            },
-            {
-              "name": "title",
-              "label": "Title",
-              "type": "string",
-              "required": true
-            }
-          ]
-        },
-        {
-          "name": "coursework",
-          "label": "Coursework",
-          "list": true,
-          "default": [],
-          "type": "string"
-        },
-        {
-          "name": "courseworkNote",
-          "label": "Coursework Note",
-          "type": "text"
-        },
-        {
-          "name": "degree",
-          "label": "Degree",
-          "type": "string"
-        },
-        {
-          "name": "description",
-          "label": "Description",
-          "type": "text"
-        },
-        {
-          "name": "end",
-          "label": "End",
-          "type": "string"
-        },
-        {
-          "name": "gpa",
-          "label": "Gpa",
-          "type": "string"
-        },
-        {
-          "name": "highlights",
-          "label": "Highlights",
-          "list": true,
-          "default": [],
-          "type": "text"
-        },
-        {
-          "name": "id",
-          "label": "Id",
-          "description": "Stable URL/anchor identifier. Keep unique; changing it changes URLs/references.",
-          "type": "string",
-          "required": true,
-          "pattern": {
-            "regex": "^[a-z][a-z0-9-]*$",
-            "message": "Use a unique lowercase ID with letters, numbers and hyphens."
-          }
-        },
-        {
-          "name": "location",
-          "label": "Location",
-          "type": "string"
-        },
-        {
-          "name": "logo",
-          "label": "Logo",
-          "type": "image",
-          "options": {
-            "media": "images"
-          }
-        },
-        {
-          "name": "logoAlt",
-          "label": "Logo Alt",
-          "type": "string"
-        },
-        {
-          "name": "major",
-          "label": "Major",
-          "type": "string"
-        },
-        {
-          "name": "period",
-          "label": "Period",
-          "type": "string"
-        },
-        {
-          "name": "reviewNote",
-          "label": "Review Note",
-          "type": "text"
-        },
-        {
-          "name": "school",
-          "label": "School",
-          "type": "string"
-        },
-        {
-          "name": "shortName",
-          "label": "Short Name",
-          "type": "string"
-        },
-        {
-          "name": "start",
-          "label": "Start",
-          "type": "string"
-        },
-        {
-          "name": "timelineLabel",
-          "label": "Timeline Label",
-          "type": "string"
-        },
-        {
-          "name": "university",
-          "label": "University",
-          "type": "string",
-          "required": true
-        },
-        {
-          "name": "gpaLabel",
-          "label": "Academic Highlight Label (leave blank for ranking only)",
-          "type": "string"
-        }
-      ],
-      "list": true
-    },
-    {
-      "name": "experience",
-      "label": "Experience",
-      "type": "file",
-      "path": "src/content/experience.json",
-      "format": "json",
-      "fields": [
-        {
-          "name": "company",
-          "label": "Company",
-          "type": "string",
-          "required": true
-        },
-        {
-          "name": "contributions",
-          "label": "Contributions",
-          "list": true,
-          "default": [],
-          "type": "text"
-        },
-        {
-          "name": "dates",
-          "label": "Dates",
-          "type": "string"
-        },
-        {
-          "name": "displayOrder",
-          "label": "Display Order",
-          "description": "Lower numbers appear first within each Featured group.",
-          "type": "number",
-          "default": 0,
-          "options": {
-            "min": 0
-          }
-        },
-        {
-          "name": "featured",
-          "label": "Featured",
-          "description": "Move this record ahead of non-featured records without changing the design.",
-          "type": "boolean",
-          "default": false
-        },
-        {
-          "name": "id",
-          "label": "Id",
-          "description": "Stable URL/anchor identifier. Keep unique; changing it changes URLs/references.",
-          "type": "string",
-          "required": true,
-          "pattern": {
-            "regex": "^[a-z][a-z0-9-]*$",
-            "message": "Use a unique lowercase ID with letters, numbers and hyphens."
-          }
-        },
-        {
-          "name": "location",
-          "label": "Location",
-          "type": "string"
-        },
-        {
-          "name": "logo",
-          "label": "Logo",
-          "type": "image",
-          "options": {
-            "media": "images"
-          }
-        },
-        {
-          "name": "logoAlt",
-          "label": "Logo Alt",
-          "type": "string"
-        },
-        {
-          "name": "monogram",
-          "label": "Monogram",
-          "type": "string"
-        },
-        {
-          "name": "note",
-          "label": "Note",
-          "type": "text"
-        },
-        {
-          "name": "role",
-          "label": "Role",
-          "type": "string"
-        },
-        {
-          "name": "start",
-          "label": "Start",
-          "type": "string"
-        },
-        {
-          "name": "summary",
-          "label": "Summary",
-          "type": "text"
-        },
-        {
-          "name": "tags",
-          "label": "Tags",
-          "list": true,
-          "default": [],
-          "type": "string"
-        },
-        {
-          "name": "team",
-          "label": "Team",
-          "type": "string"
-        }
-      ],
-      "list": true
-    },
-    {
-      "name": "categories",
-      "label": "Project Categories",
-      "type": "file",
-      "path": "src/content/categories.json",
-      "format": "json",
-      "fields": [
-        {
-          "name": "icon",
-          "label": "Icon",
-          "type": "string"
-        },
-        {
-          "name": "id",
-          "label": "Id",
-          "description": "Stable URL/anchor identifier. Keep unique; changing it changes URLs/references.",
-          "type": "string",
-          "required": true,
-          "pattern": {
-            "regex": "^[a-z][a-z0-9-]*$",
-            "message": "Use a unique lowercase ID with letters, numbers and hyphens."
-          }
-        },
-        {
-          "name": "label",
-          "label": "Label",
-          "type": "string"
-        }
-      ],
-      "list": true
-    },
-    {
-      "name": "projects",
-      "label": "Projects & Case Studies",
-      "type": "file",
-      "path": "src/content/projects.json",
-      "format": "json",
-      "fields": [
-        {
-          "name": "cardDescription",
-          "label": "Card Description",
-          "description": "Short card description, up to 180 characters. The case study uses Summary separately.",
-          "type": "text",
-          "options": {
-            "maxlength": 180
-          }
-        },
-        {
-          "name": "category",
-          "label": "Category",
-          "type": "select",
-          "required": true,
-          "options": {
-            "values": [
-              {
-                "label": "Data & Business Analytics",
-                "value": "data-business-analytics"
-              },
-              {
-                "label": "Data Science",
-                "value": "data-science"
-              },
-              {
-                "label": "Product & AI",
-                "value": "product-ai"
-              }
-            ]
-          }
-        },
-        {
-          "name": "cover",
-          "label": "Cover",
-          "type": "image",
-          "options": {
-            "media": "images"
-          }
-        },
-        {
-          "name": "coverAlt",
-          "label": "Cover Alt",
-          "type": "string"
-        },
-        {
-          "name": "dates",
-          "label": "Dates",
-          "type": "string"
-        },
-        {
-          "name": "displayOrder",
-          "label": "Display Order",
-          "description": "Lower numbers appear first within each Featured group.",
-          "type": "number",
-          "default": 0,
-          "options": {
-            "min": 0
-          }
-        },
-        {
-          "name": "featured",
-          "label": "Featured",
-          "description": "Move this record ahead of non-featured records without changing the design.",
-          "type": "boolean",
-          "default": false
-        },
-        {
-          "name": "id",
-          "label": "Id",
-          "description": "Stable URL/anchor identifier. Keep unique; changing it changes URLs/references.",
-          "type": "string",
-          "required": true,
-          "pattern": {
-            "regex": "^[a-z][a-z0-9-]*$",
-            "message": "Use a unique lowercase ID with letters, numbers and hyphens."
-          }
-        },
-        {
-          "name": "note",
-          "label": "Note",
-          "type": "text"
-        },
-        {
-          "name": "role",
-          "label": "Role",
-          "type": "string"
-        },
-        {
-          "name": "overviewBlocks",
-          "label": "Overview — Text, Images, Video & Links",
-          "list": {
-            "collapsible": {
-              "collapsed": true,
-              "summary": "{index}"
-            }
-          },
-          "default": [],
-          "type": "block",
-          "blockKey": "type",
-          "description": "Add, edit, delete and drag blocks into any order. Empty blocks do not appear on the website.",
-          "blocks": [
-            {
-              "name": "text",
-              "label": "Text",
-              "fields": [
-                {
-                  "name": "heading",
-                  "label": "Heading",
-                  "type": "string"
-                },
-                {
-                  "name": "paragraphs",
-                  "label": "Paragraphs",
-                  "list": true,
-                  "default": [],
-                  "type": "text"
-                },
-                {
-                  "name": "bullets",
-                  "label": "Bullets",
-                  "list": true,
-                  "default": [],
-                  "type": "text"
-                }
-              ]
-            },
-            {
-              "name": "image",
-              "label": "Image",
-              "fields": [
-                {
-                  "name": "src",
-                  "label": "Src",
-                  "type": "image",
-                  "options": {
-                    "media": "images"
-                  }
-                },
-                {
-                  "name": "alt",
-                  "label": "Alt",
-                  "type": "string"
-                },
-                {
-                  "name": "caption",
-                  "label": "Caption",
-                  "type": "text"
-                }
-              ]
-            },
-            {
-              "name": "video",
-              "label": "Video",
-              "fields": [
-                {
-                  "name": "videoUrl",
-                  "label": "Upload Video or Paste Video URL",
-                  "type": "file",
-                  "options": {
-                    "media": "videos"
-                  },
-                  "description": "Upload MP4/WebM, or paste a YouTube/Vimeo link or HTTPS video file URL."
-                },
-                {
-                  "name": "caption",
-                  "label": "Caption",
-                  "type": "text"
-                }
-              ]
-            },
-            {
-              "name": "links",
-              "label": "Links",
-              "fields": [
-                {
-                  "name": "links",
-                  "label": "Links",
-                  "list": {
-                    "collapsible": {
-                      "collapsed": true,
-                      "summary": "{fields.label}"
-                    }
-                  },
-                  "default": [],
-                  "type": "object",
-                  "fields": [
-                    {
-                      "name": "label",
-                      "label": "Label",
-                      "type": "string",
-                      "required": true
-                    },
-                    {
-                      "name": "url",
-                      "label": "Url",
-                      "description": "External HTTPS URL, or the /documents/... or /images/... path copied from Media.",
-                      "type": "string",
-                      "required": true
-                    },
-                    {
-                      "name": "enabled",
-                      "label": "Enabled",
-                      "type": "boolean",
-                      "default": true
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "name": "sections",
-          "label": "Sections",
-          "list": {
-            "collapsible": {
-              "collapsed": true,
-              "summary": "{fields.title}"
-            }
-          },
-          "default": [],
-          "type": "object",
-          "fields": [
-            {
-              "name": "bullets",
-              "label": "Bullets",
-              "list": true,
-              "default": [],
-              "type": "text"
-            },
-            {
-              "name": "id",
-              "label": "Id",
-              "description": "Stable URL/anchor identifier. Keep unique; changing it changes URLs/references.",
-              "type": "string",
-              "required": true,
-              "pattern": {
-                "regex": "^[a-z][a-z0-9-]*$",
-                "message": "Use a unique lowercase ID with letters, numbers and hyphens."
-              }
-            },
-            {
-              "name": "images",
-              "label": "Images",
-              "list": {
-                "collapsible": {
-                  "collapsed": true,
-                  "summary": "{index}"
-                }
-              },
-              "default": [],
-              "type": "object",
-              "fields": [
-                {
-                  "name": "src",
-                  "label": "Src",
-                  "type": "image",
-                  "options": {
-                    "media": "images"
-                  },
-                  "required": true
-                },
-                {
-                  "name": "alt",
-                  "label": "Alt",
-                  "type": "string",
-                  "required": true
-                },
-                {
-                  "name": "caption",
-                  "label": "Caption",
-                  "type": "text"
-                }
-              ]
-            },
-            {
-              "name": "paragraphs",
-              "label": "Paragraphs",
-              "list": true,
-              "default": [],
-              "type": "text"
-            },
-            {
-              "name": "title",
-              "label": "Title",
-              "type": "string",
-              "required": true
-            }
-          ]
-        },
-        {
-          "name": "sourceId",
-          "label": "Source Id",
-          "description": "Source provenance ID; not displayed.",
-          "type": "string"
-        },
-        {
-          "name": "status",
-          "label": "Status",
-          "type": "string"
-        },
-        {
-          "name": "summary",
-          "label": "Summary",
-          "type": "text"
-        },
-        {
-          "name": "tags",
-          "label": "Tags",
-          "list": true,
-          "default": [],
-          "type": "string"
-        },
-        {
-          "name": "title",
-          "label": "Title",
-          "type": "string",
-          "required": true
-        }
-      ],
-      "list": true
-    },
-    {
-      "name": "dashboards",
-      "label": "Dashboards",
-      "type": "file",
-      "path": "src/content/dashboards.json",
-      "format": "json",
-      "fields": [
-        {
-          "name": "description",
-          "label": "Description",
-          "type": "text"
-        },
-        {
-          "name": "displayOrder",
-          "label": "Display Order",
-          "description": "Lower numbers appear first within each Featured group.",
-          "type": "number",
-          "default": 0,
-          "options": {
-            "min": 0
-          }
-        },
-        {
-          "name": "featured",
-          "label": "Featured",
-          "description": "Move this record ahead of non-featured records without changing the design.",
-          "type": "boolean",
-          "default": false
-        },
-        {
-          "name": "files",
-          "label": "Files",
-          "list": {
-            "collapsible": {
-              "collapsed": true,
-              "summary": "{fields.label}"
-            }
-          },
-          "default": [],
-          "type": "object",
-          "fields": [
-            {
-              "name": "label",
-              "label": "Label",
-              "type": "string",
-              "required": true
-            },
-            {
-              "name": "type",
-              "label": "Type",
-              "type": "string",
-              "required": true
-            },
-            {
-              "name": "url",
-              "label": "Url",
-              "description": "External HTTPS URL, or the /documents/... or /images/... path copied from Media.",
-              "type": "string",
-              "required": true
-            },
-            {
-              "name": "verified",
-              "label": "Verified",
-              "description": "Enable only after checking the linked resource in your browser.",
-              "type": "boolean",
-              "default": false
-            }
-          ]
-        },
-        {
-          "name": "id",
-          "label": "Id",
-          "description": "Stable URL/anchor identifier. Keep unique; changing it changes URLs/references.",
-          "type": "string",
-          "required": true,
-          "pattern": {
-            "regex": "^[a-z][a-z0-9-]*$",
-            "message": "Use a unique lowercase ID with letters, numbers and hyphens."
-          }
-        },
-        {
-          "name": "note",
-          "label": "Note",
-          "type": "text"
-        },
-        {
-          "name": "platform",
-          "label": "Platform",
-          "type": "string"
-        },
-        {
-          "name": "preview",
-          "label": "Preview",
-          "type": "image",
-          "options": {
-            "media": "images"
-          }
-        },
-        {
-          "name": "previewAlt",
-          "label": "Preview Alt",
-          "type": "string"
-        },
-        {
-          "name": "projectId",
-          "label": "Project Id",
-          "type": "string"
-        },
-        {
-          "name": "publicUrl",
-          "label": "Public Url",
-          "type": "string"
-        },
-        {
-          "name": "publicUrlVerified",
-          "label": "Public Url Verified",
-          "description": "Enable the public dashboard link after verifying it.",
-          "type": "boolean",
-          "default": false
-        },
-        {
-          "name": "screenshots",
-          "label": "Screenshots",
-          "list": {
-            "collapsible": {
-              "collapsed": true,
-              "summary": "{index}"
-            }
-          },
-          "default": [],
-          "type": "object",
-          "fields": [
-            {
-              "name": "alt",
-              "label": "Alt",
-              "type": "string"
-            },
-            {
-              "name": "image",
-              "label": "Image",
-              "type": "image",
-              "options": {
-                "media": "images"
-              }
-            }
-          ]
-        },
-        {
-          "name": "title",
-          "label": "Title",
-          "type": "string",
-          "required": true
-        },
-        {
-          "name": "urlVerification",
-          "label": "Url Verification",
-          "type": "string"
-        }
-      ],
-      "list": true
     }
   ]
 }
