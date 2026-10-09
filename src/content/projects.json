@@ -383,15 +383,9 @@
           "Use state-level benchmarks, review DRG coding and clinical documentation, and target high-variation treatment categories for audit. Recommendations were proposed; implementation effects were not measured."
         ],
         "id": "recommendations"
-      },
-      {
-        "title": "Scope & Limits",
-        "paragraphs": [
-          "The data covers Medicare fee-for-service inpatient claims, not Medicare Advantage, private insurance, or the entire U.S. inpatient population. Statistical associations are not causal explanations."
-        ],
-        "id": "limitations"
       }
     ],
+    "cover": "/images/Screenshot 2026-10-09 002722.png",
     "cardDescription": "Comparing geographic variation in inpatient payments to support state-level benchmarking.",
     "category": "data-business-analytics",
     "featured": false,
@@ -422,7 +416,7 @@
         "type": "links",
         "links": [
           {
-            "label": "Notebook",
+            "label": "Code",
             "url": "https://github.com/zz10965-alt/Data_Project/blob/main/03-employee-attrition/Employee_Attrition_Risk_Analysis.ipynb",
             "enabled": true
           }
@@ -494,14 +488,7 @@
         ]
       },
       {
-        "type": "links",
-        "links": [
-          {
-            "label": "Original project illustration",
-            "url": "/images/projects/legacy-furniture-db.svg",
-            "enabled": true
-          }
-        ]
+        "type": "links"
       }
     ],
     "sections": [
