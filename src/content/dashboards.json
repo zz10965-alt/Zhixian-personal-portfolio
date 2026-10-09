@@ -1,41 +1,36 @@
 [
   {
-    "id": "advertising-abtest",
     "title": "A/B Testing Decision Dashboard",
     "platform": "Power BI",
-    "projectId": "advertising-ab-testing",
     "description": "CTR by experiment arm, day-level stability, uncertainty, and conservative rollout planning in a single decision dashboard.",
     "preview": "/images/dashboards/advertising-abtest-preview.webp",
     "previewAlt": "Original A/B Testing Decision Dashboard showing CTR comparison, confidence intervals, daily trends and rollout recommendations",
-    "publicUrl": "",
-    "urlVerification": "No public interactive URL supplied",
+    "publicUrlVerified": false,
     "screenshots": [
       {
-        "image": "/images/dashboards/advertising-abtest.png",
-        "alt": "Full A/B Testing Decision Dashboard"
+        "alt": "Full A/B Testing Decision Dashboard",
+        "image": "/images/dashboards/advertising-abtest.png"
       }
     ],
-    "files": [],
-    "note": "Screenshot from the owner’s Data_Project repository. Rollout and click-impact figures are analytical recommendations and estimates, not realized business outcomes.",
     "featured": false,
     "displayOrder": 1,
-    "publicUrlVerified": false
+    "id": "advertising-abtest",
+    "note": "Screenshot from the owner’s Data_Project repository. Rollout and click-impact figures are analytical recommendations and estimates, not realized business outcomes.",
+    "projectId": "advertising-ab-testing",
+    "urlVerification": "No public interactive URL supplied"
   },
   {
-    "id": "ecommerce-tableau",
     "title": "E-commerce Growth & Purchase Intent Analytics",
     "platform": "Tableau",
-    "projectId": "ecommerce-growth",
     "description": "A Tableau view linked from the e-commerce analysis, covering growth, purchasing behavior and purchase intent.",
-    "preview": "",
-    "previewAlt": "",
-    "publicUrl": "https://public.tableau.com/views/E-commerceGrowthPurchaseIntentAnalytics/1",
-    "urlVerification": "Owner-supplied URL; live verification blocked by environment network policy",
-    "screenshots": [],
-    "files": [],
-    "note": "Preview image pending. The public Tableau URL is supplied in the source materials; its current availability has not been verified.",
+    "preview": "/images/Screenshot 2026-10-09 001821.png",
+    "publicUrl": "https://public.tableau.com/views/E-commerceGrowthPurchaseIntentAnalytics/1?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
+    "publicUrlVerified": false,
     "featured": false,
     "displayOrder": 2,
-    "publicUrlVerified": false
+    "id": "ecommerce-tableau",
+    "note": "Preview image pending. The public Tableau URL is supplied in the source materials; its current availability has not been verified.",
+    "projectId": "ecommerce-growth",
+    "urlVerification": "Owner-supplied URL; live verification blocked by environment network policy"
   }
 ]
