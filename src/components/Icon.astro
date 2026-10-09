@@ -7,7 +7,6 @@ const paths: Record<string, string> = {
   spark: 'm12 2 2.5 7.5L22 12l-7.5 2.5L12 22l-2.5-7.5L2 12l7.5-2.5L12 2Z',
   email: 'M3 5h18v14H3V5Zm0 0 9 8 9-8',
   github: 'M9 21v-4c-4 1-5-2-6-3M15 21v-4c0-1-.4-2-1-2 4-.4 7-2 7-6 0-1.5-.5-3-1.5-4 .4-1.2.3-2.5 0-3-2 0-4 1.5-4 1.5a14 14 0 0 0-7 0S6.5 2 4.5 2c-.3.5-.4 1.8 0 3C3.5 6 3 7.5 3 9c0 4 3 5.6 7 6-.6 0-1 1-1 2',
-  linkedin: 'M4 9v12M4 3v1M10 21V9h5v2c3-4 6-1 6 2v8M10 13c0-3 5-4 5 0v8',
   arrow: 'M4 12h16m-6-6 6 6-6 6',
   external: 'M13 3h8v8M21 3 11 13M9 5H3v16h16v-6',
   camera: 'M3 6h5l2-3h4l2 3h5v14H3V6Zm9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z',
@@ -18,4 +17,4 @@ const paths: Record<string, string> = {
   trophy: 'M7 3h10v7a5 5 0 0 1-10 0V3Zm0 2H3v3a4 4 0 0 0 4 4M17 5h4v3a4 4 0 0 1-4 4M12 15v6M8 21h8',
 };
 ---
-<svg class:list={['icon', className]} aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d={paths[name] ?? paths.spark} /></svg>
+{name === 'linkedin' ? <svg class:list={['icon', className]} aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><rect x="2" y="2" width="20" height="20" rx="2" /><circle cx="7" cy="7" r="1.5" fill="#fff" /><path fill="#fff" d="M5.7 10h2.6v8H5.7zm4.8 0H13v1.1c.6-.9 1.5-1.3 2.6-1.3 2.3 0 3.2 1.4 3.2 3.8V18h-2.6v-4c0-1.2-.3-2-1.5-2s-1.7.8-1.7 2v4h-2.5z" /></svg> : <svg class:list={['icon', className]} aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d={paths[name] ?? paths.spark} /></svg>}
