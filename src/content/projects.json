@@ -26,7 +26,7 @@
           {
             "label": "Demo",
             "url": "https://youtu.be/XFMcbs6lcrs",
-            "enabled": false
+            "enabled": true
           }
         ]
       }
@@ -96,14 +96,14 @@
         "type": "links",
         "links": [
           {
-            "label": "Code",
+            "label": "Python Notebook",
             "url": "https://github.com/zz10965-alt/Data_Project/blob/main/04-ecommerce-analytics/growth_repurchase_analysis.ipynb",
             "enabled": true
           },
           {
             "label": "Tableau Dashboard",
             "url": "https://public.tableau.com/views/E-commerceGrowthPurchaseIntentAnalytics/1",
-            "enabled": false
+            "enabled": true
           }
         ]
       }
@@ -195,7 +195,7 @@
         "type": "links",
         "links": [
           {
-            "label": "Code",
+            "label": "Python Notebook",
             "url": "https://github.com/zz10965-alt/Data_Project/blob/main/05-advertising-analytics%28AB%20Test%29/abtest_ads_decision.ipynb",
             "enabled": true
           }
@@ -400,7 +400,7 @@
         "type": "links",
         "links": [
           {
-            "label": "Code",
+            "label": "Python Notebook",
             "url": "https://github.com/zz10965-alt/Data_Project/blob/main/03-employee-attrition/Employee_Attrition_Risk_Analysis.ipynb",
             "enabled": true
           }
@@ -540,7 +540,7 @@
           {
             "label": "Demo",
             "url": "https://zz10965-alt.github.io/ai-conversational-agent/",
-            "enabled": false
+            "enabled": true
           }
         ]
       }
@@ -618,7 +618,7 @@
           {
             "label": "Demo",
             "url": "https://zz10965-alt.github.io/starshows-mobile/",
-            "enabled": false
+            "enabled": true
           }
         ]
       }
@@ -690,7 +690,7 @@
         "type": "links",
         "links": [
           {
-            "label": "Notebook",
+            "label": "Python Notebook",
             "url": "https://github.com/zz10965-alt/Data_Project/blob/main/01-ev-battery-failure/EV_Battery_Failure_DS.ipynb",
             "enabled": true
           }
@@ -767,7 +767,7 @@
         "type": "links",
         "links": [
           {
-            "label": "Notebook",
+            "label": "Python Notebook",
             "url": "https://github.com/zz10965-alt/Data_Project/blob/main/02-ev-adoption-analysis/EV_Adoption_Drivers_Analysis.ipynb",
             "enabled": true
           }
