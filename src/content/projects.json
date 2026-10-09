@@ -344,8 +344,13 @@
         "type": "links",
         "links": [
           {
-            "label": "Original project illustration",
-            "url": "/images/projects/legacy-medicare.svg",
+            "label": "Presentation",
+            "url": "https://drive.google.com/file/d/1CK8PKRd6J7or_UJsBdX5_SpHavsXyfYR/view?usp=sharing",
+            "enabled": true
+          },
+          {
+            "label": "Report",
+            "url": "https://drive.google.com/file/d/1sYD6FJQ65V8Exdsulpo2h93aqNWInpHO/view?usp=sharing",
             "enabled": true
           }
         ]
