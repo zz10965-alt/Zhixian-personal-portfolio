@@ -31,3 +31,31 @@
 .hero-social{flex-wrap:wrap;gap:12px 24px}.hero-social a{overflow-wrap:anywhere}.hero-social a span{min-width:0}.intro,.hero-highlights li,.experience-summary,.contribution-list,.case-heading>p:not(.content-review-note),.case-section>p:not(.eyebrow),.case-section>ul,.project-card-body>p,.dashboard-card-body>p:not(.eyebrow):not(.source-caption){font-size:17px;line-height:1.8}.school-heading{min-height:0}.school-top{margin-bottom:14px}.education-card h2{max-width:none}.degree{margin-top:8px}.education-card{padding:22px;height:auto}.education-roadmap{align-items:start}.education-note{margin:18px 0 24px;padding:14px 0}.case-heading>p:not(.content-review-note){max-width:1000px}.overview-block{margin:20px 0}.overview-block h3{font-size:20px;margin-bottom:12px}.overview-block p,.overview-block ul{font-size:17px;line-height:1.8;color:var(--muted);margin-bottom:14px}.overview-block figure img{height:auto;object-fit:contain;border:1px solid var(--border);border-radius:4px}.overview-block video{width:100%;height:auto;max-height:680px;background:var(--ink)}.overview-block iframe{width:100%;aspect-ratio:16/9;border:0;border-radius:4px}.overview-links{display:flex;flex-wrap:wrap;gap:12px 24px}.overview-links a{font-size:16px;color:#60417f;text-decoration:underline;text-underline-offset:4px;min-height:44px;display:inline-flex;align-items:center;gap:8px;overflow-wrap:anywhere}.project-card h2{min-height:2.4em}.project-card-body>p{min-height:5.4em}
 @media(max-width:800px){.hero{column-gap:28px}.intro,.hero-highlights li,.experience-summary,.contribution-list,.case-heading>p:not(.content-review-note),.case-section>p:not(.eyebrow),.case-section>ul,.project-card-body>p,.overview-block p,.overview-block ul{font-size:16px}.interest-card h3{overflow-wrap:anywhere}.hero-social{gap:10px 18px}}
 @media(max-width:600px){.interest-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.section-heading{flex-wrap:wrap}.hero-social{gap:8px 18px}.education-card{padding:18px}.page-heading{padding:28px 0 24px}.roadmap-label{font-size:12px}.school-location{font-size:13px}.school-top{flex-wrap:wrap}.case-toc nav a{font-size:14px}.project-card h2,.project-card-body>p{min-height:0}.education-roadmap{gap:20px}}
+
+/* Compact project identity and a visible, accessible navigation band. */
+.site-header{background:var(--purple);border-bottom-color:#60417f;color:#fff}
+.site-header .wordmark-dot,.site-header .projects-toggle{color:#fff}
+.site-header #main-navigation>a:hover,.site-header #main-navigation>a[aria-current=page],.site-header #main-navigation .projects-nav-heading>a:hover,.site-header #main-navigation .projects-nav-heading>a[aria-current=page]{color:#fff;border-bottom-color:#eee9f3}
+.site-header a:focus-visible,.site-header button:focus-visible{outline-color:#fff}
+.site-header .projects-dropdown{color:var(--ink)}
+.site-header .projects-dropdown a:focus-visible{outline-color:var(--purple)}
+.case-topbar{padding:16px 0;border-bottom:0}
+.case-heading{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:12px 0 22px}
+.case-heading h1{font-size:clamp(28px,2.5vw,36px);line-height:1.2;letter-spacing:-.025em;margin:0;max-width:none;flex:1;min-width:0;overflow-wrap:anywhere}
+.case-heading>.tags{justify-content:flex-end;max-width:46%;flex-shrink:0}
+.case-heading>.tags li{font-size:14px;background:var(--lilac);border-color:#d5c9e1;color:var(--ink)}
+.case-layout{padding-top:24px}
+@media(max-width:800px){
+ .site-header .menu-toggle{color:#fff;background:transparent;border-color:#cdbbdd}
+ .site-header #main-navigation{background:var(--purple);color:#fff}
+ .site-header #main-navigation a[aria-current=page]{background:#60417f}
+ .site-header #main-navigation .projects-dropdown{background:var(--lilac);color:var(--ink)}
+ .case-heading{align-items:flex-start;gap:18px}
+}
+@media(max-width:600px){
+ .case-topbar{padding:12px 0}
+ .case-heading{flex-direction:column;gap:14px;padding:10px 0 18px}
+ .case-heading h1{font-size:29px}
+ .case-heading>.tags{max-width:100%;justify-content:flex-start}
+ .case-layout{padding-top:18px}
+}

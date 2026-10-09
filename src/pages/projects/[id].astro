@@ -2,8 +2,7 @@
 import Layout from '../../layouts/Layout.astro';
 import OverviewBlocks from '../../components/OverviewBlocks.astro';
 import { visibleOverviewBlocks } from '../../lib/overview.mjs';
-import Icon from '../../components/Icon.astro';
-import { projects, site, labels, categoryLabel, mediaPath, sitePath } from '../../lib/content';
+import { projects, site, labels, mediaPath, sitePath } from '../../lib/content';
 export function getStaticPaths() { return projects.map(project => ({params:{id:project.id},props:{project}})); }
 const { project } = Astro.props;
 const overviewBlocks = visibleOverviewBlocks(project.overviewBlocks);
@@ -13,7 +12,7 @@ if (overviewBlocks.length && !sections.some(section => section.id === 'overview'
 <Layout title={site.navigation.find(item => item.key === 'projects')!.label} pageKey="projects" description={project.summary}>
   <div class="container case-page">
     <div class="case-topbar"><a class="text-link" href={sitePath('projects/')}><span aria-hidden="true">←</span> {labels.backProjects}</a></div>
-    <header class="case-heading"><span class="category-badge">{categoryLabel(project.category)}</span><h1>{project.title}</h1><p>{project.summary}</p><div class="case-meta"><span>{project.dates}</span><span>{project.role}</span><span class="status-label">{project.status}</span></div><ul class="tags">{project.tags.map(tag => <li>{tag}</li>)}</ul>{project.note && <p class="content-review-note">{project.note}</p>}</header>
+    <header class="case-heading"><h1>{project.title}</h1>{project.tags.length > 0 && <ul class="tags">{project.tags.map(tag => <li>{tag}</li>)}</ul>}</header>
     <div class="case-layout">
       <aside class="case-toc"><details open><summary>{labels.onThisPage}</summary><nav aria-label={labels.projectSections}>{sections.map((section,index) => <a href={`#${section.id}`} data-section-link={section.id} aria-current={index === 0 ? 'location' : undefined}><span class="toc-number">{String(index + 1).padStart(2,'0')}</span>{section.title}</a>)}</nav></details></aside>
       <div class="case-content">{sections.map((section,index) => <section id={section.id} class="case-section" aria-labelledby={`heading-${section.id}`}>
@@ -21,7 +20,7 @@ if (overviewBlocks.length && !sections.some(section => section.id === 'overview'
         {section.paragraphs.map(paragraph => <p>{paragraph}</p>)}
         {section.bullets.length > 0 && <ul>{section.bullets.map(bullet => <li>{bullet}</li>)}</ul>}
         {section.images.filter(image => image.src).map(image => <figure><a href={mediaPath(image.src)} target="_blank" rel="noopener noreferrer"><img src={mediaPath(image.src)} alt={image.alt} width="960" height="540" loading="lazy" /></a><figcaption>{image.caption}</figcaption></figure>)}
-        {section.id === 'overview' && <OverviewBlocks blocks={overviewBlocks} />}
+        {section.id === 'overview' && <>{project.note && <p class="content-review-note">{project.note}</p>}<OverviewBlocks blocks={overviewBlocks} /></>}
       </section>)}</div>
     </div>
   </div>
