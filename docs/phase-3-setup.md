@@ -1,6 +1,6 @@
 # Temporary online preview and visual CMS
 
-Phase 3 is authorized. A temporary review preview and the CMS configuration are implemented. **The final public launch is not authorized and has no deployment workflow.** GitHub Pages enablement, the authenticated CMS login and an actual live preview fetch remain user/account-dependent until confirmed. The first remote workflow built successfully, then failed at Pages configuration with `HttpError: Not Found`; Pages must be enabled by the repository owner.
+Phase 3 is authorized. A temporary review preview and the CMS configuration are implemented. **The final public launch is not authorized and has no deployment workflow.** The owner enabled GitHub Pages. The temporary preview is now live at https://zz10965-alt.github.io/Zhixian-personal-portfolio/preview/ . All 19 routes and 14 media/style/favicon resources returned HTTP 200; the preview notice and noindex metadata were verified. Authenticated CMS authorization and save/upload verification remain pending. The earlier Pages-configuration failure has been resolved.
 
 ## 1. Enable the online preview
 
@@ -41,6 +41,6 @@ Locally verified: all content fields have CMS editors; the upstream CMS config s
 
 Remote build verified in [the first GitHub Actions run](https://github.com/zz10965-alt/Zhixian-personal-portfolio/actions/runs/37864777157). Its deployment failed because the repository has no enabled Pages site. The configure-pages action documents that automatic enablement requires an owner/admin token other than the workflow GITHUB_TOKEN; use the owner-side settings step above instead.
 
-Not yet independently confirmed: Pages settings enablement; GitHub Actions deployment success; the live preview HTTP response; CMS login/installation; a real CMS save/upload-to-preview round trip. This environment can push Git changes but cannot call the GitHub settings API with valid authorization. Its current proxy also blocks GitHub Pages and hosted CMS access. These are account/environment limits, not evidence that the preview or CMS service is broken.
+Live deployment verified in [the successful preview run](https://github.com/zz10965-alt/Zhixian-personal-portfolio/actions/runs/37869041425). GitHub API access and live endpoint checks now work; the hosted CMS sign-in page returns HTTP 200. The account installation list currently has no Pages CMS app. Still pending: owner CMS sign-in/repository installation and a real CMS save/upload-to-preview round trip. No final-site launch was performed.
 
 A cloud-environment draft adds `zz10965-alt.github.io`, `app.pagescms.org`, `pagescms.org` and `api.github.com` to the existing network presets so future agent sessions can verify hosting/CMS endpoints. Review/save the draft in environment settings and publish the **cloud environment** to apply it. This step is separate from website deployment and does not authorize the final website. It is not needed for you to open the preview/CMS in your own browser.
