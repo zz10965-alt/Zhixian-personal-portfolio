@@ -1,14 +1,13 @@
 [
   {
-    "cardDescription": "A creator-shortlisting prototype for comparing candidates and supporting human review.",
-    "category": "product-ai",
-    "cover": "/images/Screenshot 2026-10-08 230601.png",
-    "dates": "September 2026 — ongoing",
-    "displayOrder": 1,
-    "featured": false,
-    "id": "creator-shortlisting",
-    "note": "Prototype, not a production marketing system. No award is claimed.",
-    "role": "Key contributor · 5-person team",
+    "title": "Creator Shortlisting",
+    "tags": [
+      "Python",
+      "FastAPI",
+      "Gemini",
+      "YouTube API",
+      "Product Analytics"
+    ],
     "overviewBlocks": [
       {
         "type": "text",
@@ -44,58 +43,58 @@
     ],
     "sections": [
       {
-        "id": "overview",
-        "title": "Overview"
+        "title": "Overview",
+        "id": "overview"
       },
       {
+        "title": "System Design",
+        "paragraphs": [
+          "The workflow collects campaign requirements conversationally, identifies timely topics, retrieves recent creator data, and produces ranked, budget-aware recommendations."
+        ],
         "bullets": [
           "YouTube Data API supplies recent videos, statistics, and comments.",
           "A weighted score combines engagement, stability, momentum, and publishing consistency with LLM-assessed audience fit, content quality, and brand safety.",
           "Hard filters record why a creator is excluded; an estimated-cost 0/1 knapsack step compares under-, at-, and over-budget options."
         ],
-        "id": "system-design",
-        "paragraphs": [
-          "The workflow collects campaign requirements conversationally, identifies timely topics, retrieves recent creator data, and produces ranked, budget-aware recommendations."
-        ],
-        "title": "System Design"
+        "id": "system-design"
       },
       {
-        "id": "implementation",
+        "title": "Implementation",
         "paragraphs": [
           "I built the core interactive logic and explainable ranking workflow. Metrics distinguish observed data from AI-inferred judgments; frontend visual design was handled by a teammate."
         ],
-        "title": "Implementation"
+        "id": "implementation"
       },
       {
-        "id": "evaluation",
+        "title": "Evaluation & Limits",
         "paragraphs": [
           "The prototype remains in development. An informal comparison with three friends suggested faster shortlisting, but it was not a controlled study and is not presented as a validated efficiency benchmark. Competition results were pending in the supplied record."
         ],
-        "title": "Evaluation & Limits"
+        "id": "evaluation"
       }
     ],
+    "cover": "/images/Screenshot 2026-10-08 230601.png",
+    "cardDescription": "A creator-shortlisting prototype for comparing candidates and supporting human review.",
+    "category": "product-ai",
+    "featured": false,
+    "displayOrder": 1,
+    "dates": "September 2026 — ongoing",
+    "id": "creator-shortlisting",
+    "note": "Prototype, not a production marketing system. No award is claimed.",
+    "role": "Key contributor · 5-person team",
     "sourceId": "PROJ-01",
     "status": "Ongoing prototype",
-    "summary": "A conversational creator-discovery prototype with explainable scoring and budget-aware shortlists.",
-    "tags": [
-      "Python",
-      "FastAPI",
-      "Gemini",
-      "YouTube API",
-      "Product Analytics"
-    ],
-    "title": "Creator Shortlisting"
+    "summary": "A conversational creator-discovery prototype with explainable scoring and budget-aware shortlists."
   },
   {
-    "cardDescription": "Purchase-path and repurchase analysis to identify opportunities for e-commerce growth.",
-    "category": "data-business-analytics",
-    "cover": "/images/projects/ecommerce.png",
-    "coverAlt": "Purchase-path conversion comparison from the executed e-commerce notebook",
-    "dates": "August — September 2026",
-    "displayOrder": 2,
-    "featured": false,
-    "id": "ecommerce-growth",
-    "role": "Individual project",
+    "title": "E-commerce Growth & Repurchase",
+    "tags": [
+      "SQL",
+      "DuckDB",
+      "Python",
+      "Logistic Regression",
+      "Tableau"
+    ],
     "overviewBlocks": [
       {
         "type": "text",
@@ -121,74 +120,74 @@
     ],
     "sections": [
       {
-        "id": "overview",
-        "title": "Overview"
+        "title": "Overview",
+        "id": "overview"
       },
       {
+        "title": "Data & Methodology",
+        "paragraphs": [
+          "DuckDB SQL handles cleaning, user–item tables, funnel calculations, retention, and feature engineering. Features use December 6–11; purchase labels use December 12–14 to prevent future-information leakage. Logistic-regression intent scores are evaluated with out-of-fold predictions."
+        ],
         "bullets": [
           "Compare four purchase paths at consistent user–item grain.",
           "Track the December 6 active-user cohort for D1, D3, and D7 retention.",
           "Use purchase history and predicted intent to form an operational segmentation matrix."
         ],
-        "id": "methodology",
-        "paragraphs": [
-          "DuckDB SQL handles cleaning, user–item tables, funnel calculations, retention, and feature engineering. Features use December 6–11; purchase labels use December 12–14 to prevent future-information leakage. Logistic-regression intent scores are evaluated with out-of-fold predictions."
-        ],
-        "title": "Data & Methodology"
+        "id": "methodology"
       },
       {
+        "title": "Findings & Impact",
         "bullets": [
           "Cart-assisted conversion reached 21.07%, versus 0.94% for direct purchase.",
           "Within the nine-day window, 4,270 of 6,881 buyers purchased on at least two days: 62.05%.",
           "Double-12 purchases rose 4.69× on 1.6× traffic; the top 10% intent segment converted at 84.3%, a 1.58× out-of-fold lift."
         ],
-        "id": "findings",
         "images": [
           {
             "src": "/images/projects/ecommerce.png",
-            "alt": "Original notebook chart comparing conversion rates for four purchase paths",
-            "caption": "Purchase-path conversion chart extracted from the executed source notebook."
+            "caption": "Purchase-path conversion chart extracted from the executed source notebook.",
+            "alt": "Original notebook chart comparing conversion rates for four purchase paths"
           }
         ],
-        "title": "Findings & Impact"
+        "id": "findings"
       },
       {
-        "id": "recommendations",
+        "title": "Business Recommendations",
         "paragraphs": [
           "Prioritize cart recovery within 24–48 hours, align promotional messaging with observed purchase timing, and use the purchase-history × intent matrix to prioritize outreach. These are proposed actions, not measured intervention results."
         ],
-        "title": "Business Recommendations"
+        "id": "recommendations"
       },
       {
-        "id": "limitations",
+        "title": "Scope & Limits",
         "paragraphs": [
           "Repeat purchase is defined within a nine-day window. The dataset has no monetary or campaign-cost fields, so no ROI or revenue claim is made. The matrix’s value axis means purchasing history, not spend."
         ],
-        "title": "Scope & Limits"
+        "id": "limitations"
       }
     ],
+    "cover": "/images/Screenshot 2026-10-08 230940.png",
+    "coverAlt": "Purchase-path conversion comparison from the executed e-commerce notebook",
+    "cardDescription": "Purchase-path and repurchase analysis to identify opportunities for e-commerce growth.",
+    "category": "data-business-analytics",
+    "featured": false,
+    "displayOrder": 2,
+    "dates": "August — September 2026",
+    "id": "ecommerce-growth",
+    "role": "Individual project",
     "sourceId": "PROJ-02",
     "status": "Completed analysis",
-    "summary": "From purchase-path funnels to retention and purchase-intent scoring on a full public e-commerce log.",
-    "tags": [
-      "SQL",
-      "DuckDB",
-      "Python",
-      "Logistic Regression",
-      "Tableau"
-    ],
-    "title": "E-commerce Growth & Repurchase"
+    "summary": "From purchase-path funnels to retention and purchase-intent scoring on a full public e-commerce log."
   },
   {
-    "cardDescription": "An advertising experiment analysis that combines uncertainty checks with rollout recommendations.",
-    "category": "data-business-analytics",
-    "cover": "/images/dashboards/advertising-abtest-preview.webp",
-    "coverAlt": "Original Power BI A/B Testing Decision Dashboard",
-    "dates": "June — July 2026",
-    "displayOrder": 3,
-    "featured": false,
-    "id": "advertising-ab-testing",
-    "role": "Individual project",
+    "title": "Advertising A/B Testing & Decisions",
+    "tags": [
+      "A/B Testing",
+      "Python",
+      "statsmodels",
+      "Power BI",
+      "Statistical Analysis"
+    ],
     "overviewBlocks": [
       {
         "type": "text",
@@ -199,8 +198,8 @@
       {
         "type": "image",
         "src": "/images/dashboards/advertising-abtest.png",
-        "alt": "Original A/B Testing Decision Dashboard showing CTR comparison, confidence intervals, daily trends and rollout recommendations",
-        "caption": "Screenshot from the owner’s Data_Project repository. Rollout and click-impact figures are analytical recommendations and estimates, not realized business outcomes."
+        "caption": "Screenshot from the owner’s Data_Project repository. Rollout and click-impact figures are analytical recommendations and estimates, not realized business outcomes.",
+        "alt": "Original A/B Testing Decision Dashboard showing CTR comparison, confidence intervals, daily trends and rollout recommendations"
       },
       {
         "type": "links",
@@ -215,61 +214,61 @@
     ],
     "sections": [
       {
-        "id": "overview",
-        "title": "Overview"
+        "title": "Overview",
+        "id": "overview"
       },
       {
-        "id": "methodology",
+        "title": "Approach & Methodology",
         "paragraphs": [
           "Pre-specify CTR, Bonferroni-adjusted significance at 0.0167, 80% power, and a 5% planning MDE. Use dual-path two-proportion z-tests, an A/A simulation, day-stratified CMH analysis, and sensitivity checks for same-day cross-arm users."
         ],
-        "title": "Approach & Methodology"
+        "id": "methodology"
       },
       {
+        "title": "Findings & Impact",
         "bullets": [
           "Control CTR nearly doubled across days, from 0.96% to 1.82%.",
           "Strategy 1’s pooled +46.5% lift shrank to +3.6% on day 2 (p = 0.11, not significant).",
           "Strategy 2 remained positive on both days, with +38.1% on day 2 and approximately +124% day-stratified lift."
         ],
-        "id": "findings",
-        "title": "Findings & Impact"
+        "id": "findings"
       },
       {
-        "id": "recommendations",
+        "title": "Business Recommendations",
         "paragraphs": [
           "Recommend stopping Strategy 1 and staging Strategy 2 with a 10% holdout and rollback criteria. A conservative day-2 planning estimate is about 6,900 additional clicks per million impressions (95% CI 5,800–8,100). These changes were recommended, not executed."
         ],
-        "title": "Business Recommendations"
+        "id": "recommendations"
       },
       {
-        "id": "limitations",
+        "title": "Scope & Limits",
         "paragraphs": [
           "Two days of observations cannot distinguish novelty from a day-specific traffic or placement change. No revenue, cost, or downstream conversion fields are available."
         ],
-        "title": "Scope & Limits"
+        "id": "limitations"
       }
     ],
+    "cover": "/images/dashboards/advertising-abtest-preview.webp",
+    "coverAlt": "Original Power BI A/B Testing Decision Dashboard",
+    "cardDescription": "An advertising experiment analysis that combines uncertainty checks with rollout recommendations.",
+    "category": "data-business-analytics",
+    "featured": false,
+    "displayOrder": 3,
+    "dates": "June — July 2026",
+    "id": "advertising-ab-testing",
+    "role": "Individual project",
     "sourceId": "PROJ-03",
     "status": "Completed analysis",
-    "summary": "Separating a pooled win from a stable experiment effect, with day-level analysis and rollout recommendations.",
-    "tags": [
-      "A/B Testing",
-      "Python",
-      "statsmodels",
-      "Power BI",
-      "Statistical Analysis"
-    ],
-    "title": "Advertising A/B Testing & Decisions"
+    "summary": "Separating a pooled win from a stable experiment effect, with day-level analysis and rollout recommendations."
   },
   {
-    "cardDescription": "A proposed evaluation framework for testing AI safety and documenting evidence.",
-    "category": "product-ai",
-    "dates": "September 2026 — ongoing",
-    "displayOrder": 4,
-    "featured": false,
-    "id": "ai-safety-evaluation",
-    "note": "Proposal-stage work; no evaluation results or completed test dataset are reported.",
-    "role": "Testing Lead · 3-person capstone team",
+    "title": "AI Safety Evaluation for Health Guidance",
+    "tags": [
+      "AI Evaluation",
+      "Prompt Design",
+      "Evidence-Based Testing",
+      "AI Governance"
+    ],
     "overviewBlocks": [
       {
         "type": "text",
@@ -290,50 +289,51 @@
     ],
     "sections": [
       {
-        "id": "overview",
-        "title": "Overview"
+        "title": "Overview",
+        "id": "overview"
       },
       {
-        "id": "methodology",
+        "title": "Evaluation Design",
         "paragraphs": [
           "The proposed matrix crosses three health scenarios, three country contexts, and two personas: 18 standardized cases, each planned for ChatGPT, Gemini, and Claude, for 54 test runs. Scenarios cover maternal emergencies, family planning, and adolescent reproductive health. Country contexts are Kenya, Ethiopia, and India."
         ],
-        "title": "Evaluation Design"
+        "id": "methodology"
       },
       {
-        "id": "protocol",
+        "title": "Testing Protocol",
         "paragraphs": [
           "Hold the core health question constant, vary only the comparison variable, use a fresh conversation for each tool, and capture full prompts, responses, model/version dates, case evidence, and issue notes. DHS, EDHS, NFHS, and WHO public evidence informs case design."
         ],
-        "title": "Testing Protocol"
+        "id": "protocol"
       },
       {
-        "id": "status",
+        "title": "Current Status",
         "paragraphs": [
           "The supplied record is a testing proposal: pilot runs are pending, prompt wording is not locked, and country selection requires team/sponsor confirmation. The 54-response dataset is a planned deliverable, not a completed result. No model safety conclusions are claimed."
         ],
-        "title": "Current Status"
+        "id": "status"
       }
     ],
+    "cardDescription": "A proposed evaluation framework for testing AI safety and documenting evidence.",
+    "category": "product-ai",
+    "featured": false,
+    "displayOrder": 4,
+    "dates": "September 2026 — ongoing",
+    "id": "ai-safety-evaluation",
+    "note": "Proposal-stage work; no evaluation results or completed test dataset are reported.",
+    "role": "Testing Lead · 3-person capstone team",
     "sourceId": "PROJ-04",
     "status": "Proposal stage",
-    "summary": "A reproducible testing proposal for women’s and adolescent health guidance in low- and middle-income contexts.",
-    "tags": [
-      "AI Evaluation",
-      "Prompt Design",
-      "Evidence-Based Testing",
-      "AI Governance"
-    ],
-    "title": "AI Safety Evaluation for Health Guidance"
+    "summary": "A reproducible testing proposal for women’s and adolescent health guidance in low- and middle-income contexts."
   },
   {
-    "cardDescription": "Comparing geographic variation in inpatient payments to support state-level benchmarking.",
-    "category": "data-business-analytics",
-    "dates": "March — May 2026",
-    "displayOrder": 5,
-    "featured": false,
-    "id": "medicare-payments",
-    "role": "Project Lead · 3-person course team",
+    "title": "Medicare Payment Benchmarking",
+    "tags": [
+      "JASP",
+      "Excel",
+      "K-Means",
+      "Statistical Analysis"
+    ],
     "overviewBlocks": [
       {
         "type": "text",
@@ -354,61 +354,59 @@
     ],
     "sections": [
       {
-        "id": "overview",
-        "title": "Overview"
+        "title": "Overview",
+        "id": "overview"
       },
       {
-        "id": "methodology",
+        "title": "Data & Methodology",
         "paragraphs": [
           "Standardize identifiers and coding; flag rather than remove IQR outliers; aggregate using discharge-weighted state–DRG means. Apply descriptive statistics, Pearson correlation, coefficient of variation, K-Means with three clusters, Kruskal–Wallis with Dunn–Bonferroni comparisons, and chi-square tests."
         ],
-        "title": "Data & Methodology"
+        "id": "methodology"
       },
       {
+        "title": "Key Findings",
         "bullets": [
           "Average payment differed by 2.5× between the highest- and lowest-paying states ($39,922 versus $15,674).",
           "Among 360 DRGs with sufficient data, 95.3% exceeded the 15% coefficient-of-variation threshold.",
           "27.5% of state–DRG observations departed from the national benchmark by more than ±20%."
         ],
-        "id": "findings",
-        "title": "Key Findings"
+        "id": "findings"
       },
       {
-        "id": "recommendations",
+        "title": "Business Recommendations",
         "paragraphs": [
           "Use state-level benchmarks, review DRG coding and clinical documentation, and target high-variation treatment categories for audit. Recommendations were proposed; implementation effects were not measured."
         ],
-        "title": "Business Recommendations"
+        "id": "recommendations"
       },
       {
-        "id": "limitations",
+        "title": "Scope & Limits",
         "paragraphs": [
           "The data covers Medicare fee-for-service inpatient claims, not Medicare Advantage, private insurance, or the entire U.S. inpatient population. Statistical associations are not causal explanations."
         ],
-        "title": "Scope & Limits"
+        "id": "limitations"
       }
     ],
+    "cardDescription": "Comparing geographic variation in inpatient payments to support state-level benchmarking.",
+    "category": "data-business-analytics",
+    "featured": false,
+    "displayOrder": 5,
+    "dates": "March — May 2026",
+    "id": "medicare-payments",
+    "role": "Project Lead · 3-person course team",
     "sourceId": "PROJ-05",
     "status": "Completed course analysis",
-    "summary": "Comparing geographic variation in inpatient payments and translating it into state-level benchmarking recommendations.",
-    "tags": [
-      "JASP",
-      "Excel",
-      "K-Means",
-      "Statistical Analysis"
-    ],
-    "title": "Medicare Payment Benchmarking"
+    "summary": "Comparing geographic variation in inpatient payments and translating it into state-level benchmarking recommendations."
   },
   {
-    "cardDescription": "Modeling employee attrition risk and examining the factors associated with turnover.",
-    "category": "data-science",
-    "cover": "/images/projects/employee-attrition.png",
-    "coverAlt": "Employee attrition odds-ratio forest plot",
-    "dates": "August — September 2026",
-    "displayOrder": 6,
-    "featured": false,
-    "id": "employee-attrition",
-    "role": "Individual project",
+    "title": "Employee Attrition & Workplace AI Risk",
+    "tags": [
+      "Python",
+      "statsmodels",
+      "Logistic Regression",
+      "Cross-Validation"
+    ],
     "overviewBlocks": [
       {
         "type": "text",
@@ -429,59 +427,61 @@
     ],
     "sections": [
       {
-        "id": "overview",
-        "title": "Overview"
+        "title": "Overview",
+        "id": "overview"
       },
       {
-        "id": "methodology",
+        "title": "Approach & Methodology",
         "paragraphs": [
           "Audit missingness, duplicates, and tenure consistency; retain and flag 59 tenure-inconsistent records. Compare effect sizes with Cohen’s d, fit nested multivariable logistic regressions, test interactions, and evaluate out-of-fold risk scores with calibration and decile lift."
         ],
-        "title": "Approach & Methodology"
+        "id": "methodology"
       },
       {
+        "title": "Findings & Impact",
         "bullets": [
           "Overall attrition was 17.9%. Burnout and engagement showed the strongest separation.",
           "In the multivariable model, burnout odds ratio was 1.52 and promotion stagnation 1.40 per standard deviation; perceived AI risk was a smaller independent association (OR 1.19).",
           "Cross-validated ROC-AUC was 0.775. The highest-risk 10% contained 29% of leavers, a 2.9× lift."
         ],
-        "id": "findings",
         "images": [
           {
             "src": "/images/projects/employee-attrition.png",
-            "alt": "Original notebook forest plot of employee attrition odds ratios and confidence intervals",
-            "caption": "Model associations and uncertainty from the executed source notebook."
+            "caption": "Model associations and uncertainty from the executed source notebook.",
+            "alt": "Original notebook forest plot of employee attrition odds ratios and confidence intervals"
           }
         ],
-        "title": "Findings & Impact"
+        "id": "findings"
       },
       {
-        "id": "recommendations",
+        "title": "Recommendations & Limits",
         "paragraphs": [
           "Use risk scores to prioritize supportive retention conversations, not automatic employment decisions. Associations do not establish causality. A non-significant pay × promotion-stagnation interaction is not proof that compensation cannot help. No production retention effect is claimed."
         ],
-        "title": "Recommendations & Limits"
+        "id": "recommendations"
       }
     ],
+    "cover": "/images/projects/employee-attrition.png",
+    "coverAlt": "Employee attrition odds-ratio forest plot",
+    "cardDescription": "Modeling employee attrition risk and examining the factors associated with turnover.",
+    "category": "data-science",
+    "featured": false,
+    "displayOrder": 6,
+    "dates": "August — September 2026",
+    "id": "employee-attrition",
+    "role": "Individual project",
     "sourceId": "PROJ-06",
     "status": "Completed analysis",
-    "summary": "An interpretable retention-risk analysis separating individual conditions, perceived AI risk, and department differences.",
-    "tags": [
-      "Python",
-      "statsmodels",
-      "Logistic Regression",
-      "Cross-Validation"
-    ],
-    "title": "Employee Attrition & Workplace AI Risk"
+    "summary": "An interpretable retention-risk analysis separating individual conditions, perceived AI risk, and department differences."
   },
   {
-    "cardDescription": "A relational data foundation for sales and customer analysis, from entity modeling to reusable SQL.",
-    "category": "data-business-analytics",
-    "dates": "September — December 2025",
-    "displayOrder": 7,
-    "featured": false,
-    "id": "furniture-database",
-    "role": "Team member · 5-person team",
+    "title": "Furniture E-commerce Database",
+    "tags": [
+      "MySQL",
+      "SQL",
+      "Database Design",
+      "Indexing"
+    ],
     "overviewBlocks": [
       {
         "type": "text",
@@ -502,48 +502,50 @@
     ],
     "sections": [
       {
-        "id": "overview",
-        "title": "Overview"
+        "title": "Overview",
+        "id": "overview"
       },
       {
+        "title": "Design & Implementation",
+        "paragraphs": [
+          "Participated in entity and schema design for customers, orders, products, finished goods, and geography, using primary/foreign keys and normalization."
+        ],
         "bullets": [
           "Wrote multi-table joins, subqueries, RANK window functions, and ROLLUP aggregations.",
           "Created statistical stored procedures for reusable analysis.",
           "Built and checked non-unique, composite, and functional indexes for representative query workloads."
         ],
-        "id": "implementation",
-        "paragraphs": [
-          "Participated in entity and schema design for customers, orders, products, finished goods, and geography, using primary/foreign keys and normalization."
-        ],
-        "title": "Design & Implementation"
+        "id": "implementation"
       },
       {
-        "id": "limitations",
+        "title": "Scope & Limits",
         "paragraphs": [
           "No verified query-speed benchmark is available, so the recalled improvement figure is omitted. Course-project designation remains a source-review item. No repository or report link was supplied."
         ],
-        "title": "Scope & Limits"
+        "id": "limitations"
       }
     ],
+    "cardDescription": "A relational data foundation for sales and customer analysis, from entity modeling to reusable SQL.",
+    "category": "data-business-analytics",
+    "featured": false,
+    "displayOrder": 7,
+    "dates": "September — December 2025",
+    "id": "furniture-database",
+    "role": "Team member · 5-person team",
     "sourceId": "PROJ-07",
     "status": "Completed team project",
-    "summary": "A relational data foundation for sales and customer analysis, from entity modeling to reusable SQL.",
-    "tags": [
-      "MySQL",
-      "SQL",
-      "Database Design",
-      "Indexing"
-    ],
-    "title": "Furniture E-commerce Database"
+    "summary": "A relational data foundation for sales and customer analysis, from entity modeling to reusable SQL."
   },
   {
-    "cardDescription": "A conversational assistant prototype for answering questions and organizing information.",
-    "category": "product-ai",
-    "dates": "October — November 2025",
-    "displayOrder": 8,
-    "featured": false,
-    "id": "conversational-ai-agent",
-    "role": "Independent design & development",
+    "title": "Conversational AI Agent",
+    "tags": [
+      "Python",
+      "FastAPI",
+      "LangChain",
+      "RAG",
+      "Redis",
+      "Qdrant"
+    ],
     "overviewBlocks": [
       {
         "type": "text",
@@ -569,61 +571,58 @@
     ],
     "sections": [
       {
-        "id": "overview",
-        "title": "Overview"
+        "title": "Overview",
+        "id": "overview"
       },
       {
-        "id": "architecture",
-        "images": [
-          {
-            "src": "/images/projects/ai-agent-architecture.svg",
-            "alt": "Owner’s original AI Conversational Agent architecture diagram",
-            "caption": "Architecture illustration from the earlier portfolio; not an execution trace or measured performance result."
-          }
-        ],
+        "title": "System Architecture",
         "paragraphs": [
           "Redis provides cross-session memory; Qdrant supports document chunking, embedding, semantic retrieval, and filtering; SerpAPI adds live information. LangChain and OpenAI GPT orchestrate responses through a FastAPI application."
         ],
-        "title": "System Architecture"
+        "images": [
+          {
+            "src": "/images/projects/ai-agent-architecture.svg",
+            "caption": "Architecture illustration from the earlier portfolio; not an execution trace or measured performance result.",
+            "alt": "Owner’s original AI Conversational Agent architecture diagram"
+          }
+        ],
+        "id": "architecture"
       },
       {
-        "id": "implementation",
+        "title": "Implementation",
         "paragraphs": [
           "STT/TTS closes the voice-input and voice-output loop. Docker Compose brings up the application, Redis, and Qdrant, while pytest covers agent, memory, RAG, and API modules."
         ],
-        "title": "Implementation"
+        "id": "implementation"
       },
       {
-        "id": "evaluation",
+        "title": "Evaluation & Limits",
         "paragraphs": [
           "The project is an interactive prototype, not a production service. A benchmark script exists in the source, but no verified benchmark results are supplied; no latency or throughput claim is made."
         ],
-        "title": "Evaluation & Limits"
+        "id": "evaluation"
       }
     ],
+    "cardDescription": "A conversational assistant prototype for answering questions and organizing information.",
+    "category": "product-ai",
+    "featured": false,
+    "displayOrder": 8,
+    "dates": "October — November 2025",
+    "id": "conversational-ai-agent",
+    "role": "Independent design & development",
     "sourceId": "PROJ-08",
     "status": "Prototype",
-    "summary": "A text-and-voice agent prototype combining persistent memory, document retrieval, and live search.",
-    "tags": [
-      "Python",
-      "FastAPI",
-      "LangChain",
-      "RAG",
-      "Redis",
-      "Qdrant"
-    ],
-    "title": "Conversational AI Agent"
+    "summary": "A text-and-voice agent prototype combining persistent memory, document retrieval, and live search."
   },
   {
-    "cardDescription": "A mobile product prototype with scripted assistance and simulated social interactions.",
-    "category": "product-ai",
-    "cover": "/images/projects/starshow.png",
-    "coverAlt": "Original StarShow mobile prototype home screen",
-    "dates": "September 2026",
-    "displayOrder": 9,
-    "featured": false,
-    "id": "starshow",
-    "role": "Independent product design & prototype",
+    "title": "StarShow · Concert Companion",
+    "tags": [
+      "Product Design",
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Information Architecture"
+    ],
     "overviewBlocks": [
       {
         "type": "text",
@@ -649,61 +648,60 @@
     ],
     "sections": [
       {
-        "id": "overview",
-        "title": "Overview"
+        "title": "Overview",
+        "id": "overview"
       },
       {
-        "id": "product-design",
-        "images": [
-          {
-            "src": "/images/projects/starshow.png",
-            "alt": "Original StarShow mobile prototype home screen",
-            "caption": "Original screenshot supplied in the StarShow repository. This is a product prototype, not a production service."
-          }
-        ],
+        "title": "Product Design",
         "paragraphs": [
           "Mapped user needs to scenarios and solutions; distinguished favorites, watchlist, and plans; documented key flows, priorities, and a three-phase roadmap. Hypotheses and metrics are defined for future validation, not reported as measured outcomes."
         ],
-        "title": "Product Design"
+        "images": [
+          {
+            "src": "/images/projects/starshow.png",
+            "caption": "Original screenshot supplied in the StarShow repository. This is a product prototype, not a production service.",
+            "alt": "Original StarShow mobile prototype home screen"
+          }
+        ],
+        "id": "product-design"
       },
       {
-        "id": "implementation",
+        "title": "Implementation",
         "paragraphs": [
           "Built a high-fidelity frontend prototype in HTML, CSS, and vanilla JavaScript with localStorage. Seat scoring reacts to preferences; a four-stage plan covers ticket preparation, pre-trip planning, show day, and the return journey."
         ],
-        "title": "Implementation"
+        "id": "implementation"
       },
       {
-        "id": "boundaries",
+        "title": "Prototype Boundaries",
         "paragraphs": [
           "Show data, assistant conversations, group messages, and maps are local demonstrations. The assistant is scripted, group chat is simulated, and reminders are in-page switches rather than system push notifications. No live ticketing backend is connected."
         ],
-        "title": "Prototype Boundaries"
+        "id": "boundaries"
       }
     ],
+    "cover": "/images/projects/starshow.png",
+    "coverAlt": "Original StarShow mobile prototype home screen",
+    "cardDescription": "A mobile product prototype with scripted assistance and simulated social interactions.",
+    "category": "product-ai",
+    "featured": false,
+    "displayOrder": 9,
+    "dates": "September 2026",
+    "id": "starshow",
+    "role": "Independent product design & prototype",
     "sourceId": "PROJ-09",
     "status": "Interactive prototype",
-    "summary": "A mobile product-design prototype for the journey from discovering a show to keeping the memory.",
-    "tags": [
-      "Product Design",
-      "HTML",
-      "CSS",
-      "JavaScript",
-      "Information Architecture"
-    ],
-    "title": "StarShow · Concert Companion"
+    "summary": "A mobile product-design prototype for the journey from discovering a show to keeping the memory."
   },
   {
-    "cardDescription": "Battery-failure classification using synthetic data and precision–recall evaluation.",
-    "category": "data-science",
-    "cover": "/images/projects/ev-battery.png",
-    "coverAlt": "Battery-failure precision–recall curve",
-    "dates": "August — September 2026",
-    "displayOrder": 10,
-    "featured": false,
-    "id": "ev-battery-failure",
-    "note": "Narrative pending owner review. All displayed results refer to synthetic data.",
-    "role": "Individual project",
+    "title": "EV Battery Failure Prediction",
+    "tags": [
+      "Python",
+      "scikit-learn",
+      "XGBoost",
+      "PR-AUC",
+      "Predictive Maintenance"
+    ],
     "overviewBlocks": [
       {
         "type": "text",
@@ -724,62 +722,63 @@
     ],
     "sections": [
       {
-        "id": "overview",
-        "title": "Overview"
+        "title": "Overview",
+        "id": "overview"
       },
       {
-        "id": "methodology",
+        "title": "Approach & Methodology",
         "paragraphs": [
           "Exclude identifier fields; compare raw telemetry with engineered composite features; use stratified 70/15/15 train, validation, and test splits. Fit imputation and encoding only on training data. Compare dummy, logistic-regression, and XGBoost baselines using PR-AUC."
         ],
-        "title": "Approach & Methodology"
+        "id": "methodology"
       },
       {
+        "title": "Evaluation",
         "bullets": [
           "Raw-feature logistic regression achieved PR-AUC 0.9172; raw-feature XGBoost achieved 0.9192, a modest improvement.",
           "Select the threshold on validation data to maximize precision while preserving at least 90% recall. At threshold 0.7127, test recall was 90.9% and precision 75.9%.",
           "Redundancy checks showed two leading health features represent essentially the same signal."
         ],
-        "id": "evaluation",
         "images": [
           {
             "src": "/images/projects/ev-battery.png",
-            "alt": "Original executed notebook precision-recall curve for battery failure classification",
-            "caption": "Precision–recall curve from the synthetic-data source notebook."
+            "caption": "Precision–recall curve from the synthetic-data source notebook.",
+            "alt": "Original executed notebook precision-recall curve for battery failure classification"
           }
         ],
-        "title": "Evaluation"
+        "id": "evaluation"
       },
       {
-        "id": "limitations",
+        "title": "Scope & Limits",
         "paragraphs": [
           "Synthetic data restricts generalization. The threshold is an analytical decision rule, not a production maintenance policy. Model complexity is not presented as a large performance gain; importance is not causality."
         ],
-        "title": "Scope & Limits"
+        "id": "limitations"
       }
     ],
+    "cover": "/images/projects/ev-battery.png",
+    "coverAlt": "Battery-failure precision–recall curve",
+    "cardDescription": "Battery-failure classification using synthetic data and precision–recall evaluation.",
+    "category": "data-science",
+    "featured": false,
+    "displayOrder": 10,
+    "dates": "August — September 2026",
+    "id": "ev-battery-failure",
+    "note": "Narrative pending owner review. All displayed results refer to synthetic data.",
+    "role": "Individual project",
     "sourceId": "PROJ-10",
     "status": "Content review pending",
-    "summary": "A leakage-aware classification workflow, with strong baselines and recall-sensitive threshold selection.",
-    "tags": [
-      "Python",
-      "scikit-learn",
-      "XGBoost",
-      "PR-AUC",
-      "Predictive Maintenance"
-    ],
-    "title": "EV Battery Failure Prediction"
+    "summary": "A leakage-aware classification workflow, with strong baselines and recall-sensitive threshold selection."
   },
   {
-    "cardDescription": "Country-year analysis of EV adoption, infrastructure, regulation, and model robustness.",
-    "category": "data-science",
-    "cover": "/images/projects/ev-adoption.png",
-    "coverAlt": "Regional EV adoption trend chart from the source notebook",
-    "dates": "July — August 2026",
-    "displayOrder": 11,
-    "featured": false,
-    "id": "ev-adoption-drivers",
-    "role": "Individual project",
+    "title": "EV Adoption Drivers",
+    "tags": [
+      "Python",
+      "Panel Data",
+      "OLS",
+      "Fixed Effects",
+      "statsmodels"
+    ],
     "overviewBlocks": [
       {
         "type": "text",
@@ -800,52 +799,53 @@
     ],
     "sections": [
       {
-        "id": "overview",
-        "title": "Overview"
+        "title": "Overview",
+        "id": "overview"
       },
       {
-        "id": "methodology",
+        "title": "Approach & Methodology",
         "paragraphs": [
           "Validate panel grain and KPI arithmetic; discard an inconsistent supplied growth column. Analyze share and volume separately, then fit OLS to logit-transformed share with year fixed effects, country-clustered uncertainty, wild cluster bootstrap, collinearity checks, and eight robustness specifications."
         ],
-        "title": "Approach & Methodology"
+        "id": "methodology"
       },
       {
+        "title": "Findings & Impact",
+        "paragraphs": [
+          "In this dataset, emission regulation and charging infrastructure were the only consistently robust associations in the joint model. GDP was less stable after small-sample correction; fuel-price and subsidy effects were not significant in the main joint model."
+        ],
         "bullets": [
           "Premium adoption generally preceded mass-market adoption; commercial vehicles trailed.",
           "High subsidies without dense charging infrastructure were associated with lower adoption in the observed market profiles."
         ],
-        "id": "findings",
         "images": [
           {
             "src": "/images/projects/ev-adoption.png",
-            "alt": "Original source notebook regional EV market-share trajectories from 2010 to 2025",
-            "caption": "Regional patterns in the course-provided dataset; not an independently validated official market series."
+            "caption": "Regional patterns in the course-provided dataset; not an independently validated official market series.",
+            "alt": "Original source notebook regional EV market-share trajectories from 2010 to 2025"
           }
         ],
-        "paragraphs": [
-          "In this dataset, emission regulation and charging infrastructure were the only consistently robust associations in the joint model. GDP was less stable after small-sample correction; fuel-price and subsidy effects were not significant in the main joint model."
-        ],
-        "title": "Findings & Impact"
+        "id": "findings"
       },
       {
-        "id": "limitations",
+        "title": "Scope & Limits",
         "paragraphs": [
           "This is observational, course-provided data with unspecified original generation/source details, not verified official registration data. Regulation and charging variables are highly correlated; model associations do not identify causal policy effects."
         ],
-        "title": "Scope & Limits"
+        "id": "limitations"
       }
     ],
+    "cover": "/images/projects/ev-adoption.png",
+    "coverAlt": "Regional EV adoption trend chart from the source notebook",
+    "cardDescription": "Country-year analysis of EV adoption, infrastructure, regulation, and model robustness.",
+    "category": "data-science",
+    "featured": false,
+    "displayOrder": 11,
+    "dates": "July — August 2026",
+    "id": "ev-adoption-drivers",
+    "role": "Individual project",
     "sourceId": "PROJ-11",
     "status": "Completed analysis",
-    "summary": "Country-year panel analysis of adoption patterns, infrastructure, regulation, and model robustness.",
-    "tags": [
-      "Python",
-      "Panel Data",
-      "OLS",
-      "Fixed Effects",
-      "statsmodels"
-    ],
-    "title": "EV Adoption Drivers"
+    "summary": "Country-year panel analysis of adoption patterns, infrastructure, regulation, and model robustness."
   }
 ]
