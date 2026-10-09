@@ -2,11 +2,10 @@
 import '../styles/global.css';
 import { profile } from '../lib/content';
 import Icon from '../components/Icon.astro';
-import { categories, site, labels, mediaPath } from '../lib/content';
+import { categories, site, labels, mediaPath, sitePath } from '../lib/content';
 const { title = site.navigation[0].label, pageKey = 'about', description = site.description } = Astro.props;
 const preview = import.meta.env.PORTFOLIO_PREVIEW === 'true';
-const base = import.meta.env.BASE_URL;
-const url = (path = '') => `${base}${path}`;
+const url = sitePath;
 const links = site.navigation;
 ---
 <!doctype html>

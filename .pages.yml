@@ -849,6 +849,11 @@
           "label": "University",
           "type": "string",
           "required": true
+        },
+        {
+          "name": "gpaLabel",
+          "label": "Academic Highlight Label (leave blank for ranking only)",
+          "type": "string"
         }
       ],
       "list": true

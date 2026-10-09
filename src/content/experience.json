@@ -84,10 +84,10 @@
   },
   {
     "id": "conch",
-    "company": "成都海螺型材有限责任公司",
-    "monogram": "海螺",
+    "company": "Chengdu Conch Profiles Co., Ltd.",
+    "monogram": "CONCH",
     "logo": "",
-    "logoAlt": "Company logo",
+    "logoAlt": "Chengdu Conch Profiles logo",
     "role": "Marketing Department Assistant",
     "team": "Marketing",
     "dates": "Summer 2023 & Summer 2024",
@@ -105,7 +105,7 @@
       "Video Editing",
       "Layout Design"
     ],
-    "note": "Counts are owner-recalled estimates. The original Chinese company name is retained because no official English name was supplied.",
+    "note": "Counts are owner-recalled estimates.",
     "featured": false,
     "displayOrder": 4
   }

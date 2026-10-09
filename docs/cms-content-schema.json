@@ -587,6 +587,9 @@
           },
           "university": {
             "type": "string"
+          },
+          "gpaLabel": {
+            "type": "string"
           }
         },
         "additionalProperties": false

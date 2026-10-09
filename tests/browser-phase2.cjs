@@ -15,6 +15,7 @@ const experiences=JSON.parse(fs.readFileSync(root+'/src/content/experience.json'
   for(const route of routes){
    const r=await page.goto(base+route);assert.equal(r.status(),200,route);await page.locator('main h1').waitFor();
    assert.equal(await page.locator('main h1').count(),1,route);
+   assert.equal(await page.locator('.site-header').evaluate(element=>getComputedStyle(element).backgroundColor),'rgb(115, 83, 154)',`navigation background ${route}`);
    assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false,`overflow ${width} ${route}`);
    assert.equal(await page.locator('#project-categories a').count(),3);
    assert.equal(await page.locator('#main-navigation a[aria-current=page]').count(),1,route);
@@ -25,7 +26,7 @@ const experiences=JSON.parse(fs.readFileSync(root+'/src/content/experience.json'
  assert.equal(await page.locator('.project-card').count(),projects.length);
  await page.locator('.projects-nav').hover();await page.waitForFunction(()=>!document.querySelector('#project-categories').hidden);
  assert.deepEqual(await page.locator('#project-categories a').allTextContents(),categories.map(c=>c.label));
- await page.locator('#project-categories a').nth(1).click();await page.waitForURL('**/category/data-science/');assert.equal(await page.locator('.project-card').count(),projects.filter(p=>p.category==='data-science').length);
+ await page.locator('#project-categories a').nth(1).click();await page.waitForURL(url=>url.pathname.endsWith('/category/data-science/'));assert.equal(await page.locator('.project-card').count(),projects.filter(p=>p.category==='data-science').length);
  await page.mouse.move(0,0);await page.locator('.projects-toggle').focus();await page.keyboard.press('ArrowDown');assert.equal(await page.evaluate(()=>document.activeElement.textContent.trim()),categories[0].label);
  await page.keyboard.press('ArrowDown');assert.equal(await page.evaluate(()=>document.activeElement.textContent.trim()),categories[1].label);
  await page.keyboard.press('Escape');assert.equal(await page.locator('.projects-toggle').getAttribute('aria-expanded'),'false');assert.equal(await page.locator('.projects-toggle').evaluate(e=>e===document.activeElement),true);
@@ -49,7 +50,7 @@ const experiences=JSON.parse(fs.readFileSync(root+'/src/content/experience.json'
  assert.equal(await page.locator('.hero-social a[href="mailto:freyazhang968@nyu.edu"]').innerText(),'freyazhang968@nyu.edu');assert.equal(await page.locator('.hero-social a[href="https://www.linkedin.com/in/freya-data/"]').count(),1);
  const order=await page.evaluate(()=>['.hero-copy','.hero-actions','.hero-social','.hero-photo'].map(s=>document.querySelector(s).getBoundingClientRect().top));assert.ok(order.every((v,i)=>!i||v>order[i-1]));assert.equal(await page.locator('.hero-actions a').count(),0);
  for(const e of await page.locator('.hero-social a').all())assert.ok((await e.boundingBox()).height>=44);
- await page.locator('.menu-toggle').click();await page.locator('.projects-toggle').click();assert.equal(await page.locator('.projects-toggle').getAttribute('aria-expanded'),'true');await page.locator('#project-categories a').last().click();await page.waitForURL('**/category/product-ai/');
+ await page.locator('.menu-toggle').click();await page.locator('.projects-toggle').click();assert.equal(await page.locator('.projects-toggle').getAttribute('aria-expanded'),'true');await page.locator('#project-categories a').last().click();await page.waitForURL(url=>url.pathname.endsWith('/category/product-ai/'));
  await page.goto(base+'/experience/');await page.locator('main h1').waitFor();await page.locator('#experience-select').selectOption('nielseniq');assert.equal(await page.locator('#experience-panel h2').innerText(),'NielsenIQ (GfK)');
  console.log('PASS mobile contact-before-photo order, tap sizes, dropdown and internship select');
  await page.goto(base+'/projects/starshow/');assert.equal(await page.locator('img[src$="/images/projects/starshow.png"]').count(),1);

@@ -18,7 +18,8 @@ export const projects = (normalizeContent(projectRecords, contract.$defs.project
 export const dashboards = (normalizeContent(dashboardRecords, contract.$defs.dashboards) as typeof dashboardRecords).sort(presentationOrder);
 export const experiences = (normalizeContent(experienceRecords, contract.$defs.experience) as typeof experienceRecords).sort((a, b) => presentationOrder(a, b) || b.start.localeCompare(a.start));
 export const categoryLabel = (id: string) => categories.find(item => item.id === id)?.label ?? id;
-export const sitePath = (path = '') => `${import.meta.env.BASE_URL}${path.replace(/^\//, '')}`;
+const previewRevision = import.meta.env.PORTFOLIO_PREVIEW === 'true' ? import.meta.env.PORTFOLIO_REVISION : '';
+export const sitePath = (path = '') => `${import.meta.env.BASE_URL}${path.replace(/^\//, '')}${previewRevision && (!path || path.endsWith('/')) ? `?v=${previewRevision}` : ''}`;
 export const mediaPath = (path: string) => path.startsWith('https://') ? path : sitePath(path);
 export type Project = typeof projects[number];
 export type Dashboard = typeof dashboards[number];

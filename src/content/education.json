@@ -9,7 +9,7 @@
     "start": "September 2021",
     "end": "June 2025",
     "period": "2021 — 2025",
-    "gpa": "3.48 / 5.0",
+    "gpa": "Top 10%",
     "description": "A foundation in management, quantitative research, and understanding how people and organizations work.",
     "coursework": [
       "Statistics",
@@ -37,9 +37,10 @@
     ],
     "logo": "",
     "logoAlt": "Chongqing University of Technology logo",
-    "reviewNote": "English degree title is a translation of 管理学学士; official diploma wording needs confirmation.",
-    "courseworkNote": "Course titles translated from the supplied academic record.",
-    "timelineLabel": "THE FOUNDATION"
+    "reviewNote": "",
+    "courseworkNote": "",
+    "timelineLabel": "THE FOUNDATION",
+    "gpaLabel": ""
   },
   {
     "id": "nyu",
@@ -72,6 +73,7 @@
     "logoAlt": "New York University logo",
     "reviewNote": "",
     "courseworkNote": "Course titles translated from the supplied academic record.",
-    "timelineLabel": "THE NEXT CHAPTER"
+    "timelineLabel": "THE NEXT CHAPTER",
+    "gpaLabel": "GPA"
   }
 ]

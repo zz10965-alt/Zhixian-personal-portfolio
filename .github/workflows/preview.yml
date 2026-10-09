@@ -37,6 +37,7 @@ jobs:
         run: npm run build
         env:
           PORTFOLIO_PREVIEW: 'true'
+          PORTFOLIO_REVISION: ${{ github.sha }}
           PORTFOLIO_SITE_URL: 'https://zz10965-alt.github.io'
           PORTFOLIO_BASE_PATH: '/Zhixian-personal-portfolio/preview/'
       - name: Package preview in a separate path

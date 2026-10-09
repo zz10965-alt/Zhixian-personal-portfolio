@@ -21,10 +21,10 @@ import { profile } from '../lib/content';
           <p class="degree">{entry.degree}<br /><strong>{entry.major}</strong></p>
           {entry.reviewNote && <p class="content-review-note">{entry.reviewNote}</p>}
           <p class="dates">{entry.start} — {entry.end}</p>
-          <div class="gpa"><span>{labels.gpa}</span><strong>{entry.gpa}</strong></div>
+          {entry.gpa && <div class="gpa">{entry.gpaLabel && <span>{entry.gpaLabel}</span>}<strong>{entry.gpa}</strong></div>}
                     <h3 class="detail-label">{labels.coursework}</h3>
           <ul class="tags">{entry.coursework.map(course => <li>{course}</li>)}</ul>
-          <p class="source-caption">{entry.courseworkNote}</p>
+          {entry.courseworkNote && <p class="source-caption">{entry.courseworkNote}</p>}
           {entry.awards.length > 0 && <div class="academic-section"><h3 class="detail-label">{labels.honors}</h3><ul class="award-list">{entry.awards.map(award => <li><Icon name="trophy" /><div><strong>{award.title}</strong><span>{award.date}</span></div></li>)}</ul></div>}
           <div class="academic-section"><h3 class="detail-label">{labels.academicHighlights}</h3><ul class="highlights">{entry.highlights.map(item => <li>{item}</li>)}</ul></div>
         </article>

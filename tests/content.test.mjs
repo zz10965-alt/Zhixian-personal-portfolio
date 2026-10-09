@@ -10,7 +10,7 @@ test('profile and education records remain usable after CMS edits', () => {
   assert.ok(Array.isArray(profile.interests));
   for (const entry of read('education')) {
     assert.ok(entry.id && entry.university && entry.degree && entry.start && entry.end);
-    if (entry.gpa) assert.match(entry.gpa, /\d.*\/.*\d/);
+    if (entry.gpa) assert.match(entry.gpa, /(?:\d.*\/.*\d|^Top \d+%$)/);
     assert.ok(Array.isArray(entry.coursework));
   }
 });
