@@ -51,7 +51,7 @@ jobs:
       id-token: write
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}preview/
+      url: https://zz10965-alt.github.io/Zhixian-personal-portfolio/preview/
     steps:
       - name: Configure approved preview hosting
         uses: actions/configure-pages@v5

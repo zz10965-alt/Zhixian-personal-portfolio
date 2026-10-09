@@ -1,6 +1,6 @@
 # Temporary online preview and visual CMS
 
-Phase 3 is authorized. A temporary review preview and the CMS configuration are implemented. **The final public launch is not authorized and has no deployment workflow.** GitHub Pages enablement, the authenticated CMS login and an actual live preview fetch remain user/account-dependent until confirmed.
+Phase 3 is authorized. A temporary review preview and the CMS configuration are implemented. **The final public launch is not authorized and has no deployment workflow.** GitHub Pages enablement, the authenticated CMS login and an actual live preview fetch remain user/account-dependent until confirmed. The first remote workflow built successfully, then failed at Pages configuration with `HttpError: Not Found`; Pages must be enabled by the repository owner.
 
 ## 1. Enable the online preview
 
@@ -38,6 +38,8 @@ The site structure, styling and interactions remain code. They are outside the C
 ## Verification and remaining account steps
 
 Locally verified: all content fields have CMS editors; the upstream CMS config schema accepts `.pages.yml`; nine tests pass; the preview build produces all 19 routes; local browser checks use the exact repository/preview prefix to verify navigation, category dropdown, experience switching, Scroll Spy, responsive layouts and local media/documents. The preview artifact contains no final-site deployment.
+
+Remote build verified in [the first GitHub Actions run](https://github.com/zz10965-alt/Zhixian-personal-portfolio/actions/runs/37864777157). Its deployment failed because the repository has no enabled Pages site. The configure-pages action documents that automatic enablement requires an owner/admin token other than the workflow GITHUB_TOKEN; use the owner-side settings step above instead.
 
 Not yet independently confirmed: Pages settings enablement; GitHub Actions deployment success; the live preview HTTP response; CMS login/installation; a real CMS save/upload-to-preview round trip. This environment can push Git changes but cannot call the GitHub settings API with valid authorization. Its current proxy also blocks GitHub Pages and hosted CMS access. These are account/environment limits, not evidence that the preview or CMS service is broken.
 
