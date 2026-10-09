@@ -358,7 +358,6 @@
           "name": "coursework",
           "label": "课程",
           "list": true,
-          "default": [],
           "type": "string"
         },
         {
@@ -390,7 +389,6 @@
           "name": "highlights",
           "label": "要点",
           "list": true,
-          "default": [],
           "type": "text"
         },
         {
@@ -482,14 +480,12 @@
           "name": "contributions",
           "label": "工作内容（每项一条）",
           "list": true,
-          "default": [],
           "type": "text"
         },
         {
           "name": "tags",
           "label": "技术栈",
           "list": true,
-          "default": [],
           "type": "string"
         },
         {
@@ -549,7 +545,6 @@
           "name": "tags",
           "label": "1. 技术栈（名称右侧）",
           "list": true,
-          "default": [],
           "type": "string"
         },
         {
@@ -578,14 +573,12 @@
                   "name": "paragraphs",
                   "label": "正文",
                   "list": true,
-                  "default": [],
                   "type": "text"
                 },
                 {
                   "name": "bullets",
                   "label": "要点（每项一条）",
                   "list": true,
-                  "default": [],
                   "type": "text"
                 }
               ]
@@ -695,14 +688,12 @@
               "name": "paragraphs",
               "label": "正文",
               "list": true,
-              "default": [],
               "type": "text"
             },
             {
               "name": "bullets",
               "label": "要点（每项一条）",
               "list": true,
-              "default": [],
               "type": "text"
             },
             {

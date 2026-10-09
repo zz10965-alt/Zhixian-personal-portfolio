@@ -47,3 +47,18 @@ test('only the isolated temporary preview is packaged for deployment', () => {
   const script = readFileSync(new URL('../scripts/package-preview.mjs',import.meta.url),'utf8');
   assert.match(script,/preview-artifact\/preview/); assert.match(script,/final public website has not launched/); assert.match(script,/noindex/);
 });
+test('CMS primitive lists add a scalar item rather than appending an empty array', () => {
+  let count = 0;
+  function check(fields) {
+    for (const field of fields) {
+      if (field.list && !['object','block'].includes(field.type)) {
+        assert.ok(!Array.isArray(field.default), `Invalid new-item default: ${field.name}`);
+        count++;
+      }
+      check(field.fields ?? []);
+      for (const block of field.blocks ?? []) check(block.fields ?? []);
+    }
+  }
+  cms.content.forEach(entry => check(entry.fields));
+  assert.ok(count >= 9);
+});
